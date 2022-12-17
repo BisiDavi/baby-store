@@ -8,12 +8,12 @@ interface ProductItem {
     oldPrice?: number;
     rating: number;
     name: string;
-    img: string[];
+    imgs: string[];
   };
 }
 
 export default function Product({ product }: ProductItem) {
-  const { sold, discount, price, rating, name, img } = product;
+  const { sold, discount, price, rating, name, imgs } = product;
   return (
     <div>
       <div className="top">
