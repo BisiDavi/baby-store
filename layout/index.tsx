@@ -8,7 +8,7 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
     <>
       <TopHeader />
       <Header />
-      <main>{children}</main>
+      <main className="container flex mx-auto flex-col">{children}</main>
       <Footer />
     </>
   );
