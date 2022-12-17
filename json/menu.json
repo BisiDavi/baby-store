@@ -1,4 +1,12 @@
 {
+  "topHeader": {
+    "currencyDropdown": [
+      { "name": "United States (USD)", "value": "$" },
+      { "name": "Euro (EUR)", "value": "E" },
+      { "name": "Nigerian Naira (NGN)", "value": "N" }
+    ],
+    "languageDropdown": ["English", "French"]
+  },
   "header": [
     { "name": "Home", "link": "/", "dropdown": false },
     { "name": "Toys", "link": "/toys", "dropdown": true },
