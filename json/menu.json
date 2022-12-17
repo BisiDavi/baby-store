@@ -5,7 +5,10 @@
       { "name": "Euro (EUR)", "value": "E" },
       { "name": "Nigerian Naira (NGN)", "value": "N" }
     ],
-    "languageDropdown": ["English", "French"]
+    "languageDropdown": [
+      { "name": "English", "value": "english" },
+      { "name": "French", "value": "french" }
+    ]
   },
   "header": [
     { "name": "Home", "link": "/", "dropdown": false },
