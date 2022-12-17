@@ -30,6 +30,7 @@ export default function Product({ product }: ProductItem) {
         {product?.oldPrice && <h6>{product?.oldPrice}</h6>}
       </div>
       <Ratings rating={rating} />
+      
     </div>
   );
 }
