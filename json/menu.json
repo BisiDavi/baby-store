@@ -1,0 +1,45 @@
+{
+  "header": [
+    { "name": "Home", "link": "/", "dropdown": false },
+    { "name": "Toys", "link": "/toys", "dropdown": true },
+    { "name": "Bath Toys", "link": "/bath-toys", "dropdown": false },
+    { "name": "Soft Toys", "link": "/soft-toys", "dropdown": false },
+    { "name": "Blog", "link": "/blog", "dropdown": true }
+  ],
+  "footer": [
+    {
+      "name": "Service",
+      "link": "/service",
+      "dropdown": true,
+      "links": [
+        { "name": "FAQ", "link": "/faq" },
+        { "name": "About Us", "link": "/about-us" },
+        { "name": "Shipping", "link": "/shipping" },
+        { "name": "Privacy Policy", "link": "/privacy-policy" },
+        { "name": "Contact", "link": "/contact" }
+      ]
+    },
+    {
+      "name": "Extras",
+      "link": "/service",
+      "dropdown": true,
+      "links": [
+        { "name": "Search", "link": "/search" },
+        { "name": "News", "link": "/news" },
+        { "name": "Wishlist", "link": "/wishlist" },
+        { "name": "All Collections", "link": "/all-collections" },
+        { "name": "All Products", "link": "/all-products" }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "link": "/service",
+      "dropdown": true,
+      "links": [
+        { "name": "Demo Store, Nigeria", "type": "location" },
+        { "name": "0123-456-789", "link": "0123-456-789", "type": "call" },
+        { "name": "demo@demo.com", "link": "demo@demo.com", "type": "email" }
+      ]
+    }
+  ]
+}
