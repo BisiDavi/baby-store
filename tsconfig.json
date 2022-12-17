@@ -14,8 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@/*": ["./*"],
-      "@*": ["./components/@*"]
+      "@/*": ["./*"]
     },
     "incremental": true
   },
