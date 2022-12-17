@@ -7,8 +7,8 @@ export default function InfoList() {
         <li key={item.title} className="flex">
           <div className="icon"></div>
           <div className="text">
-            <h3 className="text-lg">{item.title}</h3>
-            <p>{item.text}</p>
+            <h3 className="text-lg my-2">{item.title}</h3>
+            <p className="text-gray-500">{item.text}</p>
           </div>
         </li>
       ))}

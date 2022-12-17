@@ -2,21 +2,21 @@
   {
     "title": "FREE SHIPPING",
     "text": "Free Shipping On All Order",
-    "icon": "shipping-icon"
+    "icon": "shipping-icon.webp"
   },
   {
     "title": "FREE RETURN",
     "text": "Money Back Guarantee",
-    "icon": "money-back"
+    "icon": "money-back.avif"
   },
   {
     "title": "24/7 SUPPORT",
     "text": "We Support Online 24 Hrs",
-    "icon": "support"
+    "icon": "support.avif"
   },
   {
     "title": "RECEIVE GIFT CARD",
     "text": "All Order Over $50",
-    "icon": "gift-card"
+    "icon": "gift-card.avif"
   }
 ]
