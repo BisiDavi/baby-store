@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Button from "./Button";
+
+import Caret from "@/public/icon/Caret";
+import Button from "@/components/Button";
 
 interface Props {
   content: Array<{ name: string; value: string }>;
@@ -23,8 +25,9 @@ export default function Dropdown({ content }: Props) {
     <div>
       <Button
         text={content[0].name}
-        className="h-10 border"
+        className="h-10 border px-2 mx-2"
         onClick={showDropdownHandler}
+        icon={<Caret />}
       />
       {dropdownStatus && (
         <ul className="dropdown-list">
