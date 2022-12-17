@@ -1,5 +1,9 @@
 import Head from "next/head";
 import Logo from "@/components/Logo";
+import Search from "@/public/icon/Search";
+import Wishlist from "@/public/icon/Wishlist";
+import Person from "@/public/icon/Person";
+import ShoppingCart from "@/public/icon/ShoppingCart";
 
 export default function Header() {
   return (
@@ -12,6 +16,12 @@ export default function Header() {
       </Head>
       <div className="container mx-auto flex items-center justify-between">
         <Logo />
+        <div className="icons">
+          <Search />
+          <Wishlist />
+          <Person />
+          <ShoppingCart />
+        </div>
       </div>
     </header>
   );
