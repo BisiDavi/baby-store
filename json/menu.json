@@ -13,6 +13,7 @@
   "header": [
     { "name": "Home", "link": "/", "dropdown": false },
     { "name": "Toys", "link": "/toys", "dropdown": true },
+    { "name": "Shop", "link": "/shop", "dropdown": true },
     { "name": "Bath Toys", "link": "/bath-toys", "dropdown": false },
     { "name": "Soft Toys", "link": "/soft-toys", "dropdown": false },
     { "name": "Blog", "link": "/blog", "dropdown": true }
