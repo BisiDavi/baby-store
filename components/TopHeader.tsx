@@ -1,15 +1,17 @@
-import Dropdown from "./Dropdown";
+import Dropdown from "@/components/Dropdown";
 import dropdownContent from "@/json/menu.json";
 
 export default function TopHeader() {
   return (
-    <div>
-      <div className="left">
-        <p>Free Shipping Over $120</p>
-      </div>
-      <div className="right">
-        <Dropdown content={dropdownContent.topHeader.currencyDropdown} />
-        <Dropdown content={dropdownContent.topHeader.languageDropdown} />
+    <div className="w-full border-b">
+      <div className="container mx-auto h-12 flex items-center justify-between">
+        <div className="left">
+          <p>Free Shipping Over $120</p>
+        </div>
+        <div className="right w-1/6 flex items-center justify-between">
+          <Dropdown content={dropdownContent.topHeader.currencyDropdown} />
+          <Dropdown content={dropdownContent.topHeader.languageDropdown} />
+        </div>
       </div>
     </div>
   );
