@@ -1,10 +1,14 @@
-export default function Caret() {
+interface Props {
+  className: string;
+}
+
+export default function Caret({ className }: Props) {
   return (
     <svg
       aria-hidden="true"
       focusable="false"
       role="presentation"
-      className="icon icon-caret"
+      className={className}
       viewBox="0 0 10 6"
     >
       <path

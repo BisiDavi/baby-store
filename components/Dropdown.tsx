@@ -22,17 +22,17 @@ export default function Dropdown({ content }: Props) {
   }
 
   return (
-    <div>
+    <div className="relative">
       <Button
         text={content[0].name}
-        className="h-10 border px-2 mx-2"
+        className="h-10  px-2 mx-2 flex items-center"
         onClick={showDropdownHandler}
-        icon={<Caret />}
+        icon={<Caret className="w-4 ml-2" />}
       />
       {dropdownStatus && (
-        <ul className="dropdown-list">
+        <ul className="dropdown-list bg-white absolute top-10 text-black py-1 rounded-md shadow">
           {content.map((item) => (
-            <li key={item.name}>
+            <li key={item.name} className="border-b px-3 py-1">
               <button onClick={() => dropdownHandler(item)}>{item.name}</button>
             </li>
           ))}
