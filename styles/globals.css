@@ -1,3 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Your own custom component styles */
+
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
