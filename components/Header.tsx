@@ -16,7 +16,7 @@ export default function Header() {
       </Head>
       <div className="container mx-auto flex items-center justify-between">
         <Logo />
-        <div className="icons">
+        <div className="icons flex">
           <Search />
           <Wishlist />
           <Person />
