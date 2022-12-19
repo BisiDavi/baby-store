@@ -12,21 +12,26 @@ interface Props {
 
 export default function BannerInfoCard({ content }: Props) {
   return (
-    <div className="round-md">
+    <div className={`mr-4 ${content.className}`}>
       <div className="content">
         <h3>{content.title}</h3>
         <p>{content.text}</p>
         <Button text="Shop Now" className="bg-white h-16 w-24 " />
       </div>
       <div
-        className={content.className}
+        className="w-full"
         style={{
           height: "40vh",
           position: "relative",
           objectFit: "contain",
         }}
       >
-        <Image src={content.img} alt={content.title} fill={true} />
+        <Image
+          src={content.img}
+          className="rounded-xl"
+          alt={content.title}
+          fill={true}
+        />
       </div>
     </div>
   );
