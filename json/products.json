@@ -4,7 +4,7 @@
     "price": 100,
     "oldPrice": 150,
     "description": "",
-    "imgs": [],
+    "imgs": ["./pineapple-teddy.webp"],
     "rating": 3,
     "sold": true
   },
@@ -13,7 +13,7 @@
     "price": 200,
     "oldPrice": 250,
     "description": "",
-    "imgs": [],
+    "imgs": ["./fancy-led.webp"],
     "rating": 4,
     "sold": false
   },
@@ -22,7 +22,7 @@
     "price": 100,
     "oldPrice": 150,
     "description": "",
-    "imgs": [],
+    "imgs": ["./tedy-bear-black.webp"],
     "rating": 4,
     "sold": false,
     "discount": "5%"
@@ -32,33 +32,33 @@
     "price": 150,
     "oldPrice": 200,
     "description": "",
-    "imgs": [],
+    "imgs": ["./night-led.webp"],
     "rating": 5,
     "sold": false
   },
   {
-    "name": "",
+    "name": "Green Teddy Bear",
     "price": 150,
     "oldPrice": 200,
     "description": "",
-    "imgs": [],
+    "imgs": ["./green-bear.webp"],
     "rating": 5,
     "sold": false
   },
   {
-    "name": "",
+    "name": "Fruit Shaped Toy Stack",
     "price": 150,
     "oldPrice": 200,
     "description": "",
-    "imgs": [],
+    "imgs": ["./fruit-stack.webp"],
     "rating": 5
   },
   {
-    "name": "",
+    "name": "Toy drawer",
     "price": 150,
     "oldPrice": 200,
     "description": "",
-    "imgs": [],
+    "imgs": ["./tedy-drawer.webp"],
     "rating": 5
   },
   {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Ratings from "@/components/Ratings";
 
 interface ProductItem {
@@ -30,7 +31,11 @@ export default function Product({ product }: ProductItem) {
         )}
       </div>
       <div className="image">
-        <div className="image-view"></div>
+        <div className="image-view">
+          {imgs.map((imgItem) => (
+            <img src={imgItem} key={imgItem} alt={name} />
+          ))}
+        </div>
         <div className="image-control"></div>
       </div>
       <h4 className="name">{name}</h4>
