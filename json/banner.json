@@ -22,21 +22,25 @@
   "banner1": {
     "title": "Beautiful Child Stationary Accessories",
     "text": "Interesting Features Is Rich And Colorful, Each Button To Bring A Surprise To The Baby Introduction To Give Your Child Learn In Advance.",
-    "img": "/banner-1.webp"
+    "img": "/banner-1.webp",
+    "className": "w-3/5"
   },
   "banner2": {
     "title": "Amazing Soft Toys",
     "text": "Each Button To Bring A Surprise To The Baby Introduction To Give Your Child Learn In Advance.",
-    "img": "/banner-2.webp"
+    "img": "/banner-2.webp",
+    "className": "w-2/5"
   },
   "banner3": {
     "title": "Small Seat Sofa",
     "text": "Each Button To Bring A Surprise To The Baby Introduction To Give Your Child Learn In Advance.",
-    "img": "/banner-3.webp"
+    "img": "/banner-3.webp",
+    "className": "w-2/5"
   },
   "banner4": {
     "title": "Latest Toy House For Your Children",
     "text": "Interesting Features Is Rich And Colorful, Each Button To Bring A Surprise To The Baby Introduction To Give Your Child Learn In Advance.",
-    "img": "/banner-4.webp"
+    "img": "/banner-4.webp",
+    "className": "w-3/5"
   }
 }

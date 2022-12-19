@@ -6,6 +6,7 @@ interface Props {
     title: string;
     text: string;
     img: string;
+    className: string;
   };
 }
 
@@ -17,7 +18,16 @@ export default function BannerInfoCard({ content }: Props) {
         <p>{content.text}</p>
         <Button text="Shop Now" className="bg-white h-16 w-24 " />
       </div>
-      <Image src={content.img} alt={content.title} />
+      <div
+        className={content.className}
+        style={{
+          height: "40vh",
+          position: "relative",
+          objectFit: "contain",
+        }}
+      >
+        <Image src={content.img} alt={content.title} fill={true} />
+      </div>
     </div>
   );
 }

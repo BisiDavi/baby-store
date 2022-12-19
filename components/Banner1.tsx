@@ -3,7 +3,7 @@ import BannerInfoCard from "@/components/BannerInfoCard";
 
 export default function Banner1() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto flex ">
       <BannerInfoCard content={bannerContent.banner1} />
       <BannerInfoCard content={bannerContent.banner2} />
     </div>
