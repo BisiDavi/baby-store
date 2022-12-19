@@ -16,7 +16,7 @@ interface ProductItem {
 export default function Product({ product }: ProductItem) {
   const { sold, discount, price, rating, name, imgs } = product;
   return (
-    <div className="rounded-lg p-2 product">
+    <div className="rounded-lg p-2 product mr-4 h-96">
       <div className="top flex justify-between my-2">
         {product?.oldPrice && (
           <div className="discount-badge bg-white text-red-500 rounded-md w-12 flex items-center justify-center text-sm">
@@ -33,15 +33,17 @@ export default function Product({ product }: ProductItem) {
       <div className="image">
         <div className="image-view">
           {imgs.map((imgItem) => (
-            <img src={imgItem} key={imgItem} alt={name} />
+            <img src={imgItem} key={imgItem} alt={name} className="h-60" />
           ))}
         </div>
         <div className="image-control"></div>
       </div>
-      <h4 className="name">{name}</h4>
-      <div className="price-view">
-        <h5>{price}</h5>
-        {product?.oldPrice && <h6>{product?.oldPrice}</h6>}
+      <h4 className="name font-medium text-center text-lg">{name}</h4>
+      <div className="price-view flex mx-auto justify-center items-center">
+        <h5 className="font-bold text-center text-md">${price}</h5>
+        {product?.oldPrice && (
+          <h6 className="text-sm mx-2 line-through">${product?.oldPrice}</h6>
+        )}
       </div>
       <Ratings rating={rating} />
     </div>
