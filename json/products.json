@@ -24,7 +24,8 @@
     "description": "",
     "imgs": [],
     "rating": 4,
-    "sold": false
+    "sold": false,
+    "discount": "5%"
   },
   {
     "name": "Funblast Rechargeable Table LED",

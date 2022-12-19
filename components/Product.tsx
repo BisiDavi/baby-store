@@ -15,10 +15,19 @@ interface ProductItem {
 export default function Product({ product }: ProductItem) {
   const { sold, discount, price, rating, name, imgs } = product;
   return (
-    <div>
-      <div className="top">
-        {sold && <div className="sold-badge">Sold</div>}
-        {product?.oldPrice && <div className="discount-badge">{discount}</div>}
+    <div className="rounded-lg bg-gray-100 p-2">
+      <div className="top flex justify-between my-2">
+        {product?.oldPrice && (
+          <div className="discount-badge bg-white text-red-500 rounded-md w-12 flex items-center justify-center text-sm">
+            {discount}
+          </div>
+        )}
+
+        {sold && (
+          <div className="sold-badge bg-purple-500 text-white rounded-md w-12 flex items-center justify-center text-sm">
+            Sold
+          </div>
+        )}
       </div>
       <div className="image">
         <div className="image-view"></div>

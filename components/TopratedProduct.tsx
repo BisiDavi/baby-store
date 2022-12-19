@@ -9,7 +9,7 @@ export default function TopratedProduct() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="products">
+      <div className="products grid grid-cols-4 gap-8">
         {products.map((item) => (
           <Product key={item.name} product={item} />
         ))}
