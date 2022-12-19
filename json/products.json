@@ -1,64 +1,69 @@
 [
   {
     "name": "Babyhug Pineapple Face",
-    "price": "100",
-    "oldPrice": "150",
+    "price": 100,
+    "oldPrice": 150,
     "description": "",
     "imgs": [],
-    "rating": 3
+    "rating": 3,
+    "sold": true
   },
   {
     "name": "Skylofts Rabbit LED Night Lamp",
-    "price": "200",
-    "oldPrice": "250",
+    "price": 200,
+    "oldPrice": 250,
     "description": "",
     "imgs": [],
-    "rating": 4
+    "rating": 4,
+    "sold": false
   },
   {
     "name": "Dimpy Stuff Teddy Bear",
-    "price": "100",
-    "oldPrice": "150",
+    "price": 100,
+    "oldPrice": 150,
     "description": "",
     "imgs": [],
-    "rating": 4
+    "rating": 4,
+    "sold": false
   },
   {
     "name": "Funblast Rechargeable Table LED",
-    "price": "150",
-    "oldPrice": "200",
+    "price": 150,
+    "oldPrice": 200,
+    "description": "",
+    "imgs": [],
+    "rating": 5,
+    "sold": false
+  },
+  {
+    "name": "",
+    "price": 150,
+    "oldPrice": 200,
+    "description": "",
+    "imgs": [],
+    "rating": 5,
+    "sold": false
+  },
+  {
+    "name": "",
+    "price": 150,
+    "oldPrice": 200,
     "description": "",
     "imgs": [],
     "rating": 5
   },
   {
     "name": "",
-    "price": "",
-    "oldPrice": "",
+    "price": 150,
+    "oldPrice": 200,
     "description": "",
     "imgs": [],
     "rating": 5
   },
   {
     "name": "",
-    "price": "",
-    "oldPrice": "",
-    "description": "",
-    "imgs": [],
-    "rating": 5
-  },
-  {
-    "name": "",
-    "price": "",
-    "oldPrice": "",
-    "description": "",
-    "imgs": [],
-    "rating": 5
-  },
-  {
-    "name": "",
-    "price": "",
-    "oldPrice": "",
+    "price": 150,
+    "oldPrice": 200,
     "description": "",
     "imgs": [],
     "rating": 5

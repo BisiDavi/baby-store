@@ -1,9 +1,10 @@
-import infoList from "@/json/infolist.json";
 import Image from "next/image";
+
+import infoList from "@/json/infolist.json";
 
 export default function InfoList() {
   return (
-    <ul className="container mx-auto border p-8 mt-8 my-4 rounded-xl flex justify-between shadow">
+    <ul className="container mx-auto border p-8 my-8 rounded-xl flex justify-between shadow">
       {infoList.map((item) => (
         <li key={item.title} className="flex">
           <div className="icon border rounded-full flex items-center p-4 mx-4 hover:shadow">
