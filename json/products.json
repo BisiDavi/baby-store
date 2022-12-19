@@ -62,11 +62,27 @@
     "rating": 5
   },
   {
-    "name": "",
+    "name": "Toy Hut",
     "price": 150,
     "oldPrice": 200,
     "description": "",
-    "imgs": [],
+    "imgs": ["./toy-hut.webp"],
+    "rating": 5
+  },
+  {
+    "name": "White Bunny",
+    "price": 150,
+    "oldPrice": 200,
+    "description": "",
+    "imgs": ["./white-bunny.webp"],
+    "rating": 5
+  },
+  {
+    "name": "Orange Teddy Bear",
+    "price": 150,
+    "oldPrice": 200,
+    "description": "",
+    "imgs": ["./orange-teddy-bear.webp"],
     "rating": 5
   }
 ]

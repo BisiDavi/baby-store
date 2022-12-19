@@ -16,7 +16,7 @@ interface ProductItem {
 export default function Product({ product }: ProductItem) {
   const { sold, discount, price, rating, name, imgs } = product;
   return (
-    <div className="rounded-lg bg-gray-100 p-2">
+    <div className="rounded-lg p-2 product">
       <div className="top flex justify-between my-2">
         {product?.oldPrice && (
           <div className="discount-badge bg-white text-red-500 rounded-md w-12 flex items-center justify-center text-sm">
