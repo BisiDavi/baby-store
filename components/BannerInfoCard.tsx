@@ -28,6 +28,7 @@ export default function BannerInfoCard({ content }: Props) {
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            height: 350px;
           }
         `}
       </style>
