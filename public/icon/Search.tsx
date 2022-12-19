@@ -8,7 +8,7 @@ export default function Search() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      className="w-6 mx-2"
+      className="w-6"
       viewBox="0 0 487.95 487.95"
       //   style="enable-background:new 0 0 487.95 487.95;"
       xmlSpace="preserve"

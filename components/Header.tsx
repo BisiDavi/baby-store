@@ -26,7 +26,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <div className="icons flex">
+        <div className="icons flex space-x-4">
           <Search />
           <Wishlist />
           <Person />
