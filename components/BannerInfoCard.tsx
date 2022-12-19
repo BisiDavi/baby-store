@@ -17,7 +17,7 @@ export default function BannerInfoCard({ content }: Props) {
           <p className="mt-1">{content.text}</p>
           <Button
             text="Shop Now"
-            className="bg-white h-12 mt-10 rounded w-32 hover:bg-gray-100"
+            className="bg-white h-10 mt-10 rounded-lg w-32 hover:bg-gray-100"
           />
         </div>
       </div>
