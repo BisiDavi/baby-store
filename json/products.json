@@ -3,7 +3,7 @@
     "name": "Babyhug Pineapple Face",
     "price": 100,
     "oldPrice": 150,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./pineapple-teddy.webp"],
     "rating": 3,
     "sold": true
@@ -12,7 +12,7 @@
     "name": "Skylofts Rabbit LED Night Lamp",
     "price": 200,
     "oldPrice": 250,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./fancy-led.webp"],
     "rating": 4,
     "sold": false
@@ -21,7 +21,7 @@
     "name": "Dimpy Stuff Teddy Bear",
     "price": 100,
     "oldPrice": 150,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./tedy-bear-black.webp"],
     "rating": 4,
     "sold": false,
@@ -31,7 +31,7 @@
     "name": "Funblast Rechargeable Table LED",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./night-led.webp"],
     "rating": 5,
     "sold": false
@@ -40,7 +40,7 @@
     "name": "Green Teddy Bear",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./green-bear.webp"],
     "rating": 5,
     "sold": false
@@ -49,7 +49,7 @@
     "name": "Fruit Shaped Toy Stack",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./fruit-stack.webp"],
     "rating": 5
   },
@@ -57,7 +57,7 @@
     "name": "Toy drawer",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./tedy-drawer.webp"],
     "rating": 5
   },
@@ -65,7 +65,7 @@
     "name": "Toy Hut",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./toy-hut.webp"],
     "rating": 5
   },
@@ -73,7 +73,7 @@
     "name": "White Bunny",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./white-bunny.webp"],
     "rating": 5
   },
@@ -81,7 +81,7 @@
     "name": "Orange Teddy Bear",
     "price": 150,
     "oldPrice": 200,
-    "description": "",
+    "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
     "imgs": ["./orange-teddy-bear.webp"],
     "rating": 5
   }
