@@ -5,7 +5,7 @@ import Banners from "@/components/Banners";
 import TopratedProduct from "@/components/TopratedProduct";
 import Newsletter from "@/components/Newsletter";
 import SpecialProducts from "@/components/SpecialProducts";
-import TopProduct from "@/components/TopProduct";
+import TopCategories from "@/components/TopCategories";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import Blog from "@/components/Blog";
 
@@ -17,7 +17,7 @@ export default function Home() {
       <TopratedProduct />
       <Banners />
       <SpecialProducts />
-      <TopProduct />
+      <TopCategories />
       <TestimonialSlider />
       <Blog />
       <Newsletter />
