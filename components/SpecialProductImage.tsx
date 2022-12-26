@@ -20,11 +20,11 @@ export default function SpecialProductImage({
   return (
     <div className="w-1/2 flex mr-14">
       <ul className="selectProduct w-1/4">
-        {specialProductsContent.map((item, index) => (
+        {specialProductsContent.map((item) => (
           <li key={item.name}>
             <button
               onClick={() => onSelectImage(item)}
-              className="block hover:opacity-50"
+              className="block mx-auto justify-center hover:opacity-50"
             >
               <Image
                 src={item.imgs[0]}

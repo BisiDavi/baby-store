@@ -4,34 +4,34 @@
     "text": "Quisque egestas, mauris sed fringilla tristique, nibh odio eleifend lectus, at efficitur enim nunc sed arcu. Vestibulum et nisi et neque luctus sollicitudin vitae non libero. Proin imperdiet non mauris ac porttitor. Donec mollis mi eu tincidunt pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia...",
     "date": "March 12, 2022",
     "author": "Olubisi Dave",
-    "img": ""
+    "img": "/blog-1.webp"
   },
   {
     "title": "Nullam cursus mauris faucibus",
     "text": "Ut blandit orci vitae erat tincidunt sollicitudin. Nam luctus posuere sapien vitae tempor. Quisque non pulvinar nisl. Duis nec augue efficitur, faucibus diam eget, vulputate lorem. Donec ex est, rutrum accumsan elit et, tincidunt sodales ante. Fusce tempor vulputate elit eu fringilla. Nullam cursus mauris faucibus ipsum scelerisque lobortis. Suspendisse...",
     "date": "June 18, 2022",
     "author": "Adrian Cole",
-    "img": ""
+    "img": "/blog-2.webp"
   },
   {
     "title": "Donec placerat, dolor ac tristique",
     "text": "Phasellus ex est, vehicula et ante id, dapibus dictum eros. Nunc molestie euismod pretium. Nunc feugiat arcu et condimentum porttitor. In dapibus, sapien sed hendrerit fringilla, odio quam dictum lacus, ut porta odio erat eget augue. Nunc felis dolor, elementum eget risus nec, faucibus dictum nulla. Aliquam erat volutpat. Maecenas...",
     "date": "August 02, 2022",
     "author": "Nancy Sussan",
-    "img": ""
+    "img": "/blog-3.webp"
   },
   {
     "title": "Etiam vel volutpat sem",
     "text": "Donec ante est, varius id arcu ac, venenatis vehicula purus. Suspendisse rhoncus massa at euismod viverra. Nam rutrum tortor quis tellus auctor, ac fringilla lorem fringilla. Duis nisl magna, aliquet a nibh vitae, vulputate molestie mauris. Morbi eget pulvinar dui. Sed id elit non dolor mollis hendrerit. Fusce dapibus nibh...",
     "date": "September 05, 2022",
     "author": "Nate Sawyer",
-    "img": ""
+    "img": "/blog-4.webp"
   },
   {
     "title": "Vivamus Ante Ante, Tempor Nec",
     "text": "Nulla facilisi. Maecenas eleifend laoreet est a pharetra. Aliquam erat volutpat. Etiam vitae tincidunt mauris, eu blandit mi. Suspendisse nulla massa, pulvinar at suscipit sed, vestibulum sed nisl. Nunc tincidunt, elit vitae dictum placerat, lacus nunc eleifend ante, eu bibendum mi lacus eu sem. Proin vitae dapibus augue, eu malesuada odio. Sed et velit lobortis sem imperdiet luctus sagittis id metus. Maecenas non metus lectus. Etiam vitae turpis dui. Ut ultrices, neque nec semper eleifend, mauris metus commodo purus, blandit blandit nibh purus quis lectus. Aenean sodales leo sed eros rutrum luctus. Donec tincidunt tincidunt feugiat. Integer orci purus, hendrerit nec euismod placerat, aliquet sed dui. Vivamus ante ante, tempor nec enim imperdiet, vehicula eleifend felis.",
     "date": "October 10, 2022",
     "author": "Nate Sawyer",
-    "img": ""
+    "img": "/blog-5.webp"
   }
 ]

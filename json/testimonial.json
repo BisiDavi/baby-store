@@ -3,18 +3,18 @@
     "name": "Ms Susan",
     "role": "Nanny",
     "testimony": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure esse officia aliquid obcaecati dicta rem! Minima, aut expedita. Dicta magnam nulla recusandae doloremque ea ut ullam odit. Hic, quod quidem!",
-    "img": ""
+    "img": "/testi1.webp"
   },
   {
-    "name": "Mr Adrian",
+    "name": "Mrs Becky",
     "role": "Customer",
     "testimony": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure esse officia aliquid obcaecati dicta rem! Minima, aut expedita. Dicta magnam nulla recusandae doloremque ea ut ullam odit. Hic, quod quidem!",
-    "img": ""
+    "img": "/testi2.webp"
   },
   {
     "name": "Ms Nancy",
     "role": "Customer",
     "testimony": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure esse officia aliquid obcaecati dicta rem! Minima, aut expedita. Dicta magnam nulla recusandae doloremque ea ut ullam odit. Hic, quod quidem!",
-    "img": ""
+    "img": "/testi3.webp"
   }
 ]
