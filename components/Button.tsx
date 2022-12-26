@@ -4,16 +4,19 @@ interface Props {
   className: string;
   onClick?: () => void;
   icon?: JSX.Element;
+  onMouseMove?: () => void;
+  onMouseOut?: () => void;
 }
-export default function Button({
-  text,
-  type = "button",
-  className,
-  onClick,
-  icon,
-}: Props) {
+export default function Button(props: Props) {
+  const { text, type = "button", className, onClick, icon } = props;
   return (
-    <button className={className} type={type} title={text} onClick={onClick}>
+    <button
+      {...props}
+      className={className}
+      type={type}
+      title={text}
+      onClick={onClick}
+    >
       {text ? text : ""} {icon ? icon : ""}
     </button>
   );
