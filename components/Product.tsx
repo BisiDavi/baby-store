@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import Link from "next/link";
 
@@ -7,6 +6,7 @@ import Button from "@/components/Button";
 import Eye from "@/public/icon/Eye";
 import Heart from "@/public/icon/Heart";
 import toSlug from "@/utils/toSlug";
+import Image from "next/image";
 
 interface ProductItem {
   product: {
@@ -37,7 +37,7 @@ export default function Product({ product }: ProductItem) {
   return (
     <Link href={`/products/${productLink}`}>
       <div
-        className="rounded-lg relative p-2 product mr-4 h-96"
+        className="rounded-lg bg-white relative border p-2 product mr-4 h-96"
         onMouseMove={() => setHoverState(true)}
         onMouseOut={() => setHoverState(false)}
       >
@@ -59,7 +59,13 @@ export default function Product({ product }: ProductItem) {
         )}
         <div className="image">
           <div className="image-view">
-            <img src={image} alt={title} className="h-60" />
+            <Image
+              src={image}
+              alt={title}
+              className="h-60 mx-auto"
+              height={200}
+              width={200}
+            />
           </div>
           <div className="image-control"></div>
         </div>

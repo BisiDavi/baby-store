@@ -2,14 +2,16 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useQuery } from "@tanstack/react-query";
 
 import Product from "@/components/Product";
-import "@splidejs/react-splide/css";
 import useProducts from "@/hooks/useProducts";
+import type { productType } from "@/types";
+import "@splidejs/react-splide/css";
 
 export default function TopratedProduct() {
   const { fetchProducts } = useProducts();
   const { data, status } = useQuery(["get-top-rated-products"], fetchProducts);
 
-  const topRatedProducts = status === "success" ? data?.data?.slice(0, 10) : [];
+  const topRatedProducts: productType[] | [] =
+    status === "success" ? data?.data?.slice(0, 12) : [];
   console.log("topRatedProducts", topRatedProducts);
 
   return (
@@ -26,9 +28,10 @@ export default function TopratedProduct() {
           ) : status === "loading" ? (
             <p>Fetching products</p>
           ) : (
+            status === "success" &&
             topRatedProducts.map((item) => (
-              <SplideSlide key={item.name}>
-                <Product key={item.name} product={item} />
+              <SplideSlide key={item.id}>
+                <Product product={item} />
               </SplideSlide>
             ))
           )}

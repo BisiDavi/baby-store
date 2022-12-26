@@ -2,10 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.product {
-  background-color: #f7f7f7;
-}
-
 /* slider arrow style */
 button.splide__arrow {
   height: 40px;
