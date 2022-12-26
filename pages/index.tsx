@@ -7,6 +7,7 @@ import Newsletter from "@/components/Newsletter";
 import SpecialProducts from "@/components/SpecialProducts";
 import TopProduct from "@/components/TopProduct";
 import TestimonialSlider from "@/components/TestimonialSlider";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <SpecialProducts />
       <TopProduct />
       <TestimonialSlider />
+      <Blog />
       <Newsletter />
     </Layout>
   );

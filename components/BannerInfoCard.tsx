@@ -30,6 +30,10 @@ export default function BannerInfoCard({ content }: Props) {
             background-size: cover;
             height: 350px;
           }
+          .bannerInfoCard:hover {
+            transform: scale(1);
+            transition: transform 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
         `}
       </style>
     </>

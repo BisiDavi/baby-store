@@ -5,3 +5,45 @@
 .product {
   background-color: #f7f7f7;
 }
+
+/* slider arrow style */
+button.splide__arrow {
+  height: 40px;
+  width: 40px;
+  background: white;
+  border: 1px solid gray;
+  box-shadow: 0 0 5px #0003;
+  border-radius: 10px;
+}
+
+.slider .splide__arrows.splide__arrows--ltr {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 130px;
+}
+
+.products.slider .splide__arrows.splide__arrows--ltr {
+  top: -60px;
+}
+
+/* slider pagination */
+ul.splide__pagination.splide__pagination--ltr {
+  bottom: -5px;
+}
+
+.splide__pagination li {
+  margin: 0px 10px;
+  height: 4px;
+  width: 30px;
+}
+
+.splide__pagination li button {
+  width: 30px;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.splide__pagination .splide__pagination__page.is-active {
+  background: #ff00006b;
+}
