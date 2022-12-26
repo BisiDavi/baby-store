@@ -1,10 +1,17 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useQuery } from "@tanstack/react-query";
 
-import products from "@/json/products.json"; 
+import products from "@/json/products.json";
 import Product from "@/components/Product";
 import "@splidejs/react-splide/css";
+import useProducts from "@/hooks/useProducts";
 
 export default function TopratedProduct() {
+  const { fetchProducts } = useProducts();
+  const { data, status } = useQuery(["get-top-rated-products"], fetchProducts);
+
+  console.log("data", data);
+
   return (
     <section className="container mx-auto relative mt-6 mb-10 flex flex-col">
       <h3 className="text-center text-3xl font-bold">Top rated Products</h3>
