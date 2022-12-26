@@ -43,7 +43,7 @@ export default function SpecialProductImage({
           alt={selectedProduct.name}
           height={500}
           width={500}
-          className="rounded-xl"
+          className="rounded-xl flex mx-auto w-full"
         />
       </div>
     </div>
