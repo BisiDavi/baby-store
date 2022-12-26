@@ -28,28 +28,14 @@ export default function ProductPage({ product }: Props) {
   );
 }
 
-export async function getStaticProps(context: any) {
-  console.log("slug", context.params);
+export async function getServerSideProps(context: any) {
   const product = await axios.get(
-    `https://fakestoreapi.com/products/${context.params.id}`
+    `https://fakestoreapi.com/products/${context.query.id}`
   );
 
   return {
     props: {
       product: product.data,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const products: { data: productType[] } = await axios.get(
-    "https://fakestoreapi.com/products"
-  );
-
-  return {
-    paths: products.data.map((item) => {
-      return { params: { slug: toSlug(item.title) } };
-    }),
-    fallback: false,
   };
 }
