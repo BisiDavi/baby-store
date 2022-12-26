@@ -16,7 +16,7 @@ export default function SpecialProducts() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="product-view w-full bg-gray-100 justify-between my-4 items-end flex p-10">
+      <div className="product-view w-full mx-auto bg-gray-100 justify-between my-4 items-end flex p-10">
         <SpecialProductImage
           selectedProduct={selectedProduct}
           setSelectedProduct={setSelectedProduct}

@@ -16,19 +16,19 @@ export default function Blog() {
         <Splide>
           {blogs.map((item) => (
             <SplideSlide key={item.text}>
-              <div className="blog-view flex justify-between">
+              <div className="blog-view flex items-center mt-4 justify-between space-x-6">
                 {item.img && (
                   <Image
                     src={item.img}
                     alt={item.title}
                     height={500}
-                    className="w-1/2"
+                    className="w-1/2 rounded-lg"
                     width={500}
                   />
                 )}
                 <div className="text w-1/2">
-                  <h4 className="text-2xl mb-4">{item.title}</h4>
-                  <p className="mb-2">{item.text}</p>
+                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                  <p className="mb-2 text-gray-500">{item.text}</p>
                   <div className="published w-3/4 flex justify-between">
                     <div className="date"> {item.date}</div>
                     <div className="author">{item.author}</div>
