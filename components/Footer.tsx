@@ -3,8 +3,8 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full">
-      <div className="main-footer w-full bg-blue-900">
+    <footer className="w-full ">
+      <div className="main-footer py-14 pt-24 w-full bg-blue-900">
         <div className="container mx-auto text-white flex justify-between items-start py-10">
           <div className="column-1 w-1/4">
             <div className="w-32">
