@@ -20,7 +20,7 @@ export default function Ratings({ ratings }: Props) {
       ))}
       {/* {ratingRemainder > 0 && <BsStarHalf size="20px" color="orange" />} */}
       {unfilledStarsArray.map((_, index) => (
-        <Star key={index} fill="none" />
+        <Star key={index} fill="gray" />
       ))}
     </div>
   );

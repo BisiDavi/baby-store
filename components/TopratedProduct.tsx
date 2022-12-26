@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import products from "@/json/products.json";
 import Product from "@/components/Product";
+import "@splidejs/react-splide/css";
 
 export default function TopratedProduct() {
   return (
@@ -11,7 +12,7 @@ export default function TopratedProduct() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="products mt-4 flex slider">
+      <div className="products mt-4 flex slider w-full">
         <Splide options={{ perPage: 4 }}>
           {products.map((item) => (
             <SplideSlide key={item.name}>
@@ -20,6 +21,13 @@ export default function TopratedProduct() {
           ))}
         </Splide>
       </div>
+      <style global jsx>
+        {`
+          .products .splide {
+            width: 100%;
+          }
+        `}
+      </style>
     </section>
   );
 }
