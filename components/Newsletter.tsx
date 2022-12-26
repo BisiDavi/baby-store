@@ -1,11 +1,12 @@
 import Button from "@/components/Button";
+import NewsletterIcon from "@/public/icon/Newsletter";
 
 export default function Newsletter() {
   return (
     <div className="bg-gray-100 h-40 -mb-16 container items-center justify-between mx-auto mt-20 p-10 py-14 flex rounded-md">
-      <div className="column-1">
-        <div className="icon"></div>
-        <h4 className="w-2/3 text-xl font-bold">SIGN UP FOR NEWSLETTER</h4>
+      <div className="column-1 w-1/4 flex items-center">
+        <NewsletterIcon />
+        <h4 className="w-2/3 ml-4 text-xl font-bold">SIGN UP FOR NEWSLETTER</h4>
       </div>
       <hr className="bg-gray-300 mr-8 w-0.5 h-full " />
       <div className="column-2">
