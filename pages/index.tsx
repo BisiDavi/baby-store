@@ -6,6 +6,7 @@ import TopratedProduct from "@/components/TopratedProduct";
 import Newsletter from "@/components/Newsletter";
 import SpecialProducts from "@/components/SpecialProducts";
 import TopProduct from "@/components/TopProduct";
+import TestimonialSlider from "@/components/TestimonialSlider";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Banners />
       <SpecialProducts />
       <TopProduct />
+      <TestimonialSlider />
       <Newsletter />
     </Layout>
   );
