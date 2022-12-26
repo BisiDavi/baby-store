@@ -85,6 +85,14 @@ export default function Product({ product }: ProductItem) {
         </div>
         <Ratings ratings={rating} />
       </div>
+      <style jsx>
+        {`
+          .product:hover .image-view img {
+            transform: scale(1.06);
+            transition: transform 0.5s ease-in-out;
+          }
+        `}
+      </style>
     </Link>
   );
 }
