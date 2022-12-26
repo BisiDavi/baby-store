@@ -32,10 +32,10 @@ export default function Product({ product }: ProductItem) {
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
   const { price, rating, title, image } = product;
-  const productLink = product.title ? toSlug(product.title) : "";
+  const productLink = toSlug(product.title);
 
   return (
-    <Link href={`/products/${productLink}`}>
+    <Link href={`/products/${productLink}?id=${product.id}`}>
       <div
         className="rounded-lg bg-white relative border p-2 product mr-4 h-96"
         onMouseMove={() => setHoverState(true)}

@@ -1,7 +1,8 @@
+import axios from "axios";
+
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductView from "@/components/ProductView";
 import Layout from "@/layout";
-import products from "@/json/products.json";
 import toSlug from "@/utils/toSlug";
 import type { productType } from "@/types";
 
@@ -28,20 +29,26 @@ export default function ProductPage({ product }: Props) {
 }
 
 export async function getStaticProps(context: any) {
-  const product = products.filter(
-    (item) => toSlug(item.name) === context.params.slug
-  )[0];
+  console.log("slug", context.params);
+  const product = await axios.get(
+    `https://fakestoreapi.com/products/${context.params.id}`
+  );
+
   return {
     props: {
-      product,
+      product: product.data,
     },
   };
 }
 
 export async function getStaticPaths() {
+  const products: { data: productType[] } = await axios.get(
+    "https://fakestoreapi.com/products"
+  );
+
   return {
-    paths: products.map((item) => {
-      return { params: { slug: toSlug(item.name) } };
+    paths: products.data.map((item) => {
+      return { params: { slug: toSlug(item.title) } };
     }),
     fallback: false,
   };
