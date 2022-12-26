@@ -5,4 +5,5 @@ export type productType = {
   description: string;
   imgs: string[];
   rating: number;
+  pageDescription?: string;
 };

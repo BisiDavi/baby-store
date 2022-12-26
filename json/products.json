@@ -4,7 +4,8 @@
     "price": 100,
     "oldPrice": 150,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./pineapple-teddy.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\n In pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/pineapple-teddy.webp"],
     "rating": 3,
     "sold": true
   },
@@ -13,7 +14,8 @@
     "price": 200,
     "oldPrice": 250,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./fancy-led.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/fancy-led.webp"],
     "rating": 4,
     "sold": false
   },
@@ -22,7 +24,8 @@
     "price": 100,
     "oldPrice": 150,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./tedy-bear-black.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/tedy-bear-black.webp"],
     "rating": 4,
     "sold": false,
     "discount": "5%"
@@ -32,7 +35,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./night-led.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/night-led.webp"],
     "rating": 5,
     "sold": false
   },
@@ -41,7 +45,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./green-bear.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/green-bear.webp"],
     "rating": 5,
     "sold": false
   },
@@ -50,7 +55,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./fruit-stack.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/fruit-stack.webp"],
     "rating": 5
   },
   {
@@ -58,7 +64,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./tedy-drawer.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/tedy-drawer.webp"],
     "rating": 5
   },
   {
@@ -66,7 +73,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./toy-hut.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/toy-hut.webp"],
     "rating": 5
   },
   {
@@ -74,7 +82,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./white-bunny.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/white-bunny.webp"],
     "rating": 5
   },
   {
@@ -82,7 +91,8 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Nunc at turpis a est aliquam semper id eu massa. Integer rutrum bibendum neque non fringilla. Praesent at ex vestibulum dolor accumsan convallis in et mauris. Proin augue massa, rhoncus dictum lectus eu, dapibus scelerisque turpis. In sodales urna vel varius aliquam. Nunc ut justo vitae nulla volutpat blandit. Maecenas quis ex in purus pulvinar dictum eget non dui. Pellentesque finibus tellus id scelerisque laoreet. Etiam sed faucibus magna, sit amet suscipit lacus. Vivamus eleifend sed purus sit amet tempor. Morbi condimentum ornare tempus.",
-    "imgs": ["./orange-teddy-bear.webp"],
+    "pageDescription": "Sed libero metus, tempus sit amet facilisis eget, porttitor eget nisl. Nullam commodo, diam ut gravida viverra, turpis nulla suscipit velit, ac pulvinar arcu justo sit amet ligula. Integer commodo pretium augue, et tempus dui varius ac. Vivamus pellentesque ex id tempus sagittis. Vestibulum non hendrerit erat. Maecenas maximus magna venenatis sollicitudin placerat. Cras justo nibh, gravida vel auctor nec, aliquet efficitur felis. In sapien tortor, sollicitudin in gravida commodo, vehicula vitae enim. Aliquam et elit commodo lorem malesuada semper sed vitae magna.\nIn pretium iaculis risus nec aliquam. Duis ac ipsum justo. Cras nec lectus a massa tincidunt molestie ut vitae lacus. Sed eu massa eget lectus dictum tincidunt vitae vel lectus. Mauris fermentum posuere tempus. Nunc in feugiat mi. Proin facilisis lorem quis varius aliquet. Fusce sollicitudin eget dolor at sodales. Etiam non lacinia diam. Aliquam a orci rutrum, tristique augue et, efficitur lacus. Aenean orci arcu, consectetur vitae efficitur sit amet, aliquet ac nisl. Morbi luctus ac tortor sit amet facilisis. Nulla aliquam quis est eu venenatis.",
+    "imgs": ["/orange-teddy-bear.webp"],
     "rating": 5
   }
 ]
