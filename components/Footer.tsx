@@ -33,7 +33,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bottom-footer bg-gray-300 h-14 w-full"></div>
+      <div className="bottom-footer bg-gray-300 h-14 w-full flex items-center">
+        <div className="container mx-auto">
+            <p className="p-0 m-0 text-center font-bold">
+              © 2022, made with ❤️ & <span className="text-2xl mt-4">☕️</span>
+            </p>
+        </div>
+      </div>
     </footer>
   );
 }
