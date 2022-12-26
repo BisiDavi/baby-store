@@ -1,4 +1,5 @@
 import PromoCounter from "./PromoCounter";
+import SpecialProductImage from "./SpecialProductImage";
 
 export default function SpecialProducts() {
   return (
@@ -9,7 +10,7 @@ export default function SpecialProducts() {
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
       <div className="product-view w-full"></div>
-      
+      <SpecialProductImage />
       <PromoCounter />
     </div>
   );
