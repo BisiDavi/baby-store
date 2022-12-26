@@ -1,4 +1,4 @@
-import TopProductTabs from "@/components/TopProductTabs";
+import CategoryTabView from "@/components/CategoryTabView";
 
 export default function TopCategories() {
   return (
@@ -9,7 +9,7 @@ export default function TopCategories() {
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
       <div className="container mt-4 mx-auto">
-        <TopProductTabs />
+        <CategoryTabView />
       </div>
     </div>
   );

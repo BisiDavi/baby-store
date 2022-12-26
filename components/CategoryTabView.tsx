@@ -1,23 +1,18 @@
 import { useState } from "react";
-import TopProductGrid from "@/components/TopProductGrid";
-import topProductContent from "@/json/top-product.json";
-import Button from "@/components/Button";
 import { useQuery } from "@tanstack/react-query";
+
+import TopProductGrid from "@/components/TopProductGrid";
+import Button from "@/components/Button";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
 
-type topProductKeyType = "Featured" | "Latest" | "Bestseller";
-
-export default function TopProductTabs() {
+export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
-  const initialCategory = status === "success" ? data.data[0] : "";
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState("electronics");
   const { data: productData, status: productStatus } = useQuery(
-    ["fetch-products"],
+    ["fetch-products", selectedCategory],
     () => fetchProducts(`/category/${selectedCategory}`),
     { enabled: !!selectedCategory }
   );
-
-  const tabs: topProductKeyType[] | any[] = Object.keys(topProductContent);
 
   function selectTabHandler(tabCategory: string) {
     setSelectedCategory(tabCategory);
