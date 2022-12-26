@@ -3,32 +3,32 @@
     "name": "Babyhug Pineapple Face",
     "price": "100",
     "oldPrice": "150",
-    "description": "",
-    "imgs": [],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
+    "imgs": ["./pineapple-teddy.webp"],
     "rating": 3
   },
   {
     "name": "Skylofts Rabbit LED Night Lamp",
     "price": "200",
     "oldPrice": "250",
-    "description": "",
-    "imgs": [],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
+    "imgs": ["./fancy-led.webp"],
     "rating": 4
   },
   {
     "name": "Dimpy Stuff Teddy Bear",
     "price": "100",
     "oldPrice": "150",
-    "description": "",
-    "imgs": [],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
+    "imgs": ["./tedy-bear-black.webp"],
     "rating": 4
   },
   {
     "name": "Funblast Rechargeable Table LED",
     "price": "150",
     "oldPrice": "200",
-    "description": "",
-    "imgs": [],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
+    "imgs": ["./night-led.webp"],
     "rating": 5
   }
 ]
