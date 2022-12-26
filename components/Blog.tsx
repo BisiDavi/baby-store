@@ -5,6 +5,7 @@ import blogs from "@/json/blogs.json";
 import Button from "@/components/Button";
 import Calender from "@/public/icon/Calender";
 import User from "@/public/icon/User";
+import "@splidejs/react-splide/css";
 
 export default function Blog() {
   return (
@@ -14,8 +15,8 @@ export default function Blog() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="slider">
-        <Splide>
+      <div className="slider blog">
+        <Splide options={{ perPage: 1 }}>
           {blogs.map((item) => (
             <SplideSlide key={item.text}>
               <div className="blog-view flex items-center mt-4 justify-between space-x-6">

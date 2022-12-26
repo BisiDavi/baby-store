@@ -1,6 +1,6 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import products from "@/json/products.json";
+import products from "@/json/products.json"; 
 import Product from "@/components/Product";
 import "@splidejs/react-splide/css";
 

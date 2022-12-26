@@ -47,3 +47,7 @@ ul.splide__pagination.splide__pagination--ltr {
 .splide__pagination .splide__pagination__page.is-active {
   background: #ff00006b;
 }
+
+.slider.blog {
+  height: fit-content;
+}
