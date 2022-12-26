@@ -37,7 +37,7 @@ export default function Product({ product }: ProductItem) {
   return (
     <Link href={`/products/${productLink}?id=${product.id}`}>
       <div
-        className="rounded-lg bg-white relative border p-2 product mr-4 h-96"
+        className="rounded-lg bg-white relative border  p-2 product mr-4 h-96"
         onMouseMove={() => setHoverState(true)}
         onMouseOut={() => setHoverState(false)}
       >
@@ -62,7 +62,7 @@ export default function Product({ product }: ProductItem) {
             <Image
               src={image}
               alt={title}
-              className="h-60 mx-auto"
+              className="h-52 mx-auto my-5"
               height={200}
               width={200}
             />
