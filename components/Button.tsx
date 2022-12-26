@@ -1,5 +1,5 @@
 interface Props {
-  text: string;
+  text?: string;
   type?: "submit" | "reset" | "button";
   className: string;
   onClick?: () => void;
@@ -14,7 +14,7 @@ export default function Button({
 }: Props) {
   return (
     <button className={className} type={type} title={text} onClick={onClick}>
-      {text} {icon ? icon : ""}
+      {text ? text : ""} {icon ? icon : ""}
     </button>
   );
 }

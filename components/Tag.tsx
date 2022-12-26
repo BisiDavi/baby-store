@@ -1,7 +1,13 @@
 interface Props {
-  color?: string;
+  className: string;
 }
 
-export default function Tag({ color = "" }: Props) {
-  return <div className={`rounded ${color}`}>Sale</div>;
+export default function Tag({ className }: Props) {
+  return (
+    <div
+      className={`rounded ${className} text-white h-6 px-4  text-sm flex items-center `}
+    >
+      Sale
+    </div>
+  );
 }

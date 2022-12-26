@@ -4,7 +4,7 @@
     "price": 100,
     "oldPrice": 150,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
-    "imgs": ["./pineapple-teddy.webp"],
+    "imgs": ["/pineapple-teddy.webp"],
     "rating": 3
   },
   {
@@ -12,7 +12,7 @@
     "price": 200,
     "oldPrice": 250,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
-    "imgs": ["./fancy-led.webp"],
+    "imgs": ["/fancy-led.webp"],
     "rating": 4
   },
   {
@@ -20,7 +20,7 @@
     "price": 100,
     "oldPrice": 150,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
-    "imgs": ["./tedy-bear-black.webp"],
+    "imgs": ["/tedy-bear-black.webp"],
     "rating": 4
   },
   {
@@ -28,7 +28,7 @@
     "price": 150,
     "oldPrice": 200,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur accusantium doloribus molestiae incidunt, debitis odio, ea impedit numquam recusandae eaque, magnam asperiores iusto inventore minus exercitationem voluptatem ullam voluptates?",
-    "imgs": ["./night-led.webp"],
+    "imgs": ["/night-led.webp"],
     "rating": 5
   }
 ]
