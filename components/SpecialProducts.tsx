@@ -1,9 +1,6 @@
-import { useState } from "react";
-
-import SpecialProductDescription from "@/components/SpecialProductDescription";
-import SpecialProductImage from "@/components/SpecialProductImage";
-import { productType } from "@/types";
 import { useQuery } from "@tanstack/react-query";
+
+import SpecialProductView from "@/components/SpecialProductView";
 import { fetchProducts } from "@/utils/apiRequest";
 
 export default function SpecialProducts() {
@@ -14,12 +11,6 @@ export default function SpecialProducts() {
   console.log("data-SpecialProducts", data?.data);
   console.log("status", status);
 
-  const initialProduct = status === "success" ? data?.data[0] : null;
-  const [selectedProduct, setSelectedProduct] = useState<productType | null>(
-    initialProduct
-  );
-  console.log("selectedProduct", selectedProduct);
-  console.log("initialProduct", initialProduct);
   return (
     <div className="w-full my-8 py-4">
       <h3 className="text-3xl font-bold text-center mb-4">Special Products</h3>
@@ -32,16 +23,7 @@ export default function SpecialProducts() {
       ) : status === "loading" ? (
         <p>Fetching products...</p>
       ) : (
-        selectedProduct !== null && (
-          <div className="product-view w-full mx-auto bg-gray-100 justify-between my-4 items-end flex p-10">
-            <SpecialProductImage
-              selectedProduct={selectedProduct}
-              setSelectedProduct={setSelectedProduct}
-              specialProductsContent={data?.data}
-            />
-            <SpecialProductDescription product={selectedProduct} />
-          </div>
-        )
+        status === "success" && <SpecialProductView products={data.data} />
       )}
     </div>
   );
