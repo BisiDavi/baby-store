@@ -83,7 +83,7 @@ export default function Product({ product }: ProductItem) {
         </div>
         {rating.rate && <Ratings ratings={rating.rate} />}
       </div>
-      <style jsx>
+      <style global jsx>
         {`
           .product:hover .image-view img {
             transform: scale(1.06);
