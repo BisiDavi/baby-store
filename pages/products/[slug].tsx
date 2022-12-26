@@ -16,7 +16,7 @@ const getBreadcrumblink = (name: string) => [
 ];
 
 export default function ProductPage({ product }: Props) {
-  const breadcrumbLink = getBreadcrumblink(product.name);
+  const breadcrumbLink = getBreadcrumblink(product.title);
   return (
     <Layout>
       <section className="container mx-auto">
