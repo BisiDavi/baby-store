@@ -1,3 +1,5 @@
+import PromoCounter from "./PromoCounter";
+
 export default function SpecialProducts() {
   return (
     <div>
@@ -6,8 +8,9 @@ export default function SpecialProducts() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-
+      <div className="product-view w-full"></div>
+      
+      <PromoCounter />
     </div>
   );
 }
-
