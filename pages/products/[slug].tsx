@@ -2,11 +2,25 @@ import BreadCrumb from "@/components/BreadCrumb";
 import Layout from "@/layout";
 import products from "@/json/products.json";
 import toSlug from "@/utils/toSlug";
+import { productType } from "@/types";
 
-export default function ProductPage({ product }: any) {
+interface Props {
+  product: productType;
+}
+
+export default function ProductPage({ product }: Props) {
   console.log("product", product);
+
   return (
-    <Layout>{/* <BreadCrumb type="products" name={product.name} /> */}</Layout>
+    <Layout>
+      <BreadCrumb
+        links={[
+          { name: "Home", link: "/" },
+          { name: "Products", link: "/products" },
+          { name: product.name },
+        ]}
+      />
+    </Layout>
   );
 }
 
