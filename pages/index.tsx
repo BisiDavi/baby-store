@@ -5,6 +5,7 @@ import Banners from "@/components/Banners";
 import TopratedProduct from "@/components/TopratedProduct";
 import Newsletter from "@/components/Newsletter";
 import SpecialProducts from "@/components/SpecialProducts";
+import TopProduct from "@/components/TopProduct";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <TopratedProduct />
       <Banners />
       <SpecialProducts />
+      <TopProduct />
       <Newsletter />
     </Layout>
   );

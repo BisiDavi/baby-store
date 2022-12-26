@@ -10,9 +10,9 @@ export default function SpecialProducts() {
     specialProductsContent[0]
   );
   return (
-    <div className="w-full my-4 py-4">
-      <h3 className="text-3xl text-center mb-4">Special Products</h3>
-      <p className="text-center text-lg w-1/2 mx-auto">
+    <div className="w-full my-8 py-4">
+      <h3 className="text-3xl font-bold text-center mb-4">Special Products</h3>
+      <p className="text-center mb-10 text-lg w-1/2 mx-auto">
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
