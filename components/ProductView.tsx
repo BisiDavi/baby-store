@@ -1,18 +1,16 @@
-import Image from "next/image";
-
-import { formatPrice } from "@/utils/formatPrice";
 import getCostPrice from "@/utils/getCostPrice";
-import type { productType } from "@/types";
-import Ratings from "./Ratings";
-import Button from "./Button";
+import Ratings from "@/components/Ratings";
+import Button from "@/components/Button";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import AddPlus from "@/public/icon/AddPlus";
+import ProductGridView from "@/components/ProductGridView";
+import { formatPrice } from "@/utils/formatPrice";
+import type { productType } from "@/types";
 
 interface Props {
   product: productType;
 }
 export default function ProductView({ product }: Props) {
-  const first4Images = product.images.slice(0, 4);
   const price = formatPrice(product.price);
   const oldPrice = getCostPrice(product.price, product.discountPercentage);
   const discount = Math.round(product.discountPercentage);
@@ -23,22 +21,7 @@ export default function ProductView({ product }: Props) {
       <div className="category border rounded-full fit-content px-4 bg-blue-900 text-white py-1">
         {category}
       </div>
-      <div className="images w-full space-y-6 lg:space-y-0 lg:space-x-5 my-4 lg:flex-row flex flex-col items-center">
-        <Image
-          src={product.thumbnail}
-          alt={product.title}
-          height={600}
-          width={600}
-          className="w-full lg:w-1/2 rounded-xl"
-        />
-        <ul className="thumblist grid gap-4 grid-cols-2 w-full lg:w-1/2">
-          {first4Images.map((image) => (
-            <li key={image} className="border p-2 rounded-lg flex items-center">
-              <Image src={image} alt={product.title} height={500} width={500} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ProductGridView product={product} />
       <div className="text-cotent flex flex-col lg:flex-row items-center">
         <div className="order-2 text-content w-full lg:w-1/2 px-0 flex flex-col">
           <p className="text-gray-500 font-medium">{product.brand}</p>
