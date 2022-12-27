@@ -12,11 +12,18 @@ export type productType = {
   thumbnail: string;
 };
 
-type cartProductType = productType & { quantity: number };
+export type cartProductType = {
+  id: string;
+  title: string;
+  price: number;
+  discountPercentage: number;
+  quantity: number;
+  thumbnail: string;
+};
 
 export type cartType = {
   amount: number;
   items: Array<cartProductType>;
   userEmail: string;
-  quantity: 0;
+  quantity: number;
 };

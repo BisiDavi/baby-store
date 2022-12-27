@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { cartType } from "@/types";
+import type { cartProductType, cartType } from "@/types";
 
 type initialStateType = {
   deliveryFee: number;
-  cart: cartType[] | null;
+  cart: cartType | null;
 };
 
 const initialState: initialStateType = {
@@ -14,7 +14,30 @@ const initialState: initialStateType = {
 const CartSlice = createSlice({
   name: "UI",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart(
+      state,
+      action: PayloadAction<{ product: cartProductType; userEmail: string }>
+    ) {
+      const { product, userEmail } = action.payload;
+      if (state.cart) {
+        const cartItem = [...state.cart.items, product];
+        let amount = 0;
+        state.cart.items.map((item) => {
+          const itemAmount = item.price * item.quantity;
+          amount += itemAmount;
+        });
+        state.cart = {
+          ...state.cart,
+          items: cartItem,
+          quantity: state.cart.items.length,
+          amount,
+        };
+      } else {
+        state.cart = { userEmail, quantity: 0, amount: 0, items: [product] };
+      }
+    },
+  },
 });
 
 export const {} = CartSlice.actions;

@@ -10,7 +10,6 @@ export default function TopHeader() {
         </div>
         <div className="right flex items-center justify-between">
           <Dropdown content={dropdownContent.topHeader.currencyDropdown} />
-          <Dropdown content={dropdownContent.topHeader.languageDropdown} />
         </div>
       </div>
     </div>
