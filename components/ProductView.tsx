@@ -32,15 +32,17 @@ export default function ProductView({ product }: Props) {
           ))}
         </ul>
       </div>
-      <div className="right w-1/2 px-0">
+      <div className="right w-1/2 px-0 flex flex-col">
         <p className="text-gray-500 font-medium">{product.brand}</p>
         <h3 className="text-2xl font-bold"> {product.title}</h3>
-        <div className="discount text-orange-500">{discount} % discount</div>
-        <div className="price flex space-x-2 mb-2">
+        <p className="discount text-orange-500 rounded-full border w-auto px-2 my-1 flex">
+          {discount} % discount
+        </p>
+        <div className="price flex space-x-2">
           <h5 className="text-xl font-medium">${price}</h5>
           <h6 className="text- line-through font-medium">${oldPrice}</h6>
         </div>
-        <Ratings ratings={product.rating} className="text-left mt-0" />
+        <Ratings ratings={product.rating} className="text-left" />
         <p className="mt-2">{product.description}</p>
       </div>
     </div>

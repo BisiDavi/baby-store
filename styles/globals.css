@@ -47,3 +47,7 @@ ul.splide__pagination.splide__pagination--ltr {
 .slider.blog .splide__track {
   height: 60vh;
 }
+
+.discount {
+  width: fit-content;
+}
