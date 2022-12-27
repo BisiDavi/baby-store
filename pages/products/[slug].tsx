@@ -2,10 +2,10 @@ import axios from "axios";
 
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductView from "@/components/ProductView";
-import Layout from "@/layout";
-import type { productType } from "@/types";
-import toSlug from "@/utils/toSlug";
 import OtherCategoryProducts from "@/components/OtherCategoryProducts";
+import Layout from "@/layout";
+import toSlug from "@/utils/toSlug";
+import type { productType } from "@/types";
 
 interface Props {
   product: productType;
@@ -24,7 +24,7 @@ const getBreadcrumblink = (name: string, category: string) => {
 export default function ProductPage({ product }: Props) {
   const breadcrumbLink = getBreadcrumblink(product.title, product.category);
   return (
-    <Layout>
+    <Layout title={`Buy ${product.title}`}>
       <section className="container mx-auto">
         <BreadCrumb links={breadcrumbLink} />
         <ProductView product={product} />

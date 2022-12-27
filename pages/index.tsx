@@ -10,7 +10,7 @@ import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="Welcome, buy phones, laptops, furniture, suglasses, automotive, motorcycle, clothes at a discounted price">
       <Slider />
       <InfoList />
       <TopratedProduct />
