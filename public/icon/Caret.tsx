@@ -10,6 +10,8 @@ export default function Caret({ className }: Props) {
       role="presentation"
       className={className}
       viewBox="0 0 10 6"
+      height={10}
+      width={50}
     >
       <path
         fillRule="evenodd"

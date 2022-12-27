@@ -31,7 +31,7 @@ export default function Header({ title }: Props) {
       <nav className="container mx-auto flex items-center justify-between">
         <Logo />
         {!mobileDevice && (
-          <ul className="links flex text-xl">
+          <ul className="links hidden lg:flex text-xl">
             {menuLink.header.map((item) => (
               <li key={item.name} className="mx-6 flex">
                 {item.name}{" "}
