@@ -27,7 +27,7 @@ export default function Dropdown({ content }: Props) {
         text={content[0].name}
         className="h-10  px-2 mx-2 flex items-center"
         onClick={showDropdownHandler}
-        icon={<Caret className="w-4 ml-2" />}
+        icon={<Caret className="w-4 mr-1" />}
       />
       {dropdownStatus && (
         <ul className="dropdown-list bg-white absolute top-10 text-black py-1 rounded-md shadow">

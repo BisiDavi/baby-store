@@ -60,7 +60,7 @@ export default function Product({ product }: ProductItem) {
             />
           </div>
         )}
-        <Link href={`/products/${productLink}?id=${product.id}`}>
+        <Link href={`/product/${productLink}?id=${product.id}`}>
           <div className="image">
             <div className="image-view">
               <Image
