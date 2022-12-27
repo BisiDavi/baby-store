@@ -13,10 +13,18 @@ export default function CategoryTabView() {
     () => fetchProducts(`/category/${selectedCategory}`),
     { enabled: !!selectedCategory }
   );
+  console.log("data", data);
+
+  const topCategories =
+    status === "success"
+      ? data.data.slice(data.data.length - 6, data.data.length)
+      : [];
 
   function selectTabHandler(tabCategory: string) {
     setSelectedCategory(tabCategory);
   }
+
+  console.log("productData", productData);
   return (
     <div className="mx-auto mt-4 justify-center flex flex-col">
       <div className="tab-group space-x-4 flex justify-between  justify-center mx-auto my-4 mb-8">
@@ -25,7 +33,7 @@ export default function CategoryTabView() {
         ) : status === "loading" ? (
           <p>fetching tabs</p>
         ) : (
-          data.data.map((item) => {
+          topCategories.map((item) => {
             const activeButtonClassname =
               selectedCategory === item ? "bg-blue-900" : "bg-gray-600";
             return (
@@ -44,7 +52,7 @@ export default function CategoryTabView() {
       ) : productStatus === "loading" ? (
         <p>fetching products</p>
       ) : (
-        <TopProductGrid products={productData?.data} />
+        <TopProductGrid products={productData.data.products} />
       )}
     </div>
   );

@@ -2,11 +2,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useQuery } from "@tanstack/react-query";
 
 import Product from "@/components/Product";
-import useProducts from "@/hooks/useProducts";
 import "@splidejs/react-splide/css";
+import { fetchProducts } from "@/utils/apiRequest";
 
 export default function TopratedProduct() {
-  const { fetchProducts } = useProducts();
   const { data, status } = useQuery(["get-top-rated-products"], () =>
     fetchProducts("?limit=12")
   );
@@ -26,7 +25,7 @@ export default function TopratedProduct() {
             <p>Fetching products</p>
           ) : (
             status === "success" &&
-            data?.data.map((item) => (
+            data.data.products.map((item) => (
               <SplideSlide key={item.id}>
                 <Product product={item} />
               </SplideSlide>

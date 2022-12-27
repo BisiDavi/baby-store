@@ -1,26 +1,16 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import Eye from "@/public/icon/Eye";
 import Heart from "@/public/icon/Heart";
 import toSlug from "@/utils/toSlug";
-import Image from "next/image";
+import { productType } from "@/types";
 
 interface ProductItem {
-  product: {
-    id: string;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    image: string;
-    rating: {
-      rate: number;
-      count: number;
-    };
-  };
+  product: productType;
 }
 
 export default function Product({ product }: ProductItem) {
@@ -31,7 +21,7 @@ export default function Product({ product }: ProductItem) {
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  const { price, rating, title, image } = product;
+  const { price, rating, title, images } = product;
   const productLink = toSlug(product.title);
 
   return (
@@ -60,7 +50,7 @@ export default function Product({ product }: ProductItem) {
         <div className="image">
           <div className="image-view">
             <Image
-              src={image}
+              src={images[0]}
               alt={title}
               className="h-52 mx-auto my-5"
               height={200}
@@ -81,7 +71,7 @@ export default function Product({ product }: ProductItem) {
         <div className="price-view flex mx-auto justify-center items-center">
           <h5 className="font-bold text-center text-md">${price}</h5>
         </div>
-        {rating.rate && <Ratings ratings={rating.rate} />}
+        {rating && <Ratings ratings={rating} />}
       </div>
       <style global jsx>
         {`

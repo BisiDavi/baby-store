@@ -2,9 +2,10 @@ import Star from "@/public/icon/Star";
 
 interface Props {
   ratings: number;
+  className?: string;
 }
 
-export default function Ratings({ ratings }: Props) {
+export default function Ratings({ ratings, className="mx-auto justify-center" }: Props) {
   const ratingRemainder = ratings % 1;
   const ratingValue = Math.floor(ratings);
   const unfilledStars = 5 - Number(ratingValue);
@@ -14,7 +15,9 @@ export default function Ratings({ ratings }: Props) {
   const unfilledStarsArray = new Array(numberOfunfilledStars).fill(0);
 
   return (
-    <div className="star-group mx-auto justify-center mt-3 flex items-center">
+    <div
+      className={`star-group ${className} mt-3 flex items-center`}
+    >
       {filledStarsArray.map((_, index) => (
         <Star key={index} fill="#f1e803" />
       ))}

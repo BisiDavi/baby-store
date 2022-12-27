@@ -3,7 +3,6 @@ import axios from "axios";
 import BreadCrumb from "@/components/BreadCrumb";
 import ProductView from "@/components/ProductView";
 import Layout from "@/layout";
-import toSlug from "@/utils/toSlug";
 import type { productType } from "@/types";
 
 interface Props {
@@ -30,7 +29,7 @@ export default function ProductPage({ product }: Props) {
 
 export async function getServerSideProps(context: any) {
   const product = await axios.get(
-    `https://fakestoreapi.com/products/${context.query.id}`
+    `https://dummyjson.com/products/${context.query.id}`
   );
 
   return {

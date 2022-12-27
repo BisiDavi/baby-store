@@ -19,19 +19,19 @@ export default function SpecialProductImage({
   }
   return (
     <div className="w-1/2 flex space-x-4 mr-14">
-      <ul className="selectProduct bg-white w-1/4 space-y-6">
+      <ul className="selectProduct bg-white w-1/4 space-y-6 rounded-lg">
         {specialProductsContent.map((item) => (
           <li key={item.id}>
             <button
               onClick={() => onSelectImage(item)}
-              className="block mx-auto justify-center hover:opacity-50"
+              className="block mx-auto justify-center hover:opacity-50 my-4"
             >
               <Image
-                src={item.image}
+                src={item.images[0]}
                 alt={item.title}
                 height={100}
                 width={135}
-                className="h-1/2 w-1/2 mx-auto"
+                className="h-1/2 w-2/3 mx-auto"
               />
             </button>
           </li>
@@ -40,7 +40,7 @@ export default function SpecialProductImage({
       <div className="mainProduct items-center bg-white w-3/4 relative border flex rounded-xl">
         <Tag className="bg-blue-900 absolute top-4 z-5 left-4" />
         <Image
-          src={selectedProduct.image}
+          src={selectedProduct.images[0]}
           alt={selectedProduct.title}
           height={400}
           width={400}

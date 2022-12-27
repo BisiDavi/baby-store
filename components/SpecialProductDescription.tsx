@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Wishlist from "@/public/icon/Wishlist";
 import { productType } from "@/types";
 import PromoCounter from "@/components/PromoCounter";
+import Ratings from "./Ratings";
 
 interface Props {
   product: productType;
@@ -13,9 +14,9 @@ export default function SpecialProductDescription({ product }: Props) {
       <PromoCounter />
       <div className="pl-8">
         <h4 className="text-xl">{product.title}</h4>
-        <p className="my-4">rating</p>
-        <div className="price-view flex my-4 items-center">
+        <div className="price-view flex my-4 flex-col">
           <h5 className="text-xl font-bold">${product.price}</h5>
+          <Ratings ratings={product.rating} className="text-left" />
         </div>
         <p className="mb-16">{product.description}</p>
         <div className="button-group flex items-center mb-4">
@@ -27,7 +28,6 @@ export default function SpecialProductDescription({ product }: Props) {
             className="rounded border shadow h-10 px-4"
             icon={<Wishlist />}
           />
-          {/* <Button className="rounded" icon={} /> */}
         </div>
       </div>
     </div>
