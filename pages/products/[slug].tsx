@@ -5,6 +5,7 @@ import ProductView from "@/components/ProductView";
 import Layout from "@/layout";
 import type { productType } from "@/types";
 import toSlug from "@/utils/toSlug";
+import OtherCategoryProducts from "@/components/OtherCategoryProducts";
 
 interface Props {
   product: productType;
@@ -27,6 +28,10 @@ export default function ProductPage({ product }: Props) {
       <section className="container mx-auto">
         <BreadCrumb links={breadcrumbLink} />
         <ProductView product={product} />
+        <OtherCategoryProducts
+          category={product.category}
+          mainProductName={product.title}
+        />
       </section>
     </Layout>
   );

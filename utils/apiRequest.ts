@@ -11,3 +11,9 @@ export function fetchProducts(
 export function fetchCategories(): Promise<{ data: string[] }> {
   return axios.get("https://dummyjson.com/products/categories");
 }
+
+export function fetchCategoryProducts(
+  category: string
+): Promise<{ data: { products: productType[] } }> {
+  return axios.get(`https://dummyjson.com/products/category/${category}`);
+}
