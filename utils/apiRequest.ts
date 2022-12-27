@@ -1,5 +1,5 @@
-import { productType } from "@/types";
 import axios from "axios";
+import { productType } from "@/types";
 
 export function fetchProducts(
   urlQuery?: string

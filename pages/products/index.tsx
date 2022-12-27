@@ -13,7 +13,7 @@ export default function ProductsPage() {
         <h2 className="text-center text-2xl font-bold">All Products</h2>
         <div className="content flex items-start">
           <div className="filters w-1/4"></div>
-          <div className="products w-3/4 mt-4">
+          <div className="products w-3/4 mt-8">
             {status === "error" ? (
               <p>Unable to fetch products</p>
             ) : status === "loading" ? (
