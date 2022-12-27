@@ -57,10 +57,10 @@ export default function ProductView({ product }: Props) {
           <Button
             text="Add to Cart"
             className="bg-blue-500 flex items-center text-white rounded-lg px-4 py-1 hover:opacity-80"
-            icon={<AddPlus fill="white" className="ml-3" />}
+            icon={<AddPlus fill="white" className="mr-3" />}
           />
           <Button
-            icon={<ShoppingCart fill="white" className="ml-3" />}
+            icon={<ShoppingCart fill="white" className="mr-3" />}
             text="Buy Now"
             className="flex items-center bg-red-500 text-white hover:opacity-80 rounded-lg px-4 py-1"
           />

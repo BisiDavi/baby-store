@@ -6,9 +6,17 @@ interface Props {
   icon?: JSX.Element;
   onMouseMove?: () => void;
   onMouseOut?: () => void;
+  iconPosition?: "left" | "right";
 }
 export default function Button(props: Props) {
-  const { text, type = "button", className, onClick, icon } = props;
+  const {
+    text,
+    type = "button",
+    className,
+    onClick,
+    icon,
+    iconPosition = "left",
+  } = props;
   return (
     <button
       {...props}
@@ -17,7 +25,8 @@ export default function Button(props: Props) {
       title={text}
       onClick={onClick}
     >
-      {text ? text : ""} {icon ? icon : ""}
+      {icon && iconPosition === "left" && icon} {text ? text : ""}{" "}
+      {icon && iconPosition === "right" && icon}
     </button>
   );
 }
