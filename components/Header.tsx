@@ -1,13 +1,14 @@
 import Head from "next/head";
 
+import useScroll from "@/hooks/useScroll";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import Logo from "@/components/Logo";
+import menuLink from "@/json/menu.json";
 import Search from "@/public/icon/Search";
 import Wishlist from "@/public/icon/Wishlist";
 import Person from "@/public/icon/Person";
 import ShoppingCart from "@/public/icon/ShoppingCart";
-import menuLink from "@/json/menu.json";
 import Caret from "@/public/icon/Caret";
-import useMediaQuery from "@/hooks/useMediaQuery";
 
 interface Props {
   title: string;
@@ -15,9 +16,14 @@ interface Props {
 
 export default function Header({ title }: Props) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
+  const { scroll } = useScroll();
+
+  const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-50" : "";
 
   return (
-    <header className="bg-white px-4 lg:px-0 h-20 text-black border-b shadow flex">
+    <header
+      className={`bg-white ${fixedHeader} px-4 lg:px-0 h-20 text-black border-b shadow flex`}
+    >
       <Head>
         {title && (
           <title>

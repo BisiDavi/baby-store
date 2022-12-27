@@ -1,8 +1,8 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Image from "next/image";
 
 import testimonies from "@/json/testimonial.json";
 import "@splidejs/react-splide/css";
-import Image from "next/image";
 
 export default function TestimonialSlider() {
   return (
