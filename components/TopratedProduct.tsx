@@ -1,9 +1,7 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useQuery } from "@tanstack/react-query";
 
-import Product from "@/components/Product";
-import "@splidejs/react-splide/css";
 import { fetchProducts } from "@/utils/apiRequest";
+import ProductSlider from "@/components/ProductSlider";
 
 export default function TopratedProduct() {
   const { data, status } = useQuery(["get-top-rated-products"], () =>
@@ -18,28 +16,16 @@ export default function TopratedProduct() {
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
       <div className="products mt-4 flex slider w-full">
-        <Splide options={{ perPage: 4 }}>
-          {status === "error" ? (
-            <p>Error fetching products</p>
-          ) : status === "loading" ? (
-            <p>Fetching products</p>
-          ) : (
-            status === "success" &&
-            data.data.products.map((item) => (
-              <SplideSlide key={item.id}>
-                <Product product={item} />
-              </SplideSlide>
-            ))
-          )}
-        </Splide>
+        {status === "error" ? (
+          <p>Error fetching products</p>
+        ) : status === "loading" ? (
+          <p>Fetching products</p>
+        ) : (
+          status === "success" && (
+            <ProductSlider products={data.data.products} />
+          )
+        )}
       </div>
-      <style global jsx>
-        {`
-          .products .splide {
-            width: 100%;
-          }
-        `}
-      </style>
     </section>
   );
 }

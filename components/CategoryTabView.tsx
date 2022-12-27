@@ -4,10 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import TopProductGrid from "@/components/TopProductGrid";
 import Button from "@/components/Button";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
+import ProductSlider from "./ProductSlider";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
-  const [selectedCategory, setSelectedCategory] = useState("womens-bags");
+  const [selectedCategory, setSelectedCategory] = useState("womens-watches");
   const { data: productData, status: productStatus } = useQuery(
     ["fetch-products", selectedCategory],
     () => fetchProducts(`/category/${selectedCategory}`),
@@ -16,7 +17,7 @@ export default function CategoryTabView() {
 
   const topCategories =
     status === "success"
-      ? data.data.slice(data.data.length - 6, data.data.length)
+      ? data.data.slice(data.data.length - 7, data.data.length)
       : [];
 
   function selectTabHandler(tabCategory: string) {
@@ -50,7 +51,7 @@ export default function CategoryTabView() {
       ) : productStatus === "loading" ? (
         <p>fetching products</p>
       ) : (
-        <TopProductGrid products={productData.data.products} />
+        <ProductSlider products={productData.data.products} />
       )}
     </div>
   );
