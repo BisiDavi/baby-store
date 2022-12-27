@@ -30,9 +30,12 @@ export default function Dropdown({ content }: Props) {
         icon={<Caret className="w-4 mr-1" />}
       />
       {dropdownStatus && (
-        <ul className="dropdown-list bg-white absolute top-10 text-black py-1 rounded-md shadow">
+        <ul className="dropdown-list bg-white absolute z-20 top-10 text-black py-1 rounded-md shadow">
           {content.map((item) => (
-            <li key={item.name} className="border-b px-3 py-1">
+            <li
+              key={item.name}
+              className="border-b px-3 py-1 hover:bg-gray-300 hover:text-white"
+            >
               <button onClick={() => dropdownHandler(item)}>{item.name}</button>
             </li>
           ))}
