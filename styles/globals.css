@@ -25,11 +25,11 @@ button.splide__arrow {
 
 /* slider pagination */
 ul.splide__pagination.splide__pagination--ltr {
-  bottom: -5px;
+  bottom: -15px;
 }
 
-.splide__pagination li {
-  margin: 0px 10px;
+.splide .splide__pagination li {
+  margin: 2px 0px;
   height: 4px;
   width: 30px;
 }
