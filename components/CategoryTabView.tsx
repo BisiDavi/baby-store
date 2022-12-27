@@ -7,7 +7,7 @@ import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
-  const [selectedCategory, setSelectedCategory] = useState("electronics");
+  const [selectedCategory, setSelectedCategory] = useState("womens-bags");
   const { data: productData, status: productStatus } = useQuery(
     ["fetch-products", selectedCategory],
     () => fetchProducts(`/category/${selectedCategory}`),
