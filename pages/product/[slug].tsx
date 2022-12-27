@@ -15,7 +15,7 @@ const getBreadcrumblink = (name: string, category: string) => {
   const categoryLink = toSlug(category);
   return [
     { name: "Home", link: "/" },
-    { name: "products", link: "/products" },
+    { name: "products", link: "/product" },
     { name: category, link: `/category/${categoryLink}` },
     { name },
   ];
