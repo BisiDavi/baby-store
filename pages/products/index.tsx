@@ -10,15 +10,15 @@ export default function ProductsPage() {
 
   return (
     <Layout title="Buy our products at a discounted price">
-      <section className="container mx-auto my-4">
+      <section className="container mx-auto my-4 px-4 lg:px-0">
         <BreadCrumb
           links={[{ name: "🏠 Home", link: "/" }, { name: "All Products" }]}
         />
 
         <h2 className="text-center text-2xl font-bold">All Products</h2>
-        <div className="content flex items-start">
+        <div className="content px-0 flex items-start flex-col lg:flex-row">
           <div className="filters w-1/4"></div>
-          <div className="products w-3/4 mt-8">
+          <div className="products w-full px-0 lg:w-3/4 mt-8">
             {status === "error" ? (
               <p>Unable to fetch products</p>
             ) : status === "loading" ? (

@@ -7,9 +7,9 @@ interface Props {
 
 export default function TopProductGrid({ products }: Props) {
   return (
-    <ul className="grid grid-cols-3 gap-x-2 gap-y-6">
+    <ul className="grid px-0 lg:grid-cols-3 grid-cols-2  gap-4">
       {products.map((product) => (
-        <li key={product.id} className="">
+        <li key={product.id}>
           <Product product={product} />
         </li>
       ))}

@@ -33,7 +33,7 @@ export default function Product({ product }: ProductItem) {
 
   return (
     <div
-      className="rounded-lg bg-white relative border  p-2 product mr-4 h-96"
+      className="rounded-lg bg-white relative border  p-2 product lg:mr-4 h-80 lg:h-96"
       onMouseMove={() => setHoverState(true)}
       onMouseOut={() => setHoverState(false)}
     >
@@ -65,7 +65,7 @@ export default function Product({ product }: ProductItem) {
             <Image
               src={images[0]}
               alt={title}
-              className="h-52 mx-auto my-5"
+              className=" h-32 lg:h-52  mx-auto my-5"
               height={200}
               width={200}
             />
