@@ -13,9 +13,13 @@ export default function ProductView({ product }: Props) {
   const price = formatPrice(product.price);
   const oldPrice = getCostPrice(product.price, product.discountPercentage);
   const discount = Math.round(product.discountPercentage);
+  const category = product.category.toUpperCase();
 
   return (
     <div className="w-full flex-col flex my-8">
+      <div className="category border rounded-full fit-content px-4 bg-blue-900 text-white py-1">
+        {category}
+      </div>
       <div className="left w-full space-x-5 my-4 flex items-center">
         <Image
           src={product.thumbnail}
@@ -35,7 +39,7 @@ export default function ProductView({ product }: Props) {
       <div className="right w-1/2 px-0 flex flex-col">
         <p className="text-gray-500 font-medium">{product.brand}</p>
         <h3 className="text-2xl font-bold"> {product.title}</h3>
-        <p className="discount text-orange-500 rounded-full border w-auto px-2 my-1 flex">
+        <p className="fit-content text-orange-500 rounded-full border w-auto px-2 my-1 flex">
           {discount} % discount
         </p>
         <div className="price flex space-x-2">
