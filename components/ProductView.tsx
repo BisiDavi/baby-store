@@ -19,19 +19,19 @@ export default function ProductView({ product }: Props) {
   const category = product.category.toUpperCase();
 
   return (
-    <div className="w-full flex-col flex my-8">
+    <div className="w-full flex-col px-4 lg:px-0 flex my-8">
       <div className="category border rounded-full fit-content px-4 bg-blue-900 text-white py-1">
         {category}
       </div>
-      <div className="images w-full space-x-5 my-4 flex items-center">
+      <div className="images w-full space-y-6 lg:space-y-0 lg:space-x-5 my-4 lg:flex-row flex flex-col items-center">
         <Image
           src={product.thumbnail}
           alt={product.title}
           height={600}
           width={600}
-          className="w-1/2 rounded-xl"
+          className="w-full lg:w-1/2 rounded-xl"
         />
-        <ul className="thumblist  grid gap-4 grid-cols-2 w-1/2">
+        <ul className="thumblist grid gap-4 grid-cols-2 w-full lg:w-1/2">
           {first4Images.map((image) => (
             <li key={image} className="border p-2 rounded-lg flex items-center">
               <Image src={image} alt={product.title} height={500} width={500} />
@@ -39,8 +39,8 @@ export default function ProductView({ product }: Props) {
           ))}
         </ul>
       </div>
-      <div className="text-cotent flex items-center">
-        <div className="text-content w-1/2 px-0 flex flex-col">
+      <div className="text-cotent flex flex-col lg:flex-row items-center">
+        <div className="order-2 text-content w-full lg:w-1/2 px-0 flex flex-col">
           <p className="text-gray-500 font-medium">{product.brand}</p>
           <h3 className="text-2xl font-bold"> {product.title}</h3>
           <p className="fit-content text-orange-500 rounded-full border w-auto px-2 my-1 flex">
@@ -53,7 +53,7 @@ export default function ProductView({ product }: Props) {
           <Ratings ratings={product.rating} className="text-left" />
           <p className="mt-2">{product.description}</p>
         </div>
-        <div className="cta justify-between flex w-1/4">
+        <div className="cta order-1 w-full mb-4 lg:mb-0 sm:items-start lg:order-2  flex justify-between lg:flex-row lg:w-1/4">
           <Button
             text="Add to Cart"
             className="bg-blue-500 flex items-center text-white rounded-lg px-4 py-1 hover:opacity-80"
