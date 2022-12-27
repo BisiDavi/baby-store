@@ -14,7 +14,7 @@ export default function SpecialProductDescription({ product }: Props) {
   const price = formatPrice(product.price);
   const costPrice = getCostPrice(product.price, product.discountPercentage);
   return (
-    <div className="flex w-1/2 bg-white mx-4 py-12 pr-6 rounded-lg shadow">
+    <div className="flex w-full lg:w-1/2 bg-white mx-auto my-4 lg:my-0 lg:mx-4 py-8 lg:py-12 lg:pr-6 rounded-lg shadow">
       <PromoCounter />
       <div className="pl-8">
         <h4 className="text-xl">{product.title}</h4>

@@ -11,7 +11,16 @@ interface Props {
 export default function ProductSlider({ products }: Props) {
   return (
     <>
-      <Splide options={{ perPage: 4 }}>
+      <Splide
+        options={{
+          perPage: 4,
+          breakpoints: {
+            760: {
+              perPage: 2,
+            },
+          },
+        }}
+      >
         {products.map((item) => (
           <SplideSlide key={item.id}>
             <Product product={item} />

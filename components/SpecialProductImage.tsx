@@ -19,8 +19,8 @@ export default function SpecialProductImage({
     setSelectedProduct(item);
   }
   return (
-    <div className="w-1/2 flex space-x-4 mr-14">
-      <ul className="selectProduct bg-white w-1/4 space-y-6 rounded-lg">
+    <div className="w-full lg:w-1/2 mx-auto lg:mx-0 flex space-x-4 lg:mr-14">
+      <ul className="selectProduct bg-white w-1/5 lg:w-1/4 space-y-6 rounded-lg">
         {specialProductsContent.map((item) => (
           <li key={item.id}>
             <button
@@ -38,7 +38,7 @@ export default function SpecialProductImage({
           </li>
         ))}
       </ul>
-      <div className="mainProduct items-center bg-white w-3/4 relative border flex rounded-xl">
+      <div className="mainProduct items-center bg-white w-4/5 lg:w-3/4 relative border flex rounded-xl">
         <Tag
           text={`${discount} %`}
           className="bg-blue-900 absolute top-4 z-5 left-4"
