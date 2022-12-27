@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import TopProductGrid from "@/components/TopProductGrid";
 import Button from "@/components/Button";
+import ProductSlider from "@/components/ProductSlider";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
-import ProductSlider from "./ProductSlider";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);

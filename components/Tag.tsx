@@ -1,13 +1,14 @@
 interface Props {
   className: string;
+  text: string;
 }
 
-export default function Tag({ className }: Props) {
+export default function Tag({ className, text }: Props) {
   return (
     <div
-      className={`rounded ${className} text-white h-6 px-4  text-sm flex items-center `}
+      className={`rounded-full ${className} text-white h-6 px-2  text-sm flex items-center `}
     >
-      Sale
+      {text}
     </div>
   );
 }
