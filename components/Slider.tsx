@@ -7,7 +7,7 @@ import "@splidejs/react-splide/css";
 export default function Slider() {
   return (
     <section className="w-full">
-      <Splide options={{ autoplay: true, loop: true }}>
+      <Splide options={{ autoplay: true, type: "loop" }}>
         {sliderContent.slider.map((item) => (
           <SplideSlide key={item.img}>
             <div className="content p-10 flex flex-col mx-auto justify-center lg:p-20">
