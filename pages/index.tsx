@@ -1,12 +1,13 @@
 import Layout from "@/layout";
 import Slider from "@/components/Slider";
 import InfoList from "@/components/InfoList";
-import Banners from "@/components/Banners";
 import TopratedProduct from "@/components/TopratedProduct";
 import SpecialProducts from "@/components/SpecialProducts";
 import TopCategories from "@/components/TopCategories";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import Blog from "@/components/Blog";
+import Banner from "@/components/Banner";
+import bannerContent from "@/json/banner.json";
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
       <Slider />
       <InfoList />
       <TopratedProduct />
-      <Banners />
+      <Banner content={bannerContent.banner1} />
       <SpecialProducts />
       <TopCategories />
+      <Banner content={bannerContent.banner2} />
       <TestimonialSlider />
       <Blog />
     </Layout>
