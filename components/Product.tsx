@@ -11,12 +11,14 @@ import Tag from "@/components/Tag";
 import { productType } from "@/types";
 import getCostPrice from "@/utils/getCostPrice";
 import { formatPrice } from "@/utils/formatPrice";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 interface ProductItem {
   product: productType;
+  className?: string;
 }
 
-export default function Product({ product }: ProductItem) {
+export default function Product({ product, className }: ProductItem) {
   const [hoverState, setHoverState] = useState(false);
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
@@ -31,9 +33,15 @@ export default function Product({ product }: ProductItem) {
   const fPrice = formatPrice(price);
   const costPrice = getCostPrice(price, discountPercentage);
 
+  const mobileDevice = useMediaQuery("(max-width:768px)");
+
+  const imageDimension = mobileDevice
+    ? { height: 130, width: 130 }
+    : { height: 200, width: 200 };
+
   return (
     <div
-      className="rounded-lg bg-white relative border  p-2 product lg:mr-4 h-80 lg:h-96"
+      className={`rounded-lg bg-white relative border ${className}  p-2 product lg:mr-4 h-80 lg:h-96`}
       onMouseMove={() => setHoverState(true)}
       onMouseOut={() => setHoverState(false)}
     >
@@ -65,9 +73,9 @@ export default function Product({ product }: ProductItem) {
             <Image
               src={images[0]}
               alt={title}
-              className=" h-32 lg:h-52  mx-auto my-5"
-              height={200}
-              width={200}
+              className="h-36 lg:h-52  mx-auto my-5"
+              height={imageDimension.height}
+              width={imageDimension.width}
             />
           </div>
           <div className="image-control"></div>
@@ -81,7 +89,7 @@ export default function Product({ product }: ProductItem) {
           </div>
         )}
         <div className="text-content w-full">
-          <h4 className="name font-medium text-center text-lg">{title}</h4>
+          <h4 className="name text-ellipsis truncate font-medium text-center text-lg">{title}</h4>
           <h4 className="brand text-gray-500 font-medium text-center text-md">
             {brand}
           </h4>

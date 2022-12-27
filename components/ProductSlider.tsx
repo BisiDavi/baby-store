@@ -12,8 +12,10 @@ export default function ProductSlider({ products }: Props) {
   return (
     <>
       <Splide
+        className="space-x-4"
         options={{
           perPage: 4,
+          margin: "5px",
           breakpoints: {
             760: {
               perPage: 1,
@@ -24,7 +26,7 @@ export default function ProductSlider({ products }: Props) {
       >
         {products.map((item) => (
           <SplideSlide key={item.id}>
-            <Product product={item} />
+            <Product product={item} className="mr-4" />
           </SplideSlide>
         ))}
       </Splide>
