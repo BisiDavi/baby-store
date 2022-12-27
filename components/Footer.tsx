@@ -3,10 +3,10 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full ">
-      <div className="main-footer py-14 pt-24 w-full bg-blue-900">
-        <div className="container mx-auto text-white flex justify-between items-start py-10">
-          <div className="column-1 w-1/4">
+    <footer className="w-full">
+      <div className="main-footer px-6 lg:px-0 py-14 pt-16 lg:pt-24 w-full bg-blue-900">
+        <div className="container flex-col lg:flex-row mx-auto text-white flex justify-between items-start py-10">
+          <div className="column-1 w-full lg:w-1/4">
             <div className="w-32">
               <Logo />
             </div>
@@ -17,7 +17,7 @@ export default function Footer() {
               Numquam quam dolores voluptatibus!
             </p>
           </div>
-          <div className="grid grid-cols-3 w-3/5">
+          <div className="grid grid-cols-3 w-full mt-4 lg:w-3/5">
             {footerContent.footer.map((item) => (
               <div key={item.name}>
                 <h5 className="text-xl font-medium">{item.name}</h5>
@@ -35,9 +35,9 @@ export default function Footer() {
       </div>
       <div className="bottom-footer bg-gray-300 h-14 w-full flex items-center">
         <div className="container mx-auto">
-            <p className="p-0 m-0 text-center font-bold">
-              © 2022, made with ❤️ & <span className="text-2xl mt-4">☕️</span>
-            </p>
+          <p className="p-0 m-0 text-center font-bold">
+            © 2022, made with ❤️ & <span className="text-2xl mt-4">☕️</span>
+          </p>
         </div>
       </div>
     </footer>

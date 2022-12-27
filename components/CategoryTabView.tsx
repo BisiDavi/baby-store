@@ -27,8 +27,8 @@ export default function CategoryTabView() {
   }
 
   return (
-    <div className="mx-auto mt-4 justify-center flex flex-col">
-      <div className="tab-group space-x-4 flex justify-between  justify-center mx-auto my-4 mb-8">
+    <div className="mx-auto mt-4 px-4 lg:px-0 justify-center flex flex-col">
+      <div className="tab-group grid grid-cols-2 gap-4 lg:space-x-4 lg:flex justify-between  justify-center mx-auto my-4 mb-8">
         {status === "error" ? (
           <p>Error fetching tabs</p>
         ) : status === "loading" ? (
@@ -40,7 +40,7 @@ export default function CategoryTabView() {
             return (
               <Button
                 key={item}
-                className={`${activeButtonClassname} px-5 py-2 rounded-lg hover:opacity-80 text-white`}
+                className={`${activeButtonClassname} text-sm lg:text-base px-5 py-2 rounded-lg hover:opacity-80 text-white`}
                 text={item.toUpperCase()}
                 onClick={() => selectTabHandler(item)}
               />
