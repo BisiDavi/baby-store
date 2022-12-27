@@ -11,3 +11,12 @@ export type productType = {
   brand: string;
   thumbnail: string;
 };
+
+type cartProductType = productType & { quantity: number };
+
+export type cartType = {
+  amount: number;
+  items: Array<cartProductType>;
+  userEmail: string;
+  quantity: 0;
+};
