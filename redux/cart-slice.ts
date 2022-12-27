@@ -30,15 +30,18 @@ const CartSlice = createSlice({
         state.cart = {
           ...state.cart,
           items: cartItem,
-          quantity: state.cart.items.length,
+          quantity: state.cart.items.length + 1,
           amount,
         };
       } else {
-        state.cart = { userEmail, quantity: 0, amount: 0, items: [product] };
+        state.cart = { userEmail, quantity: 1, amount: 0, items: [product] };
       }
     },
+    updateQuantity(state, action) {
+        
+    }
   },
 });
 
-export const {} = CartSlice.actions;
+export const { addToCart } = CartSlice.actions;
 export default CartSlice.reducer;

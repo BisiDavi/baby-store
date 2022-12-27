@@ -6,12 +6,14 @@ import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import Eye from "@/public/icon/Eye";
 import Heart from "@/public/icon/Heart";
+import { useAppDispatch } from "@/redux/store";
 import toSlug from "@/utils/toSlug";
 import Tag from "@/components/Tag";
 import { productType } from "@/types";
 import getCostPrice from "@/utils/getCostPrice";
 import { formatPrice } from "@/utils/formatPrice";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { addToCart } from "@/redux/cart-slice";
 
 interface ProductItem {
   product: productType;
@@ -22,11 +24,13 @@ export default function Product({ product, className }: ProductItem) {
   const [hoverState, setHoverState] = useState(false);
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
+  const dispatch = useAppDispatch();
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  const { price, rating, title, images, brand, discountPercentage } = product;
+  const { price, rating, title, images, brand, discountPercentage, id } =
+    product;
   const productLink = toSlug(product.title);
 
   const discount = Math.round(product.discountPercentage);
@@ -39,12 +43,37 @@ export default function Product({ product, className }: ProductItem) {
     ? { height: 130, width: 130 }
     : { height: 200, width: 200 };
 
+  function addToCartHandler() {
+    dispatch(
+      addToCart({
+        userEmail: "",
+        product: {
+          price,
+          id,
+          title,
+          discountPercentage,
+          quantity: 1,
+          thumbnail: product.thumbnail,
+        },
+      })
+    );
+  }
+
   return (
     <div
       className={`rounded-lg bg-white relative border ${className}  p-2 product lg:mr-4 h-80 lg:h-96`}
       onMouseMove={() => setHoverState(true)}
       onMouseOut={() => setHoverState(false)}
     >
+      {hoverState && (
+        <div className="button-view w-full z-50 absolute top-40">
+          <Button
+            className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
+            text="Add to Cart"
+            onClick={addToCartHandler}
+          />
+        </div>
+      )}
       {product?.discountPercentage && (
         <Tag
           className="bg-blue-900 flex top-4 absolute z-10"
@@ -80,16 +109,11 @@ export default function Product({ product, className }: ProductItem) {
           </div>
           <div className="image-control"></div>
         </div>
-        {hoverState && (
-          <div className="button-view w-full absolute top-40">
-            <Button
-              className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
-              text="Add to Cart"
-            />
-          </div>
-        )}
+
         <div className="text-content w-full">
-          <h4 className="name text-ellipsis truncate font-medium text-center text-lg">{title}</h4>
+          <h4 className="name text-ellipsis truncate font-medium text-center text-lg">
+            {title}
+          </h4>
           <h4 className="brand text-gray-500 font-medium text-center text-md">
             {brand}
           </h4>
