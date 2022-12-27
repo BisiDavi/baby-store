@@ -51,3 +51,10 @@ ul.splide__pagination.splide__pagination--ltr {
 .fit-content {
   width: fit-content;
 }
+
+/* product animation */
+.thumblist li:hover img,
+.product:hover .image-view img {
+  transform: scale(1.06);
+  transition: transform 0.5s ease-in-out;
+}

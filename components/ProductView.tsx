@@ -31,7 +31,7 @@ export default function ProductView({ product }: Props) {
           width={600}
           className="w-1/2 rounded-xl"
         />
-        <ul className="thumblist grid gap-4 grid-cols-2 w-1/2">
+        <ul className="thumblist  grid gap-4 grid-cols-2 w-1/2">
           {first4Images.map((image) => (
             <li key={image} className="border p-2 rounded-lg flex items-center">
               <Image src={image} alt={product.title} height={500} width={500} />
