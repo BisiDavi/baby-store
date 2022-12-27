@@ -3,7 +3,6 @@ import Slider from "@/components/Slider";
 import InfoList from "@/components/InfoList";
 import Banners from "@/components/Banners";
 import TopratedProduct from "@/components/TopratedProduct";
-import Newsletter from "@/components/Newsletter";
 import SpecialProducts from "@/components/SpecialProducts";
 import TopCategories from "@/components/TopCategories";
 import TestimonialSlider from "@/components/TestimonialSlider";
@@ -20,7 +19,6 @@ export default function Home() {
       <TopCategories />
       <TestimonialSlider />
       <Blog />
-      <Newsletter />
     </Layout>
   );
 }

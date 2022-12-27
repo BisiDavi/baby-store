@@ -3,7 +3,7 @@ import NewsletterIcon from "@/public/icon/Newsletter";
 
 export default function Newsletter() {
   return (
-    <div className="bg-gray-100 h-40 -mb-16 container items-center justify-between mx-auto mt-20 p-10 py-14 flex rounded-md">
+    <div className="bg-gray-100 h-40 relative z-20 -mb-16 container items-center justify-between mx-auto mt-20 p-10 py-14 flex rounded-md">
       <div className="column-1 w-1/4 flex items-center">
         <NewsletterIcon />
         <h4 className="w-2/3 ml-4 text-xl font-bold">SIGN UP FOR NEWSLETTER</h4>
