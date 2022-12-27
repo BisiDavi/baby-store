@@ -9,7 +9,7 @@ import "@splidejs/react-splide/css";
 
 export default function Blog() {
   return (
-    <div className="container mx-auto relative blog">
+    <div className="container mx-auto relative blog ">
       <h4 className="text-3xl text-center font-bold">Latest Blog</h4>
       <p className="text-lg my-2 text-center w-1/2 mx-auto">
         Interesting Features Is Rich And Colorful, Each Button To Bring A

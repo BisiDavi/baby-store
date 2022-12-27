@@ -13,7 +13,6 @@ export default function CategoryTabView() {
     () => fetchProducts(`/category/${selectedCategory}`),
     { enabled: !!selectedCategory }
   );
-  console.log("data", data);
 
   const topCategories =
     status === "success"
@@ -24,7 +23,6 @@ export default function CategoryTabView() {
     setSelectedCategory(tabCategory);
   }
 
-  console.log("productData", productData);
   return (
     <div className="mx-auto mt-4 justify-center flex flex-col">
       <div className="tab-group space-x-4 flex justify-between  justify-center mx-auto my-4 mb-8">

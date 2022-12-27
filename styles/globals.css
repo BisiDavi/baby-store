@@ -44,6 +44,6 @@ ul.splide__pagination.splide__pagination--ltr {
   background: #ff00006b;
 }
 
-.slider.blog {
-  height: fit-content;
+.slider.blog .splide__track {
+  height: 60vh;
 }
