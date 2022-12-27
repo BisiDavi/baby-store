@@ -16,7 +16,8 @@ export default function ProductSlider({ products }: Props) {
           perPage: 4,
           breakpoints: {
             760: {
-              perPage: 2,
+              perPage: 1,
+              padding: "5rem",
             },
           },
         }}

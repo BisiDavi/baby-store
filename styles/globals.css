@@ -58,3 +58,9 @@ ul.splide__pagination.splide__pagination--ltr {
   transform: scale(1.06);
   transition: transform 0.5s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .splide .splide__track {
+    padding-left: 0px !important;
+  }
+}
