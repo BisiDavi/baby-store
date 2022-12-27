@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import TopProductGrid from "@/components/TopProductGrid";
 import Layout from "@/layout";
 import { fetchAllProducts } from "@/utils/apiRequest";
+import BreadCrumb from "@/components/BreadCrumb";
 
 export default function ProductsPage() {
   const { data, status } = useQuery(["all-products"], fetchAllProducts);
@@ -10,6 +11,10 @@ export default function ProductsPage() {
   return (
     <Layout title="Buy our products at a discounted price">
       <section className="container mx-auto my-4">
+        <BreadCrumb
+          links={[{ name: "🏠 Home", link: "/" }, { name: "All Products" }]}
+        />
+
         <h2 className="text-center text-2xl font-bold">All Products</h2>
         <div className="content flex items-start">
           <div className="filters w-1/4"></div>
