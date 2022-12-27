@@ -15,10 +15,10 @@ export default function BreadCrumb({ links }: Props) {
                 <span className="hover:text-red-500 hover:underline">
                   {link.name}
                 </span>
-                <span className="ml-3">&gt;</span>{" "}
+                <span className="ml-2">&gt;</span>{" "}
               </Link>
             ) : (
-              link.name
+              <span className="font-medium">{link.name}</span>
             )}
           </li>
         ))}

@@ -4,19 +4,24 @@ import BreadCrumb from "@/components/BreadCrumb";
 import ProductView from "@/components/ProductView";
 import Layout from "@/layout";
 import type { productType } from "@/types";
+import toSlug from "@/utils/toSlug";
 
 interface Props {
   product: productType;
 }
 
-const getBreadcrumblink = (name: string) => [
-  { name: "Home", link: "/" },
-  { name: "Products", link: "/products" },
-  { name },
-];
+const getBreadcrumblink = (name: string, category: string) => {
+  const categoryLink = toSlug(category);
+  return [
+    { name: "Home", link: "/" },
+    { name: "products", link: "/products" },
+    { name: category, link: `/category/${categoryLink}` },
+    { name },
+  ];
+};
 
 export default function ProductPage({ product }: Props) {
-  const breadcrumbLink = getBreadcrumblink(product.title);
+  const breadcrumbLink = getBreadcrumblink(product.title, product.category);
   return (
     <Layout>
       <section className="container mx-auto">
