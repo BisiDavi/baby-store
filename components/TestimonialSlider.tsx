@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function TestimonialSlider() {
   return (
-    <section className="container mx-auto my-12 p-4 py-8 lg:p-12 lg:py-14 w-ful bg-gray-100 rounded-lg">
+    <section className="container mx-auto my-6 lg:my-12 p-4 py-8 lg:p-12 lg:py-14 w-full bg-gray-100 rounded-lg">
       <h4 className="text-3xl text-center mb-4 font-bold">Our Testimonial</h4>
       <div className="testimonial-slider">
         <Splide>
