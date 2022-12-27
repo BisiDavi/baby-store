@@ -7,17 +7,20 @@ import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
-  const [selectedCategory, setSelectedCategory] = useState("womens-watches");
+  const [selectedCategory, setSelectedCategory] = useState("home-decoration");
   const { data: productData, status: productStatus } = useQuery(
     ["fetch-products", selectedCategory],
     () => fetchProducts(`/category/${selectedCategory}`),
     { enabled: !!selectedCategory }
   );
 
-  const topCategories =
+  const topCategories = status === "success" ? data.data.slice(5, 8) : [];
+
+  const lastCategories =
     status === "success"
-      ? data.data.slice(data.data.length - 7, data.data.length)
+      ? data.data.slice(data.data.length - 4, data.data.length)
       : [];
+  const categories = [...topCategories, ...lastCategories];
 
   function selectTabHandler(tabCategory: string) {
     setSelectedCategory(tabCategory);
@@ -31,7 +34,7 @@ export default function CategoryTabView() {
         ) : status === "loading" ? (
           <p>fetching tabs</p>
         ) : (
-          topCategories.map((item) => {
+          categories.map((item) => {
             const activeButtonClassname =
               selectedCategory === item ? "bg-blue-900" : "bg-gray-600";
             return (
