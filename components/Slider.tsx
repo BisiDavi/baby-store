@@ -6,16 +6,16 @@ import "@splidejs/react-splide/css";
 
 export default function Slider() {
   return (
-    <section>
+    <section className="w-full">
       <Splide options={{ autoplay: true }}>
         {sliderContent.slider.map((item) => (
           <SplideSlide key={item.img}>
-            <div className="content p-20">
+            <div className="content p-10 lg:p-20">
               <h6 className="text-lg font-medium">{item.text1}</h6>
-              <h1 className="text-3xl w-1/3 leading-snug font-bold my-8">
+              <h1 className="text-3xl lg:w-1/3 leading-snug font-bold my-8">
                 {item.main}
               </h1>
-              <p className="text-lg w-1/2">{item.text2}</p>
+              <p className="text-lg lg:w-1/2">{item.text2}</p>
               <Button
                 text="Shop Now"
                 className="rounded-md h-10 bg-white w-32 mt-10"

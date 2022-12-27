@@ -11,7 +11,7 @@ export default function Blog() {
   return (
     <div className="container mx-auto relative blog ">
       <h4 className="text-3xl text-center font-bold">Latest Blog</h4>
-      <p className="text-lg my-2 text-center w-1/2 mx-auto">
+      <p className="text-lg my-2 text-center lg:w-1/2 mx-auto">
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
@@ -19,7 +19,7 @@ export default function Blog() {
         <Splide options={{ perPage: 1 }}>
           {blogs.map((item) => (
             <SplideSlide key={item.text}>
-              <div className="blog-view px-4 lg:px-0 flex flex-col lg:flew-row items-center mt-4 justify-between space-x-6">
+              <div className="blog-view px-4 lg:px-0 flex flex-col lg:flew-row items-center mt-4 justify-between lg:space-x-6">
                 {item.img && (
                   <Image
                     src={item.img}
@@ -29,8 +29,10 @@ export default function Blog() {
                     width={500}
                   />
                 )}
-                <div className="text w-full lg:w-1/2">
-                  <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                <div className="text w-full mt-4 lg:mt-0 lg:w-1/2">
+                  <h4 className="text-2xl text-center font-bold mb-4">
+                    {item.title}
+                  </h4>
                   <p className="mb-2 text-gray-500">{item.text}</p>
                   <div className="published w-4/5 flex justify-between">
                     <div className="date flex items-center">
