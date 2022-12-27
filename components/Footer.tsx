@@ -17,7 +17,7 @@ export default function Footer() {
               Numquam quam dolores voluptatibus!
             </p>
           </div>
-          <div className="grid grid-cols-3 w-full mt-4 lg:w-3/5">
+          <div className="grid grid-cols-2 gap-y-5 lg:grid-cols-3 w-full mt-4 lg:w-3/5">
             {footerContent.footer.map((item) => (
               <div key={item.name}>
                 <h5 className="text-xl font-medium">{item.name}</h5>

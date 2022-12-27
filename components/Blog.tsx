@@ -15,11 +15,11 @@ export default function Blog() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="slider blog">
+      <div className="slider blog mt-14 lg:mt-0">
         <Splide options={{ perPage: 1 }}>
           {blogs.map((item) => (
             <SplideSlide key={item.text}>
-              <div className="blog-view px-4 lg:px-0 flex flex-col lg:flex-row items-center mt-4 justify-between lg:space-x-6">
+              <div className="blog-view px-4 lg:px-0 flex flex-col lg:flex-row items-center lg:mt-4 justify-between lg:space-x-6">
                 {item.img && (
                   <Image
                     src={item.img}

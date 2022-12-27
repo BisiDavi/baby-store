@@ -15,7 +15,7 @@ export default function TopratedProduct() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="products mt-4 flex slider w-full">
+      <div className="products lg:mt-4 mt-10 flex slider w-full">
         {status === "error" ? (
           <p>Error fetching products</p>
         ) : status === "loading" ? (

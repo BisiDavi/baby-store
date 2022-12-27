@@ -63,4 +63,12 @@ ul.splide__pagination.splide__pagination--ltr {
   .splide .splide__track {
     padding-left: 0px !important;
   }
+
+  .products.slider .splide .splide__arrows.splide__arrows--ltr,
+  .blog.slider .splide .splide__arrows.splide__arrows--ltr {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 130px;
+  }
 }
