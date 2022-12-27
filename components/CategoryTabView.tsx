@@ -28,7 +28,7 @@ export default function CategoryTabView() {
 
   return (
     <div className="mx-auto mt-4 lg:px-0 justify-center flex flex-col">
-      <div className="tab-group overflow-scroll flex-nowrap w-full space-x-4 flex  justify-center mx-auto my-4 mb-8">
+      <div className="tab-group overflow-scroll flex-nowrap w-full space-x-4 flex lg:justify-center mx-auto my-4 mb-8">
         {status === "error" ? (
           <p>Error fetching tabs</p>
         ) : status === "loading" ? (
