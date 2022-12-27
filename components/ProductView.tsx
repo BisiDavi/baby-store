@@ -9,12 +9,19 @@ export default function ProductView({ product }: Props) {
     <div className="w-full flex space-x-4">
       <div className="left w-1/2">
         <Image
-          src={product.image}
+          src={product.thumbnail}
           alt={product.title}
           height={500}
           width={500}
           className="w-full rounded-xl"
         />
+        <ul className="thumblist space-x-4 flex items-center my-4">
+          {product.images.map((image) => (
+            <li key={image}>
+              <Image src={image} alt={product.title} height={100} width={100} />
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="right w-1/2">
         <p>{}</p>
