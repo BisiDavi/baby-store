@@ -14,6 +14,7 @@ export default function SpecialProductImage({
   setSelectedProduct,
   specialProductsContent,
 }: Props) {
+  const discount = Math.round(selectedProduct.discountPercentage);
   function onSelectImage(item: productType) {
     setSelectedProduct(item);
   }
@@ -38,7 +39,10 @@ export default function SpecialProductImage({
         ))}
       </ul>
       <div className="mainProduct items-center bg-white w-3/4 relative border flex rounded-xl">
-        <Tag className="bg-blue-900 absolute top-4 z-5 left-4" />
+        <Tag
+          text={`${discount} %`}
+          className="bg-blue-900 absolute top-4 z-5 left-4"
+        />
         <Image
           src={selectedProduct.images[0]}
           alt={selectedProduct.title}
