@@ -6,7 +6,7 @@ export default function Star({ fill }: Props) {
   return (
     <svg
       width="20"
-      height="19"
+      height="20"
       viewBox="0 0 20 19"
       fill={fill}
       className="mr-1 border-none"

@@ -24,8 +24,6 @@ export default function Product({ product }: ProductItem) {
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  console.log("product", product);
-
   const { price, rating, title, images, brand, discountPercentage } = product;
   const productLink = toSlug(product.title);
 
