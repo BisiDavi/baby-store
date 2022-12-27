@@ -6,10 +6,10 @@ export default function PromoCounter() {
     { time: 60, period: "Secs" },
   ];
   return (
-    <div className="promo-counter h-auto -ml-8 p-4 bg-blue-900 rounded-md">
+    <div className="promo-counter h-auto -ml-4 lg:-ml-8 p-2 lg:p-4 bg-blue-900 rounded-lg">
       <ul className="text-white h-auto flex flex-col">
         {duration.map((item) => (
-          <li key={item.period} className="flex text-center flex-col pb-2">
+          <li key={item.period} className="flex text-center flex-col text-sm lg:text-lg pb-2">
             {item.time}
             <span className="text-sm">{item.period}</span>
             <hr className=" w-2/3 mx-auto h-0.5 bg-white my-2" />

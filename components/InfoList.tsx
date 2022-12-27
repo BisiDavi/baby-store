@@ -4,7 +4,7 @@ import infoList from "@/json/infolist.json";
 
 export default function InfoList() {
   return (
-    <ul className="container flex-col lg:flex-row lg:mx-4 space-y-4 lg:space-y-0 lg:mx-auto border p-8 my-6 lg;my-8 rounded-xl flex justify-between shadow">
+    <ul className="lg:container flex-col lg:flex-row mx-4 lg:mx-4 space-y-4 lg:space-y-0 lg:mx-auto border p-8 my-8 rounded-xl flex justify-between shadow">
       {infoList.map((item) => (
         <li key={item.title} className="flex">
           <div className="icon border rounded-full flex items-center p-4 mx-4 hover:shadow">

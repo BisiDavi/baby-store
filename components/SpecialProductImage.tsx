@@ -20,7 +20,7 @@ export default function SpecialProductImage({
   }
   return (
     <div className="w-full lg:w-1/2 mx-auto lg:mx-0 flex space-x-4 lg:mr-14">
-      <ul className="selectProduct bg-white w-1/5 lg:w-1/4 space-y-6 rounded-lg">
+      <ul className="selectProduct lg:bg-white w-1/4 lg:w-1/4 space-y-6 rounded-lg">
         {specialProductsContent.map((item) => (
           <li key={item.id}>
             <button
