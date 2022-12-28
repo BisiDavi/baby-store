@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { fetchProducts } from "@/utils/apiRequest";
 import ProductSlider from "@/components/ProductSlider";
+import ProductLoader from "@/components/ProductLoader";
 
 export default function TopratedProduct() {
   const { data, status } = useQuery(["get-top-rated-products"], () =>
@@ -19,7 +20,7 @@ export default function TopratedProduct() {
         {status === "error" ? (
           <p>Error fetching products</p>
         ) : status === "loading" ? (
-          <p>Fetching products</p>
+          <ProductLoader />
         ) : (
           status === "success" && (
             <ProductSlider products={data.data.products} />

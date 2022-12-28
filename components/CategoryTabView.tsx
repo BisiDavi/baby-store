@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Button from "@/components/Button";
 import ProductSlider from "@/components/ProductSlider";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
+import ProductLoader from "./ProductLoader";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
@@ -51,7 +52,7 @@ export default function CategoryTabView() {
       {productStatus === "error" ? (
         <p>unable to fetch products</p>
       ) : productStatus === "loading" ? (
-        <p>fetching products</p>
+        <ProductLoader />
       ) : (
         <ProductSlider products={productData.data.products} />
       )}
