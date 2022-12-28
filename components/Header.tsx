@@ -10,6 +10,7 @@ import Person from "@/public/icon/Person";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import Caret from "@/public/icon/Caret";
 import { useAppSelector } from "@/redux/store";
+import Button from "./Button";
 
 interface Props {
   title: string;
@@ -54,7 +55,7 @@ export default function Header({ title }: Props) {
                 {cart?.quantity}
               </span>
             )}
-            <ShoppingCart />
+            <Button className="" icon={<ShoppingCart />} />
           </div>
         </div>
       </nav>
