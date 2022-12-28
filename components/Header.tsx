@@ -11,6 +11,7 @@ import ShoppingCart from "@/public/icon/ShoppingCart";
 import Caret from "@/public/icon/Caret";
 import { useAppSelector } from "@/redux/store";
 import Button from "./Button";
+import useCart from "@/hooks/useCart";
 
 interface Props {
   title: string;
@@ -19,7 +20,7 @@ interface Props {
 export default function Header({ title }: Props) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
   const { scroll } = useScroll();
-  const { cart } = useAppSelector((state) => state.cart);
+  const { cart, toggleSlideCart } = useCart();
 
   const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-50" : "";
 
@@ -55,7 +56,11 @@ export default function Header({ title }: Props) {
                 {cart?.quantity}
               </span>
             )}
-            <Button className="" icon={<ShoppingCart />} />
+            <Button
+              className=""
+              icon={<ShoppingCart />}
+              onClick={toggleSlideCart}
+            />
           </div>
         </div>
       </nav>
