@@ -1,21 +1,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { toast } from "react-toastify";
 
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import Eye from "@/public/icon/Eye";
 import Heart from "@/public/icon/Heart";
-import { useAppDispatch } from "@/redux/store";
 import toSlug from "@/utils/toSlug";
 import Tag from "@/components/Tag";
 import { productType } from "@/types";
-import getCostPrice from "@/utils/getCostPrice";
-import { formatPrice } from "@/utils/formatPrice";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { addToCart } from "@/redux/cart-slice";
 import Price from "@/components/Price";
+import useCart from "@/hooks/useCart";
 
 interface ProductItem {
   product: productType;
@@ -26,7 +22,7 @@ export default function Product({ product, className }: ProductItem) {
   const [hoverState, setHoverState] = useState(false);
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
-  const dispatch = useAppDispatch();
+  const { addToCartHandler } = useCart();
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
@@ -36,32 +32,12 @@ export default function Product({ product, className }: ProductItem) {
   const productLink = toSlug(product.title);
 
   const discount = Math.round(product.discountPercentage);
-  const fPrice = formatPrice(price);
-  const costPrice = getCostPrice(price, discountPercentage);
 
   const mobileDevice = useMediaQuery("(max-width:768px)");
 
   const imageDimension = mobileDevice
     ? { height: 130, width: 130 }
     : { height: 200, width: 200 };
-
-  function addToCartHandler() {
-    dispatch(
-      addToCart({
-        userEmail: "",
-        product: {
-          price,
-          id,
-          title,
-          discountPercentage,
-          quantity: 1,
-          thumbnail: product.thumbnail,
-          images: product.images,
-        },
-      })
-    );
-    toast.success("product added to cart");
-  }
 
   return (
     <div
@@ -74,7 +50,7 @@ export default function Product({ product, className }: ProductItem) {
           <Button
             className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
             text="Add to Cart"
-            onClick={addToCartHandler}
+            onClick={() => addToCartHandler(product)}
           />
         </div>
       )}
