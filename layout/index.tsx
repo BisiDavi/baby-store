@@ -14,16 +14,22 @@ const SlideCart = dynamic(
   () => import(/* webpackChunkName: 'SlideCart' */ "@/components/SlideCart")
 );
 
+const ProductModal = dynamic(
+  () =>
+    import(/* webpackChunkName: 'ProductModal' */ "@/components/ProductModal")
+);
+
 export default function Layout({
   children,
   title,
 }: PropsWithChildren<{ title: string }>) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
-  const { showSlideCart } = useAppSelector((state) => state.UI);
+  const { showSlideCart, previewProduct } = useAppSelector((state) => state.UI);
   return (
     <>
       {showSlideCart && <SlideCart />}
       {!mobileDevice && <TopHeader />}
+      {previewProduct.status && <ProductModal previewProduct={previewProduct} />}
       <Header title={title} />
       <main className="flex mx-auto flex-col">{children}</main>
       <Newsletter />

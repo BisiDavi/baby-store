@@ -12,6 +12,7 @@ import { productType } from "@/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Price from "@/components/Price";
 import useCart from "@/hooks/useCart";
+import useUI from "@/hooks/useUI";
 
 interface ProductItem {
   product: productType;
@@ -23,6 +24,7 @@ export default function Product({ product, className }: ProductItem) {
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
   const { addToCartHandler } = useCart();
+  const { previewProductHandler } = useUI();
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
@@ -73,6 +75,7 @@ export default function Product({ product, className }: ProductItem) {
             icon={<Eye fill={fillEyeColor} />}
             onMouseMove={() => setHoverEyeFillState(true)}
             onMouseOut={() => setHoverEyeFillState(false)}
+            onClick={() => previewProductHandler(true, product)}
           />
         </div>
       )}

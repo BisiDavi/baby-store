@@ -25,5 +25,5 @@ const UISlice = createSlice({
   },
 });
 
-export const { updateSlideCart } = UISlice.actions;
+export const { updateSlideCart, updatePreviewProduct } = UISlice.actions;
 export default UISlice.reducer;
