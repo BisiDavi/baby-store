@@ -19,7 +19,9 @@ export default function ProductModal() {
           <div className="content flex space-x-4 items-start">
             <ModalImageView product={product} />
             <div className="right w-1/2">
-              <p className="text-gray-400 my-1">{product.brand}</p>
+              <p className="text-gray-400 my-1">
+                {product.brand} | {product.category}
+              </p>
               <h3 className="text-xl">{product.title}</h3>
               <Price
                 price={product.price}

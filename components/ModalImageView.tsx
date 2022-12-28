@@ -27,7 +27,7 @@ export default function ModalImageView({ product }: Props) {
         {first4Images.map((item) => (
           <li
             key={product.id}
-            className="border p-2 rounded flex items-center justify-center"
+            className="border p-2 rounded cursor-pointer flex items-center justify-center"
           >
             <Image
               src={item}
