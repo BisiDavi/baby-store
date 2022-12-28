@@ -10,8 +10,8 @@ export default function Slider() {
       <Splide options={{ autoplay: true, type: "loop" }}>
         {sliderContent.slider.map((item) => (
           <SplideSlide key={item.img}>
-            <div className="content  w-96 text-white px-10 py-0 flex flex-col mx-auto justify-center lg:p-20">
-              <div className="txt-content relative bg-gray-900 w-2/3 opacity-90 z-10  p-10 rounded-lg">
+            <div className="content text-white px-6 lg:px-10 py-0 flex flex-col mx-auto justify-center lg:p-20">
+              <div className="txt-content relative bg-gray-900 w-full lg:w-3/5 opacity-90 z-10 p-10 py-14 rounded-lg">
                 <div className="text z-20 relative">
                   <h6 className="text-lg font-medium">{item.text1}</h6>
                   <h1 className="lg:text-3xl w-full text-2xl leading-snug font-bold my-4 lg:my-2">
