@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import Cancel from "@/public/icon/Cancel";
 import Button from "@/components/Button";
 import type { PropsWithChildren } from "react";

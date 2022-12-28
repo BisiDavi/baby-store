@@ -1,8 +1,8 @@
 export default function Cancel() {
   return (
     <svg
-      width="10px"
-      height="10px"
+      width="40px"
+      height="40px"
       viewBox="0 0 32 32"
       enableBackground="new 0 0 32 32"
       version="1.1"
