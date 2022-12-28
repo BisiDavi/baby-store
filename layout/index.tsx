@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TopHeader from "@/components/TopHeader";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import CartSidebar from "@/components/CartSidebar";
+import CartSidebar from "@/components/SlideCart";
 
 export default function Layout({
   children,

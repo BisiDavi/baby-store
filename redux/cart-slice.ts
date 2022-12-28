@@ -12,7 +12,7 @@ const initialState: initialStateType = {
 };
 
 const CartSlice = createSlice({
-  name: "UI",
+  name: "Cart",
   initialState,
   reducers: {
     addToCart(
@@ -38,7 +38,7 @@ const CartSlice = createSlice({
       }
     },
     updateQuantity(state, action) {
-        
+
     }
   },
 });

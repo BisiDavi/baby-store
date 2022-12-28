@@ -3,9 +3,11 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 
 import CartReducer from "@/redux/cart-slice";
+import UIReducer from "@/redux/ui-slice";
 
 const reducers = combineReducers({
   cart: CartReducer,
+  UI: UIReducer,
 });
 
 const persistConfig = {
