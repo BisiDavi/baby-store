@@ -17,8 +17,8 @@ export default function Home() {
       <TopratedProduct />
       <Banner content={bannerContent.banner1} />
       <SpecialProducts />
-      <TopCategories />
       <Banner content={bannerContent.banner2} />
+      <TopCategories />
       <TestimonialSlider />
       <Blog />
     </Layout>

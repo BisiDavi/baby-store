@@ -17,7 +17,7 @@ export default function Slider() {
                   <h1 className="lg:text-3xl w-full text-2xl leading-snug font-bold my-4 lg:my-2">
                     {item.main}
                   </h1>
-                  <p className="lg:text-lg lg:w-1/2">{item.text2}</p>
+                  <p className="lg:text-lg">{item.text2}</p>
                   <Button
                     text="Shop Now"
                     className="rounded-md hover:bg-blue-500 hover:text-white text-black font-bold h-10 bg-white w-32 mt-10"
