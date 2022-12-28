@@ -36,7 +36,7 @@ export default function Modal({
                   <div className="flex justify-between relative items-center w-full">
                     {header}
                     <Button
-                      className="p-1 border-0 text-black text-3xl leading-none font-semibold"
+                      className="p-1 border-0 text-black absolute right-0 -top-4 text-3xl leading-none font-semibold"
                       onClick={modalHandler}
                       icon={<Cancel />}
                     />
