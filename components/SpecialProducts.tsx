@@ -18,8 +18,8 @@ export default function SpecialProducts() {
       </p>
       {status === "error" ? (
         <p>Error fetching products</p>
-      ) : 5 ? (
-        <SpinnerRipple />
+      ) : status === "loading" ? (
+        <SpinnerRipple centerRipple />
       ) : (
         status === "success" && (
           <SpecialProductView products={data.data.products} />

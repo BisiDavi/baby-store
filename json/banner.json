@@ -1,22 +1,28 @@
 {
   "slider": [
     {
-      "text1": "Discount up to 20%",
-      "main": "Shop Best Home Accessories For Your Children",
-      "text2": "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type.",
-      "img": "/slider-1.webp"
+      "text1": "Discount up to 10%",
+      "main": "Shop for Quality SmartPhones at an affordable rate",
+      "text2": "🎉 We sale iPhones, Samsung, Oppo and Huawei phones",
+      "img": "/slider1.webp"
     },
     {
-      "text1": "Discount up to 20%",
-      "main": "Shop Best Home Accessories \n For Your Children",
-      "text2": "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type.",
-      "img": "/slider-2.webp"
+      "text1": "Discount up to 10%",
+      "main": "Wear a Nice Perfume ",
+      "text2": "⚡️⚡️ Buy quality perfumes at discounted rate",
+      "img": "/slider4.webp"
     },
     {
-      "text1": "Discount up to 20%",
-      "main": "Shop Best Home Accessories \n For Your Children",
-      "text2": "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type.",
-      "img": "/slider-3.webp"
+      "text1": "Discount up to 10%",
+      "main": "Buy Laptops, Phones, and tablet",
+      "text2": "Buy from top brands with quick delivery guaranted",
+      "img": "/slider2.webp"
+    },
+    {
+      "text1": "Discount up to 10%",
+      "main": "Get that Perfect Sunshade here",
+      "text2": "😎 During this harsh weather, our sunshade is available for the rescue ",
+      "img": "/slider3.webp"
     }
   ],
 
