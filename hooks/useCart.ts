@@ -1,6 +1,4 @@
-import { toast } from "react-toastify";
-
-import { addToCart, updateQuantity } from "@/redux/cart-slice";
+import { addToCart, deleteProduct, updateQuantity } from "@/redux/cart-slice";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { updateSlideCart } from "@/redux/ui-slice";
 import type { productType } from "@/types";
@@ -33,7 +31,10 @@ export default function useCart() {
         },
       })
     );
-    toast.success("product added to cart");
+  }
+
+  function deleteProductFromCart(id: string) {
+    dispatch(deleteProduct({ id }));
   }
 
   return {
@@ -41,5 +42,6 @@ export default function useCart() {
     toggleSlideCart,
     updateProductQuantity,
     addToCartHandler,
+    deleteProductFromCart,
   };
 }

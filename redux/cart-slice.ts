@@ -1,5 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { cartProductType, cartType } from "@/types";
+import {
+  updateCartProductQuantity,
+  updateCartQuantity,
+} from "@/utils/store-cart";
 
 type initialStateType = {
   deliveryFee: number;
@@ -24,6 +28,13 @@ const CartSlice = createSlice({
         const existingProduct = state.cart.items.filter(
           (item) => item.id === product.id
         )[0];
+        state.cart = {
+          ...state.cart,
+          loading: {
+            status: true,
+            text: "product added to cart",
+          },
+        };
         if (existingProduct) {
           const productIndex = state.cart.items.findIndex(
             (item) => item.id === product.id
@@ -46,10 +57,23 @@ const CartSlice = createSlice({
             items: cartItem,
             quantity: cartQuantity,
             amount,
+            loading: {
+              status: false,
+              text: "",
+            },
           };
         }
       } else {
-        state.cart = { userEmail, quantity: 1, amount: 0, items: [product] };
+        state.cart = {
+          userEmail,
+          quantity: 1,
+          amount: 0,
+          items: [product],
+          loading: {
+            status: false,
+            text: "",
+          },
+        };
       }
     },
     updateQuantity(
@@ -59,24 +83,44 @@ const CartSlice = createSlice({
       const { type, id } = action.payload;
 
       if (state.cart) {
+        state.cart = {
+          ...state.cart,
+          loading: {
+            status: true,
+            text: "product quantity updated",
+          },
+        };
         const productIndex = state.cart.items.findIndex(
           (item) => item.id === id
         );
         if (type === "add") {
-          state.cart.items[productIndex] = {
-            ...state.cart.items[productIndex],
-            quantity: state.cart.items[productIndex].quantity + 1,
-          };
-        } else if (type === "minus") {
-          state.cart.items[productIndex] = {
-            ...state.cart.items[productIndex],
-            quantity: state.cart.items[productIndex].quantity - 1,
-          };
+          updateCartProductQuantity(state.cart, productIndex, "add");
+        } else if (
+          type === "minus" &&
+          state.cart.items[productIndex].quantity > 1
+        ) {
+          updateCartProductQuantity(state.cart, productIndex, "minus");
         }
+        updateCartQuantity(state.cart);
+        state.cart = {
+          ...state.cart,
+          loading: {
+            status: false,
+            text: "product quantity updated",
+          },
+        };
+      }
+    },
+    deleteProduct(state, action: PayloadAction<{ id: string }>) {
+      const { id } = action.payload;
+      if (state.cart) {
+        const productId = state.cart?.items.findIndex((item) => item.id === id);
+        state.cart.items.splice(productId, 1);
+        // toast.success("product removed from cart");
       }
     },
   },
 });
 
-export const { addToCart, updateQuantity } = CartSlice.actions;
+export const { addToCart, updateQuantity, deleteProduct } = CartSlice.actions;
 export default CartSlice.reducer;

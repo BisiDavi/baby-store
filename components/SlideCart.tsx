@@ -11,7 +11,12 @@ import Minus from "@/public/icon/Minus";
 import Trash from "@/public/icon/Trash";
 
 export default function SlideCart() {
-  const { toggleSlideCart, cart, updateProductQuantity } = useCart();
+  const {
+    toggleSlideCart,
+    cart,
+    updateProductQuantity,
+    deleteProductFromCart,
+  } = useCart();
 
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
@@ -80,7 +85,11 @@ export default function SlideCart() {
                         icon={<Minus />}
                         onClick={() => updateProductQuantity("minus", item.id)}
                       />
-                      <Button className="" icon={<Trash />} />
+                      <Button
+                        className=""
+                        icon={<Trash />}
+                        onClick={() => deleteProductFromCart(item.id)}
+                      />
                     </div>
                   </li>
                 );

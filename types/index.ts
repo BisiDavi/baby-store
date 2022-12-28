@@ -27,4 +27,8 @@ export type cartType = {
   items: Array<cartProductType>;
   userEmail: string;
   quantity: number;
+  loading: {
+    status: boolean;
+    text: string;
+  };
 };
