@@ -32,3 +32,12 @@ export type cartType = {
     text: string;
   };
 };
+
+
+export type UIType = {
+  showSlideCart: boolean;
+  previewProduct: {
+    status: boolean;
+    product: null | productType;
+  };
+};
