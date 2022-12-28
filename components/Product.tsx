@@ -56,6 +56,7 @@ export default function Product({ product, className }: ProductItem) {
           discountPercentage,
           quantity: 1,
           thumbnail: product.thumbnail,
+          images: product.images,
         },
       })
     );

@@ -19,6 +19,7 @@ export type cartProductType = {
   discountPercentage: number;
   quantity: number;
   thumbnail: string;
+  images: string[];
 };
 
 export type cartType = {

@@ -36,7 +36,7 @@ export default function SlideCart() {
                 return (
                   <li
                     key={item.id}
-                    className="border-b hover:bg-gray-100 py-2 border-gray-200 flex justify-between items-center w-full"
+                    className="border-b px-2 hover:bg-gray-100 py-2 border-gray-200 flex justify-between items-center w-full"
                   >
                     <Link
                       href={`/product/${itemLink}?id=${item.id}`}
@@ -44,10 +44,10 @@ export default function SlideCart() {
                     >
                       <div className="product flex items-center space-x-3">
                         <Image
-                          src={item.thumbnail}
+                          src={item.images[0]}
                           alt={item.title}
                           height={200}
-                          className="w-1/3"
+                          className="w-1/3 max-h-24"
                           width={200}
                         />
                         <div className="text-content">
@@ -64,12 +64,12 @@ export default function SlideCart() {
                         </div>
                       </div>
                     </Link>
-                    <div className="controls  justify-between w-2/6 flex">
+                    <div className="controls justify-between w-2/6 flex">
                       <Button
                         className=""
                         icon={
                           <AddPlus
-                            className="bg-gray-500 hover:bg-green-500 rounded-md w-10 h-8 py-2"
+                            className="bg-gray-500 hover:bg-green-500 rounded-md w-10 h-8 py-1"
                             fill="white"
                           />
                         }
