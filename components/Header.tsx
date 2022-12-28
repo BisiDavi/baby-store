@@ -22,7 +22,7 @@ export default function Header({ title }: Props) {
   const { scroll } = useScroll();
   const { cart, toggleSlideCart } = useCart();
 
-  const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-50" : "";
+  const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-40" : "";
 
   return (
     <header

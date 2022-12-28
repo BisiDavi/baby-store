@@ -68,7 +68,7 @@ export default function Product({ product, className }: ProductItem) {
       onMouseOut={() => setHoverState(false)}
     >
       {hoverState && (
-        <div className="button-view w-full z-50 absolute top-40">
+        <div className="button-view w-full z-30 absolute top-40">
           <Button
             className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
             text="Add to Cart"
