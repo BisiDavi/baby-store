@@ -3,6 +3,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import sliderContent from "@/json/banner.json";
 import Button from "@/components/Button";
 import "@splidejs/react-splide/css";
+import Link from "next/link";
 
 export default function Slider() {
   return (
@@ -18,10 +19,12 @@ export default function Slider() {
                     {item.main}
                   </h1>
                   <p className="lg:text-lg">{item.text2}</p>
-                  <Button
-                    text="Shop Now"
-                    className="rounded-md hover:bg-blue-500 hover:text-white text-black font-bold h-10 bg-white w-32 mt-10"
-                  />
+                  <Link href="/products">
+                    <Button
+                      text="Shop Now"
+                      className="rounded-md hover:bg-blue-500 hover:text-white text-black font-bold h-10 bg-white w-32 mt-10"
+                    />
+                  </Link>
                 </div>
               </div>
               <style jsx>

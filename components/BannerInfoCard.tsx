@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Link from "next/link";
 
 interface Props {
   content: {
@@ -18,10 +19,12 @@ export default function BannerInfoCard({ content }: Props) {
         <div className="content bg-gray-900 opacity-70 rounded h-full mx-auto justify-center flex flex-col text-white px-8 py-4">
           <h3 className="text-2xl font-bold">{content.title}</h3>
           <p className="mt-1">{content.text}</p>
-          <Button
-            text="Shop Now"
-            className="bg-white text-black hover:bg-blue-900 hover:text-white hover:opacity-100 font-bold h-10 mt-5 lg:mt-10 rounded-lg w-32"
-          />
+          <Link href="/products">
+            <Button
+              text="Shop Now"
+              className="bg-white text-black hover:bg-blue-900 hover:text-white hover:opacity-100 font-bold h-10 mt-5 lg:mt-10 rounded-lg w-32"
+            />
+          </Link>
         </div>
       </div>
       <style jsx>
