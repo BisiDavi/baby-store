@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
@@ -57,6 +58,7 @@ export default function Product({ product, className }: ProductItem) {
         },
       })
     );
+    toast.success("product added to cart");
   }
 
   return (

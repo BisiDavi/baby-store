@@ -9,6 +9,7 @@ import Wishlist from "@/public/icon/Wishlist";
 import Person from "@/public/icon/Person";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import Caret from "@/public/icon/Caret";
+import { useAppSelector } from "@/redux/store";
 
 interface Props {
   title: string;
@@ -17,6 +18,7 @@ interface Props {
 export default function Header({ title }: Props) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
   const { scroll } = useScroll();
+  const { cart } = useAppSelector((state) => state.cart);
 
   const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-50" : "";
 
@@ -46,7 +48,14 @@ export default function Header({ title }: Props) {
           <Search />
           <Wishlist />
           <Person />
-          <ShoppingCart />
+          <div className="cart relative">
+            {cart && (
+              <span className="rounded-full bg-red-500 text-white h-5 w-5 text-xs flex items-center justify-center absolute -top-3 right-0">
+                {cart?.quantity}
+              </span>
+            )}
+            <ShoppingCart />
+          </div>
         </div>
       </nav>
     </header>

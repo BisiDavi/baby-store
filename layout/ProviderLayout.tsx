@@ -8,6 +8,8 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import store from "@/redux/store";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const NextNProgress = dynamic(
   () => import(/* webpackChunkName: 'NProgress' */ "@/components/NProgress")
 );
