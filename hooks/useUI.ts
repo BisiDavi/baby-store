@@ -6,7 +6,7 @@ export default function useUI() {
   const dispatch = useAppDispatch();
   const { previewProduct } = useAppSelector((state) => state.UI);
 
-  function previewProductHandler(status: boolean, product: productType) {
+  function previewProductHandler(status: boolean, product: productType | null) {
     dispatch(updatePreviewProduct({ status, product }));
   }
 
