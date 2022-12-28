@@ -17,6 +17,7 @@ const NextNProgress = dynamic(
 export default function ProviderLayout({ children }: PropsWithChildren) {
   const queryClient = new QueryClient();
   let persistor = persistStore(store);
+  
 
   return (
     <Provider store={store}>
