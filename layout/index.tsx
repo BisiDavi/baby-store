@@ -29,7 +29,7 @@ export default function Layout({
     <>
       {showSlideCart && <SlideCart />}
       {!mobileDevice && <TopHeader />}
-      {previewProduct.status && <ProductModal previewProduct={previewProduct} />}
+      {previewProduct.status && <ProductModal />}
       <Header title={title} />
       <main className="flex mx-auto flex-col">{children}</main>
       <Newsletter />
