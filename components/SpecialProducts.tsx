@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import SpecialProductView from "@/components/SpecialProductView";
+import SpinnerRipple from "@/components/SpinnerRipple";
 import { fetchProducts } from "@/utils/apiRequest";
 
 export default function SpecialProducts() {
@@ -17,8 +18,8 @@ export default function SpecialProducts() {
       </p>
       {status === "error" ? (
         <p>Error fetching products</p>
-      ) : status === "loading" ? (
-        <p>Fetching products...</p>
+      ) : 5 ? (
+        <SpinnerRipple />
       ) : (
         status === "success" && (
           <SpecialProductView products={data.data.products} />
