@@ -15,6 +15,7 @@ import getCostPrice from "@/utils/getCostPrice";
 import { formatPrice } from "@/utils/formatPrice";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { addToCart } from "@/redux/cart-slice";
+import Price from "@/components/Price";
 
 interface ProductItem {
   product: productType;
@@ -119,12 +120,7 @@ export default function Product({ product, className }: ProductItem) {
           <h4 className="brand text-gray-500 font-medium text-center text-md">
             {brand}
           </h4>
-          <div className="price-view flex mx-auto space-x-2 justify-center items-center">
-            <h5 className="font-bold text-center text-lg">${fPrice}</h5>
-            <h6 className="font-bold text-center line-through text-sm">
-              ${costPrice}
-            </h6>
-          </div>
+          <Price price={price} discountPercentage={discountPercentage} />
           {rating && <Ratings ratings={rating} />}
         </div>
       </Link>
