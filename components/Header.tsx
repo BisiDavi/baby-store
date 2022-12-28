@@ -37,14 +37,9 @@ export default function Header({ title }: Props) {
       <nav className="container mx-auto flex items-center justify-between">
         <Logo />
         {!mobileDevice && (
-          <ul className="links hidden lg:flex text-xl">
-            {menuLink.header.map((item) => (
-              <li key={item.name} className="mx-6 flex">
-                {item.name}{" "}
-                {item.dropdown && <Caret className="w-4 mt-2 ml-1" />}
-              </li>
-            ))}
-          </ul>
+         <form className="flex">
+          <input className="bg-white border w-full rounded" /><Button className="" text="" />
+         </form>
         )}
         <div className="icons flex space-x-4">
           <Search />

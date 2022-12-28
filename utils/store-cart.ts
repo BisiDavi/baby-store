@@ -1,4 +1,4 @@
-import { cartType } from "@/types";
+import type { cartType } from "@/types";
 
 export function updateCartProductQuantity(
   cart: cartType,
