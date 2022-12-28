@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { cartProductType, cartType } from "@/types";
 import {
   updateCartProductQuantity,
   updateCartQuantity,
 } from "@/utils/store-cart";
+import type { cartProductType, cartType } from "@/types";
 
 type initialStateType = {
   deliveryFee: number;

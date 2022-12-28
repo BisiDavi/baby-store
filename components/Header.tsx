@@ -37,12 +37,19 @@ export default function Header({ title }: Props) {
       <nav className="container mx-auto flex items-center justify-between">
         <Logo />
         {!mobileDevice && (
-         <form className="flex">
-          <input className="bg-white border w-full rounded" /><Button className="" text="" />
-         </form>
+          <form className="flex w-1/2">
+            <input
+              placeholder="Search"
+              className="bg-white px-4 border w-full py-1 rounded-l-lg"
+            />
+            <Button
+              className="text-white bg-blue-500 hover:opacity-50 px-4 py-1.5 rounded-r-lg"
+              icon={<Search />}
+              text=""
+            />
+          </form>
         )}
-        <div className="icons flex space-x-4">
-          <Search />
+        <div className="icons items-center flex space-x-4">
           <Wishlist />
           <Person />
           <div className="cart relative">
@@ -52,7 +59,7 @@ export default function Header({ title }: Props) {
               </span>
             )}
             <Button
-              className=""
+              className="mb-0"
               icon={<ShoppingCart />}
               onClick={toggleSlideCart}
             />

@@ -10,8 +10,8 @@ export default function Search() {
       y="0px"
       className="w-6"
       viewBox="0 0 487.95 487.95"
-      //   style="enable-background:new 0 0 487.95 487.95;"
       xmlSpace="preserve"
+      fill="white"
     >
       <g>
         <g>
