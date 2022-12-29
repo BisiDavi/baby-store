@@ -3,14 +3,11 @@ import Head from "next/head";
 import useScroll from "@/hooks/useScroll";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Logo from "@/components/Logo";
-import menuLink from "@/json/menu.json";
 import Search from "@/public/icon/Search";
 import Wishlist from "@/public/icon/Wishlist";
 import Person from "@/public/icon/Person";
 import ShoppingCart from "@/public/icon/ShoppingCart";
-import Caret from "@/public/icon/Caret";
-import { useAppSelector } from "@/redux/store";
-import Button from "./Button";
+import Button from "@/components/Button";
 import useCart from "@/hooks/useCart";
 
 interface Props {
