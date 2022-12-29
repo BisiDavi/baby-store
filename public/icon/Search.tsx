@@ -1,5 +1,5 @@
 
-export default function Search() {
+export default function SearchIcon() {
   return (
     <svg
       version="1.1"

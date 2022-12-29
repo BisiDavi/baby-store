@@ -3,12 +3,12 @@ import Head from "next/head";
 import useScroll from "@/hooks/useScroll";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Logo from "@/components/Logo";
-import Search from "@/public/icon/Search";
 import Wishlist from "@/public/icon/Wishlist";
 import Person from "@/public/icon/Person";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import Button from "@/components/Button";
 import useCart from "@/hooks/useCart";
+import Search from "@/components/Search";
 
 interface Props {
   title: string;
@@ -33,19 +33,7 @@ export default function Header({ title }: Props) {
       </Head>
       <nav className="container mx-auto flex items-center justify-between">
         <Logo />
-        {!mobileDevice && (
-          <form className="flex w-1/2">
-            <input
-              placeholder="Search"
-              className="bg-white px-4 border w-full py-1 rounded-l-lg"
-            />
-            <Button
-              className="text-white bg-blue-500 hover:opacity-50 px-4 py-1.5 rounded-r-lg"
-              icon={<Search />}
-              text=""
-            />
-          </form>
-        )}
+        {!mobileDevice && <Search />}
         <div className="icons items-center flex space-x-4">
           <Wishlist />
           <Person />

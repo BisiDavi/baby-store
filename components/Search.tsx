@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import SearchIcon from "@/components/Search";
 
 export default function Search() {
   return (
@@ -9,7 +10,7 @@ export default function Search() {
       />
       <Button
         className="text-white bg-blue-500 hover:opacity-50 px-4 py-1.5 rounded-r-lg"
-        icon={<Search />}
+        icon={<SearchIcon />}
         text=""
       />
     </form>
