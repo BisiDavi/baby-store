@@ -1,9 +1,9 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Link from "next/link";
 
 import sliderContent from "@/json/banner.json";
 import Button from "@/components/Button";
 import "@splidejs/react-splide/css";
-import Link from "next/link";
 
 export default function Slider() {
   return (

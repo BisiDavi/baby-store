@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import { addToCart, deleteProduct, updateQuantity } from "@/redux/cart-slice";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { updateSlideCart } from "@/redux/ui-slice";
