@@ -27,9 +27,6 @@ export type cartType = {
   items: Array<cartProductType>;
   userEmail: string;
   quantity: number;
-  loading: {
-    text: string;
-  };
 };
 
 export type UIType = {

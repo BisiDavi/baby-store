@@ -36,9 +36,6 @@ export default function useCart() {
 
   function deleteProductFromCart(id: string) {
     dispatch(deleteProduct({ id }));
-    if (cart?.loading.text) {
-      toast.success(cart?.loading.text);
-    }
   }
 
   return {

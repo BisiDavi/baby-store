@@ -40,9 +40,6 @@ const CartSlice = createSlice({
           state.cart = {
             ...state.cart,
             ...updatedCartQuantity,
-            loading: {
-              text: "product added to cart",
-            },
           };
         } else {
           const cartItem = [...state.cart.items, product];
@@ -51,9 +48,6 @@ const CartSlice = createSlice({
             ...state.cart,
             ...updatedCartQuantity,
             items: cartItem,
-            loading: {
-              text: "product added to cart",
-            },
           };
         }
       } else {
@@ -62,9 +56,6 @@ const CartSlice = createSlice({
           quantity: 1,
           amount: 0,
           items: [product],
-          loading: {
-            text: "product added to cart",
-          },
         };
       }
     },
@@ -79,17 +70,19 @@ const CartSlice = createSlice({
           (item) => item.id === id
         );
         if (state.cart.items[productIndex].quantity <= 1) {
-          state.cart.loading.text = "";
         }
         if (type === "add") {
           updateCartProductQuantity(state.cart, productIndex, "add");
-          state.cart.loading.text = "product quantity updated";
         } else if (
           type === "minus" &&
           state.cart.items[productIndex].quantity > 1
         ) {
           updateCartProductQuantity(state.cart, productIndex, "minus");
-          state.cart.loading.text = "product quantity updated";
+        } else if (
+          type === "minus" &&
+          state.cart.items[productIndex].quantity <= 1
+        ) {
+          throw Error;
         }
         const updatedCartQuantity = updateCartQuantity(state.cart);
         state.cart = {
@@ -107,9 +100,6 @@ const CartSlice = createSlice({
         state.cart = {
           ...state.cart,
           ...updateCart,
-          loading: {
-            text: "product deleted",
-          },
         };
       }
     },
