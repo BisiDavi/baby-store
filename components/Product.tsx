@@ -11,8 +11,8 @@ import Tag from "@/components/Tag";
 import { productType } from "@/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Price from "@/components/Price";
-import useCart from "@/hooks/useCart";
 import useUI from "@/hooks/useUI";
+import useCartMutation from "@/hooks/useCartMutation";
 
 interface ProductItem {
   product: productType;
@@ -23,7 +23,8 @@ export default function Product({ product, className }: ProductItem) {
   const [hoverState, setHoverState] = useState(false);
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
-  const { addToCartHandler } = useCart();
+  const { useAddToCartMutation } = useCartMutation();
+  const { mutate } = useAddToCartMutation();
   const { previewProductHandler } = useUI();
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
@@ -52,7 +53,7 @@ export default function Product({ product, className }: ProductItem) {
           <Button
             className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
             text="Add to Cart"
-            onClick={() => addToCartHandler(product)}
+            onClick={() => mutate(product)}
           />
         </div>
       )}
