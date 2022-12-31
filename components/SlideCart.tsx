@@ -9,14 +9,15 @@ import Button from "@/components/Button";
 import AddPlus from "@/public/icon/AddPlus";
 import Minus from "@/public/icon/Minus";
 import Trash from "@/public/icon/Trash";
+import useCartMutation from "@/hooks/useCartMutation";
 
 export default function SlideCart() {
-  const {
-    toggleSlideCart,
-    cart,
-    updateProductQuantity,
-    deleteProductFromCart,
-  } = useCart();
+  const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
+    useCartMutation();
+  const mutateDelete = useDeleteProductFromCart();
+  const mutateUpdateQuantity = useUpdateProductQuantityMutation();
+
+  const { toggleSlideCart, cart } = useCart();
 
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
@@ -78,17 +79,27 @@ export default function SlideCart() {
                             fill="white"
                           />
                         }
-                        onClick={() => updateProductQuantity("add", item.id) }
+                        onClick={() =>
+                          mutateUpdateQuantity.mutate({
+                            type: "add",
+                            id: item.id,
+                          })
+                        }
                       />
                       <Button
                         className="bg-gray-500 flex items-center justify-center hover:bg-red-500 rounded-md w-10 h-8 py-2"
                         icon={<Minus />}
-                        onClick={() => updateProductQuantity("minus", item.id)}
+                        onClick={() =>
+                          mutateUpdateQuantity.mutate({
+                            type: "minus",
+                            id: item.id,
+                          })
+                        }
                       />
                       <Button
                         className=""
                         icon={<Trash />}
-                        onClick={() => deleteProductFromCart(item.id)}
+                        onClick={() => mutateDelete.mutate(item.id)}
                       />
                     </div>
                   </li>

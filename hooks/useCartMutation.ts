@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-
 import { useMutation } from "@tanstack/react-query";
+
 import useCart from "@/hooks/useCart";
 import type { productType } from "@/types";
 
