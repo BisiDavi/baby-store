@@ -18,6 +18,8 @@ export default function SlideCart() {
     deleteProductFromCart,
   } = useCart();
 
+  console.log("cart", cart);
+
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
       <div

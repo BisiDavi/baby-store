@@ -101,9 +101,11 @@ const CartSlice = createSlice({
         ) {
           updateCartProductQuantity(state.cart, productIndex, "minus");
         }
-        updateCartQuantity(state.cart);
+        const updatedCartQuantity = updateCartQuantity(state.cart);
+        console.log("updatedCartQuantity", updatedCartQuantity);
         state.cart = {
           ...state.cart,
+          ...updatedCartQuantity,
           loading: {
             status: false,
             text: "product quantity updated",
@@ -116,7 +118,15 @@ const CartSlice = createSlice({
       if (state.cart) {
         const productId = state.cart?.items.findIndex((item) => item.id === id);
         state.cart.items.splice(productId, 1);
-        // toast.success("product removed from cart");
+        const updateCart = updateCartQuantity(state.cart);
+        state.cart = {
+          ...state.cart,
+          ...updateCart,
+          loading: {
+            status: false,
+            text: "product deleted",
+          },
+        };
       }
     },
   },
