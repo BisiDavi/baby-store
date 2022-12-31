@@ -18,8 +18,6 @@ export default function SlideCart() {
     deleteProductFromCart,
   } = useCart();
 
-  console.log("cart", cart);
-
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
       <div
@@ -80,7 +78,7 @@ export default function SlideCart() {
                             fill="white"
                           />
                         }
-                        onClick={() => updateProductQuantity("add", item.id)}
+                        onClick={() => updateProductQuantity("add", item.id) }
                       />
                       <Button
                         className="bg-gray-500 flex items-center justify-center hover:bg-red-500 rounded-md w-10 h-8 py-2"

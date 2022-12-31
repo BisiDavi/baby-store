@@ -28,11 +28,9 @@ export type cartType = {
   userEmail: string;
   quantity: number;
   loading: {
-    status: boolean;
     text: string;
   };
 };
-
 
 export type UIType = {
   showSlideCart: boolean;

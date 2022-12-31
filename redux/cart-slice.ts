@@ -25,17 +25,10 @@ const CartSlice = createSlice({
     ) {
       const { product, userEmail } = action.payload;
       if (state.cart) {
-        const existingProduct = state.cart.items.filter(
+        const existingProductIndex = state.cart.items.filter(
           (item) => item.id === product.id
         )[0];
-        state.cart = {
-          ...state.cart,
-          loading: {
-            status: true,
-            text: "product added to cart",
-          },
-        };
-        if (existingProduct) {
+        if (existingProductIndex) {
           const productIndex = state.cart.items.findIndex(
             (item) => item.id === product.id
           );
@@ -43,23 +36,23 @@ const CartSlice = createSlice({
             ...state.cart.items[productIndex],
             quantity: state.cart.items[productIndex].quantity + 1,
           };
-        } else {
-          const cartItem = [...state.cart.items, product];
-          let amount = 0;
-          let cartQuantity = 0;
-          state.cart.items.map((item) => {
-            const itemAmount = item.price * item.quantity;
-            amount += itemAmount;
-            cartQuantity += item.quantity;
-          });
+          const updatedCartQuantity = updateCartQuantity(state.cart);
           state.cart = {
             ...state.cart,
-            items: cartItem,
-            quantity: cartQuantity,
-            amount,
+            ...updatedCartQuantity,
             loading: {
-              status: false,
-              text: "",
+              text: "product added to cart",
+            },
+          };
+        } else {
+          const cartItem = [...state.cart.items, product];
+          const updatedCartQuantity = updateCartQuantity(state.cart);
+          state.cart = {
+            ...state.cart,
+            ...updatedCartQuantity,
+            items: cartItem,
+            loading: {
+              text: "product added to cart",
             },
           };
         }
@@ -70,8 +63,7 @@ const CartSlice = createSlice({
           amount: 0,
           items: [product],
           loading: {
-            status: false,
-            text: "",
+            text: "product added to cart",
           },
         };
       }
@@ -83,33 +75,26 @@ const CartSlice = createSlice({
       const { type, id } = action.payload;
 
       if (state.cart) {
-        state.cart = {
-          ...state.cart,
-          loading: {
-            status: true,
-            text: "product quantity updated",
-          },
-        };
         const productIndex = state.cart.items.findIndex(
           (item) => item.id === id
         );
+        if (state.cart.items[productIndex].quantity <= 1) {
+          state.cart.loading.text = "";
+        }
         if (type === "add") {
           updateCartProductQuantity(state.cart, productIndex, "add");
+          state.cart.loading.text = "product quantity updated";
         } else if (
           type === "minus" &&
           state.cart.items[productIndex].quantity > 1
         ) {
           updateCartProductQuantity(state.cart, productIndex, "minus");
+          state.cart.loading.text = "product quantity updated";
         }
         const updatedCartQuantity = updateCartQuantity(state.cart);
-        console.log("updatedCartQuantity", updatedCartQuantity);
         state.cart = {
           ...state.cart,
           ...updatedCartQuantity,
-          loading: {
-            status: false,
-            text: "product quantity updated",
-          },
         };
       }
     },
@@ -123,7 +108,6 @@ const CartSlice = createSlice({
           ...state.cart,
           ...updateCart,
           loading: {
-            status: false,
             text: "product deleted",
           },
         };
