@@ -4,6 +4,7 @@ import useCart from "@/hooks/useCart";
 import Button from "@/components/Button";
 import useCartMutation from "@/hooks/useCartMutation";
 import SlideCartItem from "@/components/SlideCartItem";
+import { formatPrice } from "@/utils/formatPrice";
 
 export default function SlideCart() {
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
@@ -29,16 +30,22 @@ export default function SlideCart() {
               </span>
             </h5>
             {cart && cart.items.length > 0 ? (
-              <ul className="space-y4 overflow-y-scroll h-4/5">
-                {cart?.items.map((item) => (
-                  <SlideCartItem
-                    key={item.id}
-                    item={item}
-                    mutateUpdateQuantity={mutateUpdateQuantity}
-                    mutateDelete={mutateDelete}
-                  />
-                ))}
-              </ul>
+              <>
+                <ul className="space-y4 overflow-y-scroll h-5/6">
+                  {cart?.items.map((item) => (
+                    <SlideCartItem
+                      key={item.id}
+                      item={item}
+                      mutateUpdateQuantity={mutateUpdateQuantity}
+                      mutateDelete={mutateDelete}
+                    />
+                  ))}
+                </ul>
+                <div className="cart-prices font-bold border rounded text-xl shadow-xl  px-4 h-20 flex items-center justify-between">
+                  <h6>Subtotal</h6>
+                  <h6>${formatPrice(cart.amount)}</h6>
+                </div>
+              </>
             ) : (
               <>
                 <p className="font-bold text-center text-xl">
