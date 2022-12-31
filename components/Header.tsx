@@ -38,7 +38,7 @@ export default function Header({ title }: Props) {
           <Wishlist />
           <Person />
           <div className="cart relative">
-            {cart && (
+            {cart && cart.quantity > 0 && (
               <span className="rounded-full bg-red-500 text-white h-5 w-5 text-xs flex items-center justify-center absolute -top-3 right-0">
                 {cart?.quantity}
               </span>

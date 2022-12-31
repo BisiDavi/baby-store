@@ -5,6 +5,7 @@ import PromoCounter from "@/components/PromoCounter";
 import Ratings from "./Ratings";
 import { formatPrice } from "@/utils/formatPrice";
 import getCostPrice from "@/utils/getCostPrice";
+import useCartMutation from "@/hooks/useCartMutation";
 
 interface Props {
   product: productType;
@@ -13,6 +14,9 @@ interface Props {
 export default function SpecialProductDescription({ product }: Props) {
   const price = formatPrice(product.price);
   const costPrice = getCostPrice(product.price, product.discountPercentage);
+  const { useAddToCartMutation } = useCartMutation();
+  const { mutate } = useAddToCartMutation();
+
   return (
     <div className="flex w-full -mr-1 lg:mr-0 pl-1 lg:w-1/2 bg-white lg:mx-auto my-4 lg:my-0 lg:mx-4 px-0 py-8 lg:py-12 lg:pr-6 rounded-lg shadow">
       <PromoCounter />
@@ -32,6 +36,7 @@ export default function SpecialProductDescription({ product }: Props) {
           <Button
             className="rounded-md shadow h-10 px-4 mr-4 border"
             text="Add to Cart"
+            onClick={() => mutate(product)}
           />
           <Button
             className="rounded border shadow h-10 px-4"

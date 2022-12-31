@@ -5,6 +5,7 @@ import ShoppingCart from "@/public/icon/ShoppingCart";
 import AddPlus from "@/public/icon/AddPlus";
 import ProductGridView from "@/components/ProductGridView";
 import { formatPrice } from "@/utils/formatPrice";
+import useCartMutation from "@/hooks/useCartMutation";
 import type { productType } from "@/types";
 
 interface Props {
@@ -15,6 +16,8 @@ export default function ProductView({ product }: Props) {
   const oldPrice = getCostPrice(product.price, product.discountPercentage);
   const discount = Math.round(product.discountPercentage);
   const category = product.category.toUpperCase();
+  const { useAddToCartMutation } = useCartMutation();
+  const { mutate } = useAddToCartMutation();
 
   return (
     <div className="w-full flex-col px-4 lg:px-0 flex my-8">
@@ -41,6 +44,7 @@ export default function ProductView({ product }: Props) {
             text="Add to Cart"
             className="bg-blue-500 flex items-center text-white rounded-lg px-4 py-1 hover:opacity-80"
             icon={<AddPlus fill="white" className="mr-3" />}
+            onClick={() => mutate(product)}
           />
           <Button
             icon={<ShoppingCart fill="white" className="mr-3" />}
