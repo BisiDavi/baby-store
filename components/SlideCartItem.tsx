@@ -8,8 +8,7 @@ import Minus from "@/public/icon/Minus";
 import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
-import { cartProductType, productType } from "@/types";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import type { cartProductType } from "@/types";
 
 interface Props {
   item: cartProductType;
