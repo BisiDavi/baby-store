@@ -9,6 +9,7 @@ import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
 import { cartProductType, productType } from "@/types";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 interface Props {
   item: cartProductType;
@@ -27,7 +28,7 @@ export default function SlideCartItem({
   return (
     <li
       key={item.id}
-      className="border-b px-2 hover:bg-gray-100 py-2 border-gray-200 flex justify-between items-center w-full"
+      className="border-b flex-col lg:flex-row px-2 hover:bg-gray-100 py-2 border-gray-200 flex lg:justify-between lg:items-center w-full"
     >
       <Link href={`/product/${itemLink}?id=${item.id}`} className="w-4/6">
         <div className="product flex items-center space-x-3">
@@ -43,6 +44,7 @@ export default function SlideCartItem({
             <Price
               price={item.price}
               discountPercentage={item.discountPercentage}
+              className=""
             />
             <p>
               X {item.quantity} = ${itemAmount}
@@ -50,7 +52,7 @@ export default function SlideCartItem({
           </div>
         </div>
       </Link>
-      <div className="controls justify-between w-2/6 flex">
+      <div className=" controls mt-3 justify-between w-2/3 mx-auto lg:mx-0 lg:w-2/6 flex">
         <Button
           className=""
           icon={
