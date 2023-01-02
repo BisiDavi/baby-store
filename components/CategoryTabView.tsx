@@ -31,7 +31,7 @@ export default function CategoryTabView() {
 
   return (
     <div className="mx-auto mt-4 lg:px-0 justify-center flex flex-col">
-      <div className="tab-group overflow-scroll flex-nowrap w-full space-x-4 flex lg:justify-center mx-auto my-4 mb-8">
+      <div className="tab-group overflow-scroll w-full space-x-4 flex lg:justify-center mx-auto my-4 mb-8">
         {status === "error" ? (
           <p>Error fetching tabs</p>
         ) : status === "loading" ? (
@@ -43,7 +43,7 @@ export default function CategoryTabView() {
             return (
               <Button
                 key={item}
-                className={`${activeButtonClassname} text-xs lg:text-base px-4 lg:px-5 py-1 lg:py-2 rounded-lg hover:opacity-80 text-white`}
+                className={`${activeButtonClassname} items-center  text-xs lg:text-base px-4 lg:px-5 py-1 lg:py-2 rounded-lg hover:opacity-80 text-white`}
                 text={item.toUpperCase()}
                 onClick={() => selectTabHandler(item)}
               />
