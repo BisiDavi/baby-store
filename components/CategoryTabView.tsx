@@ -4,7 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import Button from "@/components/Button";
 import ProductSlider from "@/components/ProductSlider";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
-import ProductLoader from "./ProductLoader";
+import ProductLoader from "@/components/ProductLoader";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import SpinnerRipple from "./SpinnerRipple";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
@@ -14,7 +16,7 @@ export default function CategoryTabView() {
     () => fetchProducts(`/category/${selectedCategory}`),
     { enabled: !!selectedCategory }
   );
-
+  const mobileDevice = useMediaQuery("(max-width:768px)");
   const topCategories = status === "success" ? data.data.slice(5, 8) : [];
 
   const lastCategories =
@@ -33,7 +35,7 @@ export default function CategoryTabView() {
         {status === "error" ? (
           <p>Error fetching tabs</p>
         ) : status === "loading" ? (
-          <p>fetching tabs</p>
+          <SpinnerRipple centerRipple />
         ) : (
           categories.map((item) => {
             const activeButtonClassname =
@@ -52,7 +54,7 @@ export default function CategoryTabView() {
       {productStatus === "error" ? (
         <p>unable to fetch products</p>
       ) : productStatus === "loading" ? (
-        <ProductLoader />
+        <>{mobileDevice ? <SpinnerRipple centerRipple /> : <ProductLoader />}</>
       ) : (
         <ProductSlider products={productData.data.products} />
       )}

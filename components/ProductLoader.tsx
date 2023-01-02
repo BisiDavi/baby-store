@@ -28,7 +28,7 @@ export default function ProductLoader() {
   const dummyProducts = new Array(4).fill(0);
 
   return (
-    <div className="grid grid-cols-2 lg:flex container mx-auto items-center justify-center">
+    <div className="flex-nowrap overflow-x-scroll flex container lg:mx-auto lg:items-center lg:justify-center">
       {dummyProducts.map((_, index) => (
         <ProductLoaderItem key={index} />
       ))}
