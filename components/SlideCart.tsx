@@ -17,10 +17,10 @@ export default function SlideCart() {
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
       <div
-        className="w-1/5 lg:w-4/5 bg-gray-900 cursor-pointer opacity-80  w-full h-full"
+        className="w-1/6 lg:w-4/5 bg-gray-900 cursor-pointer opacity-80  w-full h-full"
         onClick={toggleSlideCart}
       ></div>
-      <div className="w-4/5 lg:w-2/5  px-4 py-8 bg-white w-full h-full">
+      <div className="w-5/6 lg:w-2/5  px-4 py-8 bg-white w-full h-full">
         {cart && (
           <>
             <h5 className="text-xl font-bold flex my-2">
