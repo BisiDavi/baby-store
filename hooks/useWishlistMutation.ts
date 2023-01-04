@@ -12,10 +12,8 @@ export default function useWishlistMutation() {
   const dispatch = useAppDispatch();
 
   function useAddToWishlist() {
-    return (
-      useMutation(async (product: productType) =>
-        dispatch(addProductToWishlist(product))
-      ),
+    return useMutation(
+      async (product: productType) => dispatch(addProductToWishlist(product)),
       {
         mutationKey: ["useAddToWishlist"],
         onSuccess: () => {
@@ -26,10 +24,8 @@ export default function useWishlistMutation() {
   }
 
   function useRemoveProductFromWishlist() {
-    return (
-      useMutation(async (id: string) =>
-        dispatch(removeProductFromWishlist(id))
-      ),
+    return useMutation(
+      async (id: string) => dispatch(removeProductFromWishlist(id)),
       {
         mutationKey: ["useRemoveProductFromWishlist"],
         onSuccess: () => {

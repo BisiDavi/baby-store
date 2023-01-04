@@ -13,6 +13,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import Price from "@/components/Price";
 import useUI from "@/hooks/useUI";
 import useCartMutation from "@/hooks/useCartMutation";
+import useWishlistMutation from "@/hooks/useWishlistMutation";
 
 interface ProductItem {
   product: productType;
@@ -24,14 +25,15 @@ export default function Product({ product, className }: ProductItem) {
   const [hoverEyeFillState, setHoverEyeFillState] = useState(false);
   const [hoverHeartFillState, setHeartFillHoverState] = useState(false);
   const { useAddToCartMutation } = useCartMutation();
+  const { useAddToWishlist } = useWishlistMutation();
   const { mutate } = useAddToCartMutation();
+  const { mutate: mutateAddToWishlist } = useAddToWishlist();
   const { previewProductHandler } = useUI();
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  const { price, rating, title, images, brand, discountPercentage } =
-    product;
+  const { price, rating, title, images, brand, discountPercentage } = product;
   const productLink = toSlug(product.title);
 
   const discount = Math.round(product.discountPercentage);
@@ -70,6 +72,7 @@ export default function Product({ product, className }: ProductItem) {
             icon={<Heart fill={fillHeartColor} />}
             onMouseMove={() => setHeartFillHoverState(true)}
             onMouseOut={() => setHeartFillHoverState(false)}
+            onClick={() => mutateAddToWishlist(product)}
           />
           <Button
             className="bg-white shadow px-2 h-10 w-10 hover:text-white flex justify-center items-center border rounded-md hover:bg-blue-900 hover:text-white"
