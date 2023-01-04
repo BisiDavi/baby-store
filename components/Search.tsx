@@ -88,7 +88,7 @@ export default function Search() {
                         className="flex border-b p-2 hover:bg-gray-100"
                       >
                         <Link
-                          href={`/products/${toSlug(item.title)}?id=${item.id}`}
+                          href={`/product/${toSlug(item.title)}?id=${item.id}`}
                           className="w-full flex space-x-4"
                         >
                           <Image
