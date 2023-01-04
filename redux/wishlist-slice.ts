@@ -1,5 +1,5 @@
-import type { productType } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { productType } from "@/types";
 
 const initialState: productType[] = [];
 
@@ -11,10 +11,10 @@ const WishlistSlice = createSlice({
       const { payload } = action;
       state = [payload, ...state];
     },
-    removeProductFromWishlist(state, action: PayloadAction<{ id: string }>) {
+    removeProductFromWishlist(state, action: PayloadAction<string>) {
       const { payload } = action;
       if (state) {
-        const productId = state.findIndex((item) => item.id === payload.id);
+        const productId = state.findIndex((item) => item.id === payload);
         state.splice(productId, 1);
       }
     },
