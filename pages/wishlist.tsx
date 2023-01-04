@@ -1,25 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Button from "@/components/Button";
 import Price from "@/components/Price";
 import Ratings from "@/components/Ratings";
+import WishlistIcon from "@/public/icon/Wishlist";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
 import Layout from "@/layout";
-import Link from "next/link";
 
 export default function Wishlist() {
   const { wishlist } = useWishlistMutation();
+
+  console.log("wishlist", wishlist);
+
   return (
     <Layout title="View your wishlist | BestStores">
       <section className="container mx-auto py-4">
         <h4 className="text-center font-bold text-2xl">
           Products in your Wishlist
         </h4>
-
-        {wishlist.length > 0 ? (
+        {wishlist ? (
           <ul>
             {wishlist.map((item) => (
-              <li key={item.id} className="flex justify-between">
+              <li key={item.id} className="flex items-center justify-between">
                 <Image
                   src={item.images[0]}
                   alt={item.title}
@@ -35,7 +38,10 @@ export default function Wishlist() {
                   />
                   <Ratings ratings={item.rating} />
                 </div>
-                <Button className="border p-4 rounded" icon={<Wishlist />} />
+                <Button
+                  className="border p-4 rounded"
+                  icon={<WishlistIcon />}
+                />
               </li>
             ))}
           </ul>

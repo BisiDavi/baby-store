@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import useScroll from "@/hooks/useScroll";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -10,7 +11,6 @@ import Button from "@/components/Button";
 import useCart from "@/hooks/useCart";
 import Search from "@/components/Search";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
-import Link from "next/link";
 
 interface Props {
   title: string;
@@ -23,7 +23,7 @@ export default function Header({ title }: Props) {
   const { wishlist } = useWishlistMutation();
 
   const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-40" : "";
-  const wishlistFill = wishlist.length > 0 ? "red" : "black";
+  const wishlistFill = wishlist && wishlist.length > 0 ? "red" : "black";
   return (
     <header
       className={`bg-white ${fixedHeader} px-4 lg:px-0 h-20 text-black border-b shadow flex`}
@@ -40,9 +40,9 @@ export default function Header({ title }: Props) {
         <div className="icons items-center flex space-x-4">
           <Link href="/wishlist" className="wishlist relative">
             <Wishlist fill={wishlistFill} />
-            {wishlist.length > 0 && (
+            {wishlist && wishlist.length > 0 && (
               <span className="rounded-full bg-white border-red-500 border text-red-500 h-5 w-5 text-xs flex items-center justify-center absolute -top-3 -right-1">
-                {wishlist.length}
+                {wishlist?.length}
               </span>
             )}
           </Link>
