@@ -9,13 +9,13 @@ import { searchProducts } from "@/utils/apiRequest";
 import Price from "@/components/Price";
 import Ratings from "@/components/Ratings";
 import toSlug from "@/utils/toSlug";
+import CancelIcon from "@/public/icon/CancelIcon";
 
 export default function Search() {
   const [query, setQuery] = useState("");
   const [searchIt, setSearchIt] = useState(false);
-  const [cancelSearch, setCancelSearch] = useState(false);
   const { data, status } = useQuery(
-    ["searchProducts"],
+    [`searchProducts-${query}`],
     () => searchProducts(query),
     {
       enabled: !!searchIt,
@@ -28,9 +28,7 @@ export default function Search() {
   console.log("data", data, "status", status);
 
   function cancelSearchQuery() {
-    if (searchIt) {
-      setCancelSearch(true);
-    }
+    setQuery("");
   }
 
   function onSubmitHandler(e: any) {
@@ -48,12 +46,13 @@ export default function Search() {
         <input
           placeholder="Search for a product"
           className="bg-white px-4 border w-full py-1 rounded-l-lg"
+          value={query}
           onChange={onInputChange}
         />
         {query && (
           <Button
             className="text-white bg-gray-500 hover:opacity-50 px-4 py-1.5 "
-            icon={<SearchIcon />}
+            icon={<CancelIcon />}
             text=""
             onClick={cancelSearchQuery}
           />
@@ -70,7 +69,7 @@ export default function Search() {
           {status === "error" ? (
             <p>Error fetch search result</p>
           ) : status === "loading" ? (
-            <p>fetching products...</p>
+            searchIt && <p>fetching products...</p>
           ) : (
             <>
               {data.data.products.length > 0 ? (
@@ -110,7 +109,7 @@ export default function Search() {
                   ))}
                 </ul>
               ) : (
-                <p>No product for this search query</p>
+                <p>❌ No product for this search query</p>
               )}
             </>
           )}
