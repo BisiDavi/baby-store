@@ -7,9 +7,11 @@ import Ratings from "@/components/Ratings";
 import WishlistIcon from "@/public/icon/Wishlist";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
 import Layout from "@/layout";
+import toSlug from "@/utils/toSlug";
 
 export default function Wishlist() {
-  const { wishlist } = useWishlistMutation();
+  const { wishlist, useRemoveProductFromWishlist } = useWishlistMutation();
+  const { mutate } = useRemoveProductFromWishlist();
 
   console.log("wishlist", wishlist);
 
@@ -19,31 +21,44 @@ export default function Wishlist() {
         <h4 className="text-center font-bold text-2xl">
           Products in your Wishlist
         </h4>
-        {wishlist ? (
-          <ul>
-            {wishlist.map((item) => (
-              <li key={item.id} className="flex items-center justify-between">
-                <Image
-                  src={item.images[0]}
-                  alt={item.title}
-                  height={100}
-                  width={100}
-                  className="w-1/5"
-                />
-                <div className="content w-3/5">
-                  <h4>{item.title}</h4>
-                  <Price
-                    price={item.price}
-                    discountPercentage={item.discountPercentage}
+        {wishlist.length > 0 ? (
+          <ul className="mt-6 space-y-4">
+            {wishlist.map((item) => {
+              const itemLink = toSlug(item.title);
+              return (
+                <li
+                  key={item.id}
+                  className="flex justify-between items-center hover:bg-gray-400 hover:text-white border p-4 pr-20 rounded"
+                >
+                  <Link
+                    href={`/product/${itemLink}?id=${item.id}`}
+                    className="w-4/5 flex items-center space-x-8"
+                  >
+                    <Image
+                      src={item.thumbnail}
+                      alt={item.title}
+                      height={70}
+                      width={70}
+                      className="w-1/6 m"
+                    />
+                    <div className="content w-3/5">
+                      <h4 className="text-2xl font-bold">{item.title}</h4>
+                      <Price
+                        price={item.price}
+                        discountPercentage={item.discountPercentage}
+                        className=""
+                      />
+                      <Ratings ratings={item.rating} className="" />
+                    </div>
+                  </Link>
+                  <Button
+                    className="border h-14 flex items-center  p-4 rounded hover:bg-gray-800"
+                    icon={<WishlistIcon fill="red" />}
+                    onClick={() => mutate(item.id)}
                   />
-                  <Ratings ratings={item.rating} />
-                </div>
-                <Button
-                  className="border p-4 rounded"
-                  icon={<WishlistIcon />}
-                />
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         ) : (
           <>
