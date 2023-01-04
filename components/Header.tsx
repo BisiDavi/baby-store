@@ -9,6 +9,8 @@ import ShoppingCart from "@/public/icon/ShoppingCart";
 import Button from "@/components/Button";
 import useCart from "@/hooks/useCart";
 import Search from "@/components/Search";
+import useWishlistMutation from "@/hooks/useWishlistMutation";
+import Link from "next/link";
 
 interface Props {
   title: string;
@@ -18,9 +20,10 @@ export default function Header({ title }: Props) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
   const { scroll } = useScroll();
   const { cart, toggleSlideCart } = useCart();
+  const { wishlist } = useWishlistMutation();
 
   const fixedHeader = Number(scroll) > 300 ? "fixed w-full top-0 z-40" : "";
-
+  const wishlistFill = wishlist.length > 0 ? "red" : "black";
   return (
     <header
       className={`bg-white ${fixedHeader} px-4 lg:px-0 h-20 text-black border-b shadow flex`}
@@ -35,7 +38,14 @@ export default function Header({ title }: Props) {
         <Logo />
         {!mobileDevice && <Search />}
         <div className="icons items-center flex space-x-4">
-          <Wishlist />
+          <Link href="/wishlist" className="wishlist relative">
+            <Wishlist fill={wishlistFill} />
+            {wishlist.length > 0 && (
+              <span className="rounded-full bg-white border-red-500 border text-red-500 h-5 w-5 text-xs flex items-center justify-center absolute -top-3 right-0">
+                {wishlist.length}
+              </span>
+            )}
+          </Link>
           <Person />
           <div className="cart relative">
             {cart && cart.quantity > 0 && (

@@ -1,4 +1,7 @@
-export default function Wishlist() {
+interface Props {
+  fill?: string;
+}
+export default function Wishlist({ fill = "black" }: Props) {
   return (
     <svg viewBox="0 0 27.387 25.187" className="w-6">
       <path
@@ -7,6 +10,7 @@ export default function Wishlist() {
         transform="translate(-1 -2)"
         strokeLinecap="round"
         strokeWidth="2"
+        fill={fill}
       ></path>
     </svg>
   );

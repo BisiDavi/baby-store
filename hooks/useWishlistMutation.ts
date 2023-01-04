@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 
-import { useAppDispatch } from "@/redux/store";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
 import {
   addProductToWishlist,
   removeProductFromWishlist,
@@ -10,6 +10,7 @@ import type { productType } from "@/types";
 
 export default function useWishlistMutation() {
   const dispatch = useAppDispatch();
+  const {wishlist} = useAppSelector(state => state.wishlist)
 
   function useAddToWishlist() {
     return useMutation(
@@ -35,5 +36,5 @@ export default function useWishlistMutation() {
     );
   }
 
-  return { useAddToWishlist, useRemoveProductFromWishlist };
+  return { useAddToWishlist, useRemoveProductFromWishlist, wishlist };
 }
