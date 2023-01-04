@@ -21,9 +21,9 @@ export default function FilterCategory({
     selectedCategory === "?limit=100" ? "bg-blue-900 text-white" : "";
 
   return (
-    <div className="filters p-4 w-1/5 rounded border ">
+    <div className="filters p-4 w-full lg:w-1/5 rounded border ">
       <h3 className="font-bold text-xl">Filter By Category</h3>
-      <ul>
+      <ul className="w-full flex items-start space-x-4 overflow-x-scroll lg:overflow-none lg:space-x-0 lg:flex-col ">
         {categoryStatus === "error" ? (
           <p>unable to fetch category</p>
         ) : categoryStatus === "loading" ? (
@@ -31,7 +31,7 @@ export default function FilterCategory({
         ) : (
           <>
             <li
-              className={`${activeHome} my-2 rounded border fit-content px-4 py-1 hover:bg-gray-800 hover:text-white`}
+              className={`${activeHome} my-2 rounded border max-w-4xl  lg:fit-conten px-4 py-1 hover:bg-gray-800 hover:text-white`}
               onClick={() => selectCateory("?limit=100")}
             >
               All

@@ -29,7 +29,7 @@ export default function ProductsPage() {
           links={[{ name: "🏠 Home", link: "/" }, { name: "All Products" }]}
         />
         <h2 className="text-center text-2xl font-bold">All Products</h2>
-        <div className="content space-x-6 px-0 flex items-start pt-8 flex-col lg:flex-row justify-between">
+        <div className="content space-y-6 lg:space-y-0 lg:space-x-6 px-0 flex items-start pt-8 flex-col lg:flex-row justify-between">
           <FilterCategory
             categoryData={categoryData}
             categoryStatus={categoryStatus}
