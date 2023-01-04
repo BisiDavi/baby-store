@@ -56,16 +56,16 @@ export default function Search() {
             text=""
             onClick={cancelSearchQuery}
           />
-        )}{" "}
+        )}
         <Button
           className="text-white bg-blue-500 hover:opacity-50 px-4 py-1.5 rounded-r-lg"
           icon={<SearchIcon />}
           type="submit"
           text=""
-        />{" "}
+        />
       </form>
       {query && (
-        <div className="result absolute max-h-80 bg-white z-10 w-full p-4 overflow-y-scroll">
+        <div className="result absolute max-h-80 bg-white z-10 w-full p-4 overflow-y-scroll shadow">
           {status === "error" ? (
             <p>Error fetch search result</p>
           ) : status === "loading" ? (
@@ -73,41 +73,49 @@ export default function Search() {
           ) : (
             <>
               {data.data.products.length > 0 ? (
-                <ul className="space-y-4">
-                  {data.data.products.map((item) => (
-                    <li
-                      key={item.id}
-                      className="flex border-b p-2 hover:bg-gray-100"
-                    >
-                      <Link
-                        href={`/products/${toSlug(item.title)}?id=${item.id}`}
-                        className="w-full flex space-x-4"
+                <>
+                  <div className="items-found flex items-end justify-end">
+                    <span className="font-bold text-white bg-red-500 rounded-full px-4 fit-content mb-4">
+                      {data.data.products.length} product
+                      {data.data.products.length > 1 ? "s" : ""} found
+                    </span>
+                  </div>
+                  <ul>
+                    {data.data.products.map((item) => (
+                      <li
+                        key={item.id}
+                        className="flex border-b p-2 hover:bg-gray-100"
                       >
-                        <Image
-                          src={item.images[0]}
-                          alt={item.title}
-                          height={100}
-                          width={100}
-                          className="w-1/5"
-                        />
-                        <div className="text">
-                          <h4 className="text-xl font-bold my-2">
-                            {item.title}
-                          </h4>
-                          <Price
-                            price={item.price}
-                            discountPercentage={item.discountPercentage}
-                            className="font-medium"
+                        <Link
+                          href={`/products/${toSlug(item.title)}?id=${item.id}`}
+                          className="w-full flex space-x-4"
+                        >
+                          <Image
+                            src={item.images[0]}
+                            alt={item.title}
+                            height={100}
+                            width={100}
+                            className="w-1/5"
                           />
-                          <Ratings
-                            ratings={item.rating}
-                            className="items-start"
-                          />
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                          <div className="text">
+                            <h4 className="text-xl font-bold my-2">
+                              {item.title}
+                            </h4>
+                            <Price
+                              price={item.price}
+                              discountPercentage={item.discountPercentage}
+                              className="font-medium"
+                            />
+                            <Ratings
+                              ratings={item.rating}
+                              className="items-start"
+                            />
+                          </div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
               ) : (
                 <p>❌ No product for this search query</p>
               )}
