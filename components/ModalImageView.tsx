@@ -21,7 +21,7 @@ export default function ModalImageView({ product }: Props) {
         alt={product.title}
         height={500}
         width={500}
-        className="h-96 max-w-xs mx-auto"
+        className="max-h-96 w-full mx-auto"
       />
       <ul className="image-group flex space-x-2 mt-4">
         {first4Images.map((item) => (

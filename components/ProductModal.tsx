@@ -4,11 +4,13 @@ import Price from "@/components/Price";
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import ModalImageView from "@/components/ModalImageView";
+import useCartMutation from "@/hooks/useCartMutation";
 
 export default function ProductModal() {
   const { previewProduct, previewProductHandler } = useUI();
   const { product, status } = previewProduct;
-
+  const { useAddToCartMutation } = useCartMutation();
+  const { mutate } = useAddToCartMutation();
   return (
     <>
       {product && (
@@ -34,6 +36,7 @@ export default function ProductModal() {
                 <Button
                   className="bg-blue-900 hover:opacity-80 text-white rounded-lg py-2"
                   text="Add to Cart"
+                  onClick={() => mutate(product)}
                 />
                 <Button
                   className="border hover:bg-gray-400 hover:text-white rounded-lg py-2"
