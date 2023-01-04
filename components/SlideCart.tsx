@@ -41,9 +41,15 @@ export default function SlideCart() {
                     />
                   ))}
                 </ul>
-                <div className="cart-prices font-bold border rounded text-xl shadow-xl  px-4 h-20 flex items-center justify-between">
-                  <h6>Subtotal</h6>
-                  <h6>${formatPrice(cart.amount)}</h6>
+                <div className="cart-prices font-bold border rounded text-xl shadow-xl mx-auto justify-center px-4 h-20 flex flex-col">
+                  <div className="text flex w-full items-center justify-between">
+                    <h6>Subtotal</h6>
+                    <h6>${formatPrice(cart.amount)}</h6>
+                  </div>
+                  <Button
+                    className="bg-red-500 text-white py-0.5 text-lg hover:opacity-80 rounded-full px-6 fit-content mx-auto"
+                    text="Checkout →"
+                  />
                 </div>
               </>
             ) : (

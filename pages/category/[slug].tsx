@@ -2,8 +2,8 @@ import axios from "axios";
 
 import TopProductGrid from "@/components/TopProductGrid";
 import Layout from "@/layout";
-import type { productType } from "@/types";
 import BreadCrumb from "@/components/BreadCrumb";
+import type { productType } from "@/types";
 
 interface Props {
   category: string;
