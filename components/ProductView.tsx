@@ -29,7 +29,7 @@ export default function ProductView({ product }: Props) {
         <div className="order-2 text-content w-full lg:w-1/2 px-0 flex flex-col">
           <p className="text-gray-500 font-medium">{product.brand}</p>
           <h3 className="text-2xl font-bold"> {product.title}</h3>
-          <p className="fit-content text-orange-500 rounded-full border w-auto px-2 my-1 flex">
+          <p className="fit-content hover:bg-orange-500 hover:text-white text-orange-500 rounded-full border w-auto px-2 my-1 flex">
             {discount} % discount
           </p>
           <div className="price flex space-x-2">

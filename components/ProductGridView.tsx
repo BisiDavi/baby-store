@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+
 import type { productType } from "@/types";
 
 interface Props {
