@@ -13,7 +13,10 @@ const WishlistSlice = createSlice({
     },
     removeProductFromWishlist(state, action: PayloadAction<{ id: string }>) {
       const { payload } = action;
-      
+      if (state) {
+        const productId = state.findIndex((item) => item.id === payload.id);
+        state.splice(productId, 1);
+      }
     },
   },
 });
