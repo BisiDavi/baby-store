@@ -34,7 +34,7 @@ export default function ProductLoader({ arrayCount = 4, className }: Props) {
 
   return (
     <div
-      className={`${className} flex-nowrap overflow-x-scroll flex container lg:mx-auto lg:items-center lg:justify-center`}
+      className={`${className} flex-nowrap overflow-x-scroll  container lg:mx-auto lg:items-center lg:justify-center`}
     >
       {dummyProducts.map((_, index) => (
         <ProductLoaderItem key={index} />

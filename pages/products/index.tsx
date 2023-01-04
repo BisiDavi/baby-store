@@ -7,9 +7,12 @@ import BreadCrumb from "@/components/BreadCrumb";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
 import ProductLoader from "@/components/ProductLoader";
 import FilterCategory from "@/components/FilterCategory";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import SpinnerRipple from "@/components/SpinnerRipple";
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("?limit=100");
+  const mobileDevice = useMediaQuery("(max-width:768px)");
   const { data, status } = useQuery(
     [`all-products-${selectedCategory}`],
     () => fetchProducts(selectedCategory),
@@ -40,10 +43,16 @@ export default function ProductsPage() {
             {status === "error" ? (
               <p>Unable to fetch products</p>
             ) : status === "loading" ? (
-              <ProductLoader
-                className="lg:grid lg:grid-cols-3"
-                arrayCount={6}
-              />
+              <>
+                {mobileDevice ? (
+                  <SpinnerRipple centerRipple />
+                ) : (
+                  <ProductLoader
+                    className="lg:grid lg:grid-cols-3"
+                    arrayCount={6}
+                  />
+                )}
+              </>
             ) : (
               <TopProductGrid products={data.data.products} />
             )}

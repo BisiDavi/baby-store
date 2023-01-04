@@ -21,7 +21,7 @@ export default function FilterCategory({
     selectedCategory === "?limit=100" ? "bg-blue-900 text-white" : "";
 
   return (
-    <div className="filters p-4 w-full lg:w-1/5 rounded border ">
+    <div className="filters p-4 w-full lg:w-1/5 rounded border">
       <h3 className="font-bold text-xl">Filter By Category</h3>
       <ul className="w-full flex items-start space-x-4 overflow-x-scroll lg:overflow-none lg:space-x-0 lg:flex-col ">
         {categoryStatus === "error" ? (
