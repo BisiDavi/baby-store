@@ -41,7 +41,7 @@ export default function Header({ title }: Props) {
           <Link href="/wishlist" className="wishlist relative">
             <Wishlist fill={wishlistFill} />
             {wishlist.length > 0 && (
-              <span className="rounded-full bg-white border-red-500 border text-red-500 h-5 w-5 text-xs flex items-center justify-center absolute -top-3 right-0">
+              <span className="rounded-full bg-white border-red-500 border text-red-500 h-5 w-5 text-xs flex items-center justify-center absolute -top-3 -right-1">
                 {wishlist.length}
               </span>
             )}
@@ -49,12 +49,12 @@ export default function Header({ title }: Props) {
           <Person />
           <div className="cart relative">
             {cart && cart.quantity > 0 && (
-              <span className="rounded-full bg-red-500 text-white h-5 w-5 text-xs flex items-center justify-center absolute -top-3 right-0">
+              <span className="rounded-full bg-red-500 text-white h-5 w-5 text-xs flex items-center justify-center absolute -top-2 right-0">
                 {cart?.quantity}
               </span>
             )}
             <Button
-              className="mb-0"
+              className="mb-0 mt-1"
               icon={<ShoppingCart />}
               onClick={toggleSlideCart}
             />
