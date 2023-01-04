@@ -10,6 +10,7 @@ import Price from "@/components/Price";
 import Ratings from "@/components/Ratings";
 import toSlug from "@/utils/toSlug";
 import CancelIcon from "@/public/icon/CancelIcon";
+import SpinnerRipple from "@/components/SpinnerRipple";
 
 export default function Search() {
   const [query, setQuery] = useState("");
@@ -69,7 +70,7 @@ export default function Search() {
           {status === "error" ? (
             <p>Error fetch search result</p>
           ) : status === "loading" ? (
-            searchIt && <p>fetching products...</p>
+            searchIt && <SpinnerRipple centerRipple />
           ) : (
             <>
               {data.data.products.length > 0 ? (
