@@ -44,7 +44,7 @@ export default function Product({ product, className }: ProductItem) {
 
   return (
     <div
-      className={`rounded-lg bg-white relative border ${className}  p-2 product lg:mr-4 h-80 lg:h-96`}
+      className={`rounded-lg bg-white relative border ${className} p-2 product lg:mr-4 h-80 lg:h-96`}
       onMouseMove={() => setHoverState(true)}
       onMouseOut={() => setHoverState(false)}
     >

@@ -23,3 +23,7 @@ export function fetchAllProducts(): Promise<{
 }> {
   return axios.get("https://dummyjson.com/products?limit=100");
 }
+
+export function searchProducts(query: string): Promise<{ data: string[] }> {
+  return axios.get(`https://dummyjson.com/products/search?q=${query}`);
+}
