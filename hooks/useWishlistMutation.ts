@@ -10,7 +10,7 @@ import type { productType } from "@/types";
 
 export default function useWishlistMutation() {
   const dispatch = useAppDispatch();
-  const {wishlist} = useAppSelector(state => state.wishlist)
+  const { wishlist } = useAppSelector((state) => state.wishlist);
 
   function useAddToWishlist() {
     return useMutation(
@@ -19,6 +19,9 @@ export default function useWishlistMutation() {
         mutationKey: ["useAddToWishlist"],
         onSuccess: () => {
           toast.success("product added to wishlist");
+        },
+        onError: () => {
+          toast.error("product is already in your wishlist");
         },
       }
     );
