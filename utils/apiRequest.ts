@@ -24,6 +24,9 @@ export function fetchAllProducts(): Promise<{
   return axios.get("https://dummyjson.com/products?limit=100");
 }
 
-export function searchProducts(query: string): Promise<{ data: string[] }> {
+export function searchProducts(
+  query: string
+): Promise<{ data: { products: productType[] } }> {
+  console.log("query", query);
   return axios.get(`https://dummyjson.com/products/search?q=${query}`);
 }

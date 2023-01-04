@@ -6,7 +6,7 @@ export default function TopHeader() {
     <div className="w-full border-b bg-green-800 text-white">
       <div className="container mx-auto h-12 flex items-center justify-between">
         <div className="left">
-          <p>Free Shipping Over $120</p>
+          <p>Free Shipping</p>
         </div>
         <div className="right flex items-center justify-between">
           <Dropdown content={dropdownContent.topHeader.currencyDropdown} />
