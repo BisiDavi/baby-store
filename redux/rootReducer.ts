@@ -4,10 +4,12 @@ import { persistReducer } from "redux-persist";
 
 import CartReducer from "@/redux/cart-slice";
 import UIReducer from "@/redux/ui-slice";
+import WishlistReducer from "@/redux/wishlist-slice";
 
 const reducers = combineReducers({
   cart: CartReducer,
   UI: UIReducer,
+  wishlist: WishlistReducer,
 });
 
 const persistConfig = {
