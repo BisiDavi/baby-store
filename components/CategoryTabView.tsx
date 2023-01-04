@@ -54,7 +54,13 @@ export default function CategoryTabView() {
       {productStatus === "error" ? (
         <p>unable to fetch products</p>
       ) : productStatus === "loading" ? (
-        <>{mobileDevice ? <SpinnerRipple centerRipple /> : <ProductLoader />}</>
+        <>
+          {mobileDevice ? (
+            <SpinnerRipple centerRipple />
+          ) : (
+            <ProductLoader className="flex" />
+          )}
+        </>
       ) : (
         <ProductSlider products={productData.data.products} />
       )}
