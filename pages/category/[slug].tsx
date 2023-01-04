@@ -17,15 +17,10 @@ export default function CategoryPage({ categoryProducts, category }: Props) {
         <BreadCrumb
           links={[{ name: "🏠 Home", link: "/" }, { name: category }]}
         />
-        <h2 className="text-center font-bold text-2xl">
+        <h2 className="text-center font-bold mb-8 text-2xl">
           All Products in {category} category
         </h2>
-        <div className="content flex flex-col lg:flex-row mt-8 w-full">
-          <div className="filter w-full lg:w-1/4"></div>
-          <div className="products w-full lg:w-3/4">
-            <TopProductGrid products={categoryProducts} />
-          </div>
-        </div>
+        <TopProductGrid products={categoryProducts} />
       </section>
     </Layout>
   );
@@ -35,8 +30,6 @@ export async function getServerSideProps(context: any) {
   const categoryProducts = await axios.get(
     `https://dummyjson.com/products/category/${context.params.slug}`
   );
-
-  console.log("categoryProducts", categoryProducts.data.products);
 
   return {
     props: {
