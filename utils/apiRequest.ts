@@ -21,5 +21,5 @@ export function fetchCategoryProducts(
 export function fetchAllProducts(): Promise<{
   data: { products: productType[] };
 }> {
-  return axios.get("https://dummyjson.com/products");
+  return axios.get("https://dummyjson.com/products?limit=100");
 }

@@ -24,11 +24,18 @@ export function ProductLoaderItem(
   );
 }
 
-export default function ProductLoader() {
-  const dummyProducts = new Array(4).fill(0);
+interface Props {
+  arrayCount?: number;
+  className?: string;
+}
+
+export default function ProductLoader({ arrayCount = 4, className }: Props) {
+  const dummyProducts = new Array(arrayCount).fill(0);
 
   return (
-    <div className="flex-nowrap overflow-x-scroll flex container lg:mx-auto lg:items-center lg:justify-center">
+    <div
+      className={`${className} flex-nowrap overflow-x-scroll flex container lg:mx-auto lg:items-center lg:justify-center`}
+    >
       {dummyProducts.map((_, index) => (
         <ProductLoaderItem key={index} />
       ))}

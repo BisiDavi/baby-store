@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import TopProductGrid from "@/components/TopProductGrid";
 import Layout from "@/layout";
-import { fetchAllProducts } from "@/utils/apiRequest";
 import BreadCrumb from "@/components/BreadCrumb";
+import { fetchAllProducts } from "@/utils/apiRequest";
+import ProductLoader from "@/components/ProductLoader";
 
 export default function ProductsPage() {
   const { data, status } = useQuery(["all-products"], fetchAllProducts);
@@ -22,7 +23,7 @@ export default function ProductsPage() {
             {status === "error" ? (
               <p>Unable to fetch products</p>
             ) : status === "loading" ? (
-              <p>Fetching product </p>
+              <ProductLoader className="lg:grid lg:grid-cols-3" arrayCount={6} />
             ) : (
               <TopProductGrid products={data.data.products} />
             )}
