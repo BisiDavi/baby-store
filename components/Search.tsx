@@ -24,10 +24,6 @@ export default function Search() {
     }
   );
 
-  console.log("query", query);
-  console.log("searchIt", searchIt);
-  console.log("data", data, "status", status);
-
   function cancelSearchQuery() {
     setQuery("");
   }
