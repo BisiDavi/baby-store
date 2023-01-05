@@ -19,7 +19,7 @@ export default function Blog() {
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="slider blog mt-14 lg:mt-0 mb-20">
+      <div className="slider blog mt-14 lg:mt-0 mb-4 lg:mb-0">
         <Splide options={{ perPage: 1 }} className="h-full">
           {blogs.map((item) => {
             const blogLink = `/blog/${toSlug(item.title)}`;
@@ -51,7 +51,7 @@ export default function Blog() {
                     </div>
                     <Link href={blogLink}>
                       <Button
-                        className="rounded-xl text-white py-2 mt-8j lg:mt-0 px-6 bg-blue-900 hover:opacity-80"
+                        className="rounded-xl text-white py-2 mt-4 lg:mt-0 px-6 bg-blue-900 hover:opacity-80"
                         text="Read More"
                       />
                     </Link>
