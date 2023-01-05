@@ -20,7 +20,7 @@ export default function TopratedProduct() {
         {status === "error" ? (
           <p>Error fetching products</p>
         ) : status === "loading" ? (
-          <ProductLoader />
+          <ProductLoader className="flex" />
         ) : (
           status === "success" && (
             <ProductSlider products={data.data.products} />

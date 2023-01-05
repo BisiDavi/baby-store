@@ -29,16 +29,15 @@ export default function Product({ product, className }: ProductItem) {
   const { mutate } = useAddToCartMutation();
   const { mutate: mutateAddToWishlist } = useAddToWishlist();
   const { previewProductHandler } = useUI();
+  const mobileDevice = useMediaQuery("(max-width:768px)");
 
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  const { price, rating, title, images, brand, discountPercentage } = product;
+  const { price, rating, title, thumbnail, brand, discountPercentage } = product;
   const productLink = toSlug(product.title);
 
   const discount = Math.round(product.discountPercentage);
-
-  const mobileDevice = useMediaQuery("(max-width:768px)");
 
   const imageDimension = mobileDevice
     ? { height: 130, width: 130 }
@@ -46,11 +45,11 @@ export default function Product({ product, className }: ProductItem) {
 
   return (
     <div
-      className={`rounded-lg bg-white relative border ${className} p-2 product lg:mr-4 h-80 lg:h-96`}
+      className={`rounded-lg bg-white relative border ${className} p-2 product lg:mr-4 lg:h-96`}
       onMouseMove={() => setHoverState(true)}
       onMouseOut={() => setHoverState(false)}
     >
-      {hoverState && (
+      {hoverState && !mobileDevice && (
         <div className="button-view w-full z-30 absolute top-40">
           <Button
             className="bg-white shadow px-5 py-2 transition duration-200 ease-in-out delay-100 rounded-md mx-auto flex my-2 hover:bg-blue-900 hover:text-white"
@@ -65,7 +64,7 @@ export default function Product({ product, className }: ProductItem) {
           text={`${discount} %`}
         />
       )}
-      {hoverState && (
+      {hoverState && !mobileDevice && (
         <div className="icons flex flex-col absolute right-2 z-10  space-y-2">
           <Button
             className="bg-white shadow h-10 w-10 flex items-center justify-center  border rounded-md hover:bg-blue-900 hover:text-white"
@@ -87,25 +86,31 @@ export default function Product({ product, className }: ProductItem) {
         <div className="image">
           <div className="image-view">
             <Image
-              src={images[0]}
+              src={thumbnail}
               alt={title}
-              className="h-36 lg:h-52  mx-auto my-5"
+              className="h-32 w-full lg:h-52  mx-auto my-5"
               height={imageDimension.height}
               width={imageDimension.width}
             />
           </div>
-          <div className="image-control"></div>
         </div>
 
         <div className="text-content w-full">
           <h4 className="name text-ellipsis truncate font-medium text-center text-lg">
             {title}
           </h4>
-          <h4 className="brand text-gray-500 font-medium text-center text-md">
+          <h4 className="brand text-ellipsis truncate text-gray-500 font-medium text-center text-md">
             {brand}
           </h4>
           <Price price={price} discountPercentage={discountPercentage} />
           {rating && <Ratings ratings={rating} />}
+          {mobileDevice && (
+            <Button
+              className="bg-blue-900 text-white shadow px-5 py-2 mt-4 mb-1 rounded-md mx-auto flex"
+              text="Add to Cart"
+              onClick={() => mutate(product)}
+            />
+          )}
         </div>
       </Link>
     </div>
