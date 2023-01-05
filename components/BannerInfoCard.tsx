@@ -16,7 +16,7 @@ export default function BannerInfoCard({ content }: Props) {
       <div
         className={`bannerInfoCard p-6 lg:p-8 relative ${content.className} lg:h-80 rounded-xl`}
       >
-        <div className="content bg-gray-900 opacity-70 rounded h-full mx-auto justify-center flex flex-col text-white px-8 py-4">
+        <div className="content bg-gray-900 opacity-70 rounded h-full mx-auto justify-center flex flex-col text-white px-6 lg:px-8 py-4">
           <h3 className="text-2xl font-bold">{content.title}</h3>
           <p className="mt-1">{content.text}</p>
           <Link href="/products">

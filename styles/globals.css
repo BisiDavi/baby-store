@@ -55,7 +55,7 @@ ul.splide__pagination.splide__pagination--ltr {
 /* product animation */
 .thumblist li:hover img,
 .product:hover .image-view img,
-.blog-content .blog:hover  {
+.blog-content .blog:hover {
   transform: scale(1.06);
   transition: transform 0.5s ease-in-out;
 }
@@ -63,6 +63,11 @@ ul.splide__pagination.splide__pagination--ltr {
 @media (max-width: 768px) {
   .splide .splide__track {
     padding-left: 0px !important;
+  }
+
+  .slider.blog .splide__track {
+    padding-left: 0px !important;
+    height: 65vh;
   }
 
   .products.slider .splide .splide__arrows.splide__arrows--ltr,

@@ -11,14 +11,16 @@ import "@splidejs/react-splide/css";
 
 export default function Blog() {
   return (
-    <div className="container mx-auto relative blog ">
-      <h4 className="text-3xl text-center font-bold">Latest Blog</h4>
-      <p className="text-lg my-2 text-center lg:w-1/2 mx-auto">
+    <div className="container mx-auto relative blog">
+      <h4 className="text-3xl text-center font-bold my-4 lg:my-0">
+        Latest Blog
+      </h4>
+      <p className="text-lg px-4 lg:px-0 my-2 text-center lg:w-1/2 mx-auto">
         Interesting Features Is Rich And Colorful, Each Button To Bring A
         Surprise To The Baby Introduction To Give Your Child Learn In Advance.
       </p>
-      <div className="slider blog mt-14 lg:mt-0">
-        <Splide options={{ perPage: 1 }}>
+      <div className="slider blog mt-14 lg:mt-0 mb-20">
+        <Splide options={{ perPage: 1 }} className="h-full">
           {blogs.map((item) => {
             const blogLink = `/blog/${toSlug(item.title)}`;
             return (
@@ -38,7 +40,7 @@ export default function Blog() {
                       {item.title}
                     </h4>
                     <p className="mb-2 text-gray-500">{item.text}</p>
-                    <div className="published w-4/5 flex justify-between">
+                    <div className="published w-4/5 flex justify-between mt-4">
                       <div className="date flex items-center">
                         <Calender className="w-1/12 mr-2" /> {item.date}
                       </div>
@@ -49,7 +51,7 @@ export default function Blog() {
                     </div>
                     <Link href={blogLink}>
                       <Button
-                        className="rounded-xl text-white py-2 px-6 bg-blue-900 mt-14 hover:opacity-80"
+                        className="rounded-xl text-white py-2 mt-8j lg:mt-0 px-6 bg-blue-900 hover:opacity-80"
                         text="Read More"
                       />
                     </Link>
