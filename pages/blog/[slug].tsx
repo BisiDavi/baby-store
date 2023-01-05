@@ -17,14 +17,14 @@ interface Props {
   };
 }
 
-export default function Blog({ blog }: Props) {
+export default function BlogPage({ blog }: Props) {
   return (
     <Layout title={`${blog.title}`}>
       <section className="container mx-auto flex flex-col py-6">
         <BreadCrumb
           links={[
             { name: "🏠 Home", link: "/" },
-            { name: "Blogs", link: "/blogs" },
+            { name: "Blog", link: "/blog" },
             { name: blog.title },
           ]}
         />
