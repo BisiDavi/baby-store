@@ -15,8 +15,8 @@ export default function Blog() {
         <BreadCrumb
           links={[{ name: "🏠 Home", link: "/" }, { name: "Blog" }]}
         />
-        <div className="blog-content mt-4 w-full">
-          <ul className="grid grid-cols-3 gap-6">
+        <div className="blog-content mt-4 w-full px-4 lg:px-0">
+          <ul className="grid lg:grid-cols-3 gap-6">
             {blogContent.map((item) => {
               const blogLink = `/blog/${toSlug(item.title)}`;
               return (
