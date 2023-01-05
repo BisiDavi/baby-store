@@ -2,6 +2,7 @@ import Image from "next/image";
 import { GetServerSidePropsContext } from "next";
 
 import blogContent from "@/json/blogs.json";
+import Calender from "@/public/icon/Calender";
 import Layout from "@/layout";
 import toSlug from "@/utils/toSlug";
 import User from "@/public/icon/User";
@@ -35,9 +36,14 @@ export default function BlogPage({ blog }: Props) {
           <div className="w-1/2">
             <h4 className="text-3xl font-bold mb-2">{blog.title}</h4>
             <p className="leading-relaxed">{blog.text}</p>
-            <div className="author mt-4 items-center flex w-1/3 font-medium">
-              <span className="mr-2">Author: </span>{" "}
-              <User className="w-1/12 mr-2" /> {blog.author}
+            <div className="published mt-6 font-medium flex justify-between">
+              <div className="date flex items-center">
+                <Calender className="w-4 mr-2" /> {blog.date}
+              </div>
+              <div className="author flex items-center">
+                Author: <User className="w-4 mx-2" />
+                {blog.author}
+              </div>
             </div>
           </div>
         </div>
