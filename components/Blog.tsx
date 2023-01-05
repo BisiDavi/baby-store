@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Link from "next/link";
 
 import blogs from "@/json/blogs.json";
 import Button from "@/components/Button";
 import Calender from "@/public/icon/Calender";
 import User from "@/public/icon/User";
+import toSlug from "@/utils/toSlug";
 import "@splidejs/react-splide/css";
 
 export default function Blog() {
@@ -17,40 +19,45 @@ export default function Blog() {
       </p>
       <div className="slider blog mt-14 lg:mt-0">
         <Splide options={{ perPage: 1 }}>
-          {blogs.map((item) => (
-            <SplideSlide key={item.text}>
-              <div className="blog-view px-4 lg:px-0 flex flex-col lg:flex-row items-center lg:mt-4 justify-between lg:space-x-6">
-                {item.img && (
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    height={500}
-                    className="w-full lg:w-1/2 rounded-lg"
-                    width={500}
-                  />
-                )}
-                <div className="text w-full mt-4 lg:mt-0 lg:w-1/2">
-                  <h4 className="text-2xl text-center font-bold mb-4">
-                    {item.title}
-                  </h4>
-                  <p className="mb-2 text-gray-500">{item.text}</p>
-                  <div className="published w-4/5 flex justify-between">
-                    <div className="date flex items-center">
-                      <Calender className="w-1/12 mr-2" /> {item.date}
+          {blogs.map((item) => {
+            const blogLink = `/blog/${toSlug(item.title)}`;
+            return (
+              <SplideSlide key={item.text}>
+                <div className="blog-view px-4 lg:px-0 flex flex-col lg:flex-row items-center lg:mt-4 justify-between lg:space-x-6">
+                  {item.img && (
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      height={500}
+                      className="w-full lg:w-1/2 rounded-lg"
+                      width={500}
+                    />
+                  )}
+                  <div className="text w-full mt-4 lg:mt-0 lg:w-1/2">
+                    <h4 className="text-2xl text-center font-bold mb-4">
+                      {item.title}
+                    </h4>
+                    <p className="mb-2 text-gray-500">{item.text}</p>
+                    <div className="published w-4/5 flex justify-between">
+                      <div className="date flex items-center">
+                        <Calender className="w-1/12 mr-2" /> {item.date}
+                      </div>
+                      <div className="author flex items-center">
+                        <User className="w-1/12 mr-2" />
+                        {item.author}
+                      </div>
                     </div>
-                    <div className="author flex items-center">
-                      <User className="w-1/12 mr-2" />
-                      {item.author}
-                    </div>
+                    <Link href={blogLink}>
+                      <Button
+                        className="rounded-xl text-white py-2 px-6 bg-blue-900 mt-14 hover:opacity-80"
+                        text="Read More"
+                      />
+                    </Link>
                   </div>
-                  <Button
-                    className="rounded-xl text-white py-3 px-6 bg-blue-900 mt-14 hover:opacity-80"
-                    text="Read More"
-                  />
                 </div>
-              </div>
-            </SplideSlide>
-          ))}
+              </SplideSlide>
+            );
+          })}
         </Splide>
       </div>
     </div>
