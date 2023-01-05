@@ -1,6 +1,6 @@
 export default function Newsletter() {
   return (
-    <svg viewBox="0 0 49.000000 49.000000" className="w-1/6">
+    <svg viewBox="0 0 49.000000 49.000000" className="lg:w-1/6 w-1/12">
       <g
         transform="translate(0.000000,49.000000) scale(0.100000,-0.100000)"
         fill="#000000"

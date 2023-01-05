@@ -6,7 +6,7 @@ export default function Newsletter() {
     <div className="flex-col mx-6 px-6 pt-4 lg:flex-row  bg-gray-100 lg:h-40 relative z-20 -mb-16 lg:container lg:items-center lg:justify-between lg:mx-auto mt-10 lg:mt-20 lg:py-14 flex rounded-md">
       <div className="column-1 mx-auto justify-center lg:mx-0 w-full lg:w-1/4 flex items-center">
         <NewsletterIcon />
-        <h4 className="ww-full text-lg ml-2 lg:w-2/3 lg:ml-4 lg:text-xl font-bold">
+        <h4 className="w-full text-md ml-2 lg:w-2/3 lg:ml-4 lg:text-xl font-bold">
           SIGN UP FOR NEWSLETTER
         </h4>
       </div>
