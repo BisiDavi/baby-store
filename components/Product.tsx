@@ -95,7 +95,7 @@ export default function Product({ product, className }: ProductItem) {
           </div>
         </div>
 
-        <div className="text-content w-full">
+        <div className="text-content w-full px-2 lg:px-0">
           <h4 className="name text-ellipsis truncate font-medium text-center text-lg">
             {title}
           </h4>

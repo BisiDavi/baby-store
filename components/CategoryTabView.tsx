@@ -43,7 +43,7 @@ export default function CategoryTabView() {
             return (
               <Button
                 key={item}
-                className={`${activeButtonClassname} items-center  text-xs lg:text-base px-4 lg:px-5 py-1 lg:py-2 rounded-lg hover:opacity-80 text-white`}
+                className={`${activeButtonClassname} items-center capitalize whitespace-nowrap text-xs lg:text-base px-4 lg:px-5 py-1 lg:py-2 rounded-lg hover:opacity-80 text-white`}
                 text={item.toUpperCase()}
                 onClick={() => selectTabHandler(item)}
               />

@@ -20,12 +20,12 @@ export default function Newsletter() {
         <input
           name="email"
           placeholder="Email"
-          className="p-3 lg:pl-4 w-full rounded-l-lg"
+          className="p-2 lg:p-3 lg:pl-4 w-full rounded-l-lg"
         />
         <Button
           text="Subscribe"
           type="submit"
-          className="bg-blue-900 rounded-r-lg p-3 px-4  text-white hover:opacity-80"
+          className="bg-blue-900 rounded-r-lg p-2 lg:p-3 px-4  text-white hover:opacity-80"
         />
       </form>
     </div>
