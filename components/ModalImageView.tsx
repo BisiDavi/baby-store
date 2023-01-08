@@ -22,11 +22,13 @@ export default function ModalImageView({ product }: Props) {
         height={500}
         width={500}
         className="max-h-96 w-full mx-auto"
+        blurDataURL={mainImage}
+        placeholder="blur"
       />
       <ul className="image-group flex space-x-2 mt-4">
-        {first4Images.map((item) => (
+        {first4Images.map((item, index) => (
           <li
-            key={product.id}
+            key={`${product.id}-${index}`}
             className="border p-2 rounded cursor-pointer flex items-center justify-center"
           >
             <Image
@@ -36,6 +38,8 @@ export default function ModalImageView({ product }: Props) {
               width={100}
               className="max-h-24"
               onClick={() => selectImageHandler(item)}
+              blurDataURL={mainImage}
+              placeholder="blur"
             />
           </li>
         ))}

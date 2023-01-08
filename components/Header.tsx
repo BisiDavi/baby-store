@@ -47,17 +47,16 @@ export default function Header({ title }: Props) {
             )}
           </Link>
           <Person />
-          <div className="cart relative">
+          <div
+            className="cart relative cursor-pointer"
+            onClick={toggleSlideCart}
+          >
             {cart && cart.quantity > 0 && (
               <span className="rounded-full bg-red-500 text-white h-5 w-5 text-xs flex items-center justify-center absolute -top-2 right-0">
                 {cart?.quantity}
               </span>
             )}
-            <Button
-              className="mb-0 mt-1"
-              icon={<ShoppingCart />}
-              onClick={toggleSlideCart}
-            />
+            <Button className="mb-0 mt-1" icon={<ShoppingCart />} />
           </div>
         </div>
       </nav>

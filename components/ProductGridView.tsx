@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { productType } from "@/types";
 
@@ -14,6 +14,10 @@ export default function ProductGridView({ product }: Props) {
     setMainImage(image);
   }
 
+  useEffect(() => {
+    setMainImage(product.thumbnail);
+  }, []);
+
   return (
     <div className="images w-full space-y-6 lg:space-y-0 lg:space-x-5 my-4 lg:flex-row flex flex-col items-center">
       <Image
@@ -22,6 +26,9 @@ export default function ProductGridView({ product }: Props) {
         height={600}
         width={600}
         className="w-full lg:w-1/2 rounded-xl"
+        blurDataURL={mainImage}
+        placeholder="blur"
+        priority={true}
       />
       <ul className="thumblist grid gap-4 grid-cols-2 w-full lg:w-1/2">
         {first4Images.map((image) => (

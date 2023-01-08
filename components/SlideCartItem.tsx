@@ -9,6 +9,7 @@ import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
 import type { cartProductType } from "@/types";
+import useCart from "@/hooks/useCart";
 
 interface Props {
   item: cartProductType;
@@ -24,10 +25,13 @@ export default function SlideCartItem({
   const _itemAmount = item.quantity * item.price;
   const itemAmount = formatPrice(_itemAmount);
   const itemLink = toSlug(item.title);
+  const { toggleSlideCart } = useCart();
+
   return (
     <li
       key={item.id}
       className="border-b flex-col lg:flex-row px-2 hover:bg-gray-100 py-2 border-gray-200 flex lg:justify-between lg:items-center w-full"
+      onClick={toggleSlideCart}
     >
       <Link href={`/product/${itemLink}?id=${item.id}`} className="w-4/6">
         <div className="product flex items-center space-x-3">

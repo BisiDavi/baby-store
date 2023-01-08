@@ -34,7 +34,8 @@ export default function Product({ product, className }: ProductItem) {
   const fillEyeColor = hoverEyeFillState ? "white" : "black";
   const fillHeartColor = hoverHeartFillState ? "white" : "black";
 
-  const { price, rating, title, thumbnail, brand, discountPercentage } = product;
+  const { price, rating, title, thumbnail, brand, discountPercentage } =
+    product;
   const productLink = toSlug(product.title);
 
   const discount = Math.round(product.discountPercentage);
@@ -91,6 +92,8 @@ export default function Product({ product, className }: ProductItem) {
               className="h-32 w-full lg:h-52  mx-auto my-5"
               height={imageDimension.height}
               width={imageDimension.width}
+              blurDataURL={thumbnail}
+              placeholder="blur"
             />
           </div>
         </div>
