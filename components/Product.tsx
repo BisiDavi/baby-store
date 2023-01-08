@@ -65,24 +65,24 @@ export default function Product({ product, className }: ProductItem) {
           text={`${discount} %`}
         />
       )}
-      {hoverState && !mobileDevice && (
-        <div className="icons flex flex-col absolute right-2 z-10  space-y-2">
-          <Button
-            className="bg-white shadow h-10 w-10 flex items-center justify-center  border rounded-md hover:bg-blue-900 hover:text-white"
-            icon={<Heart fill={fillHeartColor} />}
-            onMouseMove={() => setHeartFillHoverState(true)}
-            onMouseOut={() => setHeartFillHoverState(false)}
-            onClick={() => mutateAddToWishlist(product)}
-          />
-          <Button
-            className="bg-white shadow px-2 h-10 w-10 hover:text-white flex justify-center items-center border rounded-md hover:bg-blue-900 hover:text-white"
-            icon={<Eye fill={fillEyeColor} />}
-            onMouseMove={() => setHoverEyeFillState(true)}
-            onMouseOut={() => setHoverEyeFillState(false)}
-            onClick={() => previewProductHandler(true, product)}
-          />
-        </div>
-      )}
+      {/* {hoverState && !mobileDevice && ( */}
+      <div className="icons flex flex-col absolute right-2 z-10  space-y-2">
+        <Button
+          className="bg-white shadow h-10 w-10 flex items-center justify-center  border rounded-md hover:bg-blue-900 hover:text-white"
+          icon={<Heart fill={fillHeartColor} />}
+          onMouseMove={() => setHeartFillHoverState(true)}
+          onMouseOut={() => setHeartFillHoverState(false)}
+          onClick={() => mutateAddToWishlist(product)}
+        />
+        <Button
+          className="bg-white shadow px-2 h-10 w-10 hover:text-white flex justify-center items-center border rounded-md hover:bg-blue-900 hover:text-white"
+          icon={<Eye fill={fillEyeColor} />}
+          onMouseMove={() => setHoverEyeFillState(true)}
+          onMouseOut={() => setHoverEyeFillState(false)}
+          onClick={() => previewProductHandler(true, product)}
+        />
+      </div>
+      {/* )} */}
       <Link href={`/product/${productLink}?id=${product.id}`}>
         <div className="image">
           <div className="image-view">

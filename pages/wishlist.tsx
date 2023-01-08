@@ -13,8 +13,6 @@ export default function Wishlist() {
   const { wishlist, useRemoveProductFromWishlist } = useWishlistMutation();
   const { mutate } = useRemoveProductFromWishlist();
 
-  console.log("wishlist", wishlist);
-
   return (
     <Layout title="View your wishlist | BestStores">
       <section className="container mx-auto py-4">
@@ -22,29 +20,31 @@ export default function Wishlist() {
           Products in your Wishlist
         </h4>
         {wishlist.length > 0 ? (
-          <ul className="mt-6 space-y-4">
+          <ul className="mt-6 space-y-4 px-4 lg:px-0">
             {wishlist.map((item) => {
               const itemLink = toSlug(item.title);
               return (
                 <li
                   key={item.id}
-                  className="flex justify-between items-center hover:bg-gray-400 hover:text-white border p-4 pr-20 rounded"
+                  className="flex w-full justify-between items-center hover:bg-gray-400 hover:text-white border p-4 lg:pr-20 rounded"
                 >
                   <Link
                     href={`/product/${itemLink}?id=${item.id}`}
-                    className="w-4/5 flex items-center space-x-8"
+                    className="w-5/6 lg:w-4/5 flex items-center space-x-4 lg:space-x-8"
                   >
                     <Image
                       src={item.thumbnail}
                       alt={item.title}
                       height={70}
                       width={70}
-                      className="w-1/6"
+                      className="lg:w-1/6 w-2/6"
                       blurDataURL={item.thumbnail}
                       placeholder="blur"
                     />
-                    <div className="content w-3/5">
-                      <h4 className="text-2xl font-bold">{item.title}</h4>
+                    <div className="content lg:w-3/5">
+                      <h4 className="text-lg lg:text-2xl font-bold">
+                        {item.title}
+                      </h4>
                       <Price
                         price={item.price}
                         discountPercentage={item.discountPercentage}
@@ -54,7 +54,7 @@ export default function Wishlist() {
                     </div>
                   </Link>
                   <Button
-                    className="border h-14 flex items-center  p-4 rounded hover:bg-gray-800"
+                    className="border h-10 lg:h-14 flex items-center p-2 lg:p-4 rounded hover:bg-gray-800"
                     icon={<WishlistIcon fill="red" />}
                     onClick={() => mutate(item.id)}
                   />

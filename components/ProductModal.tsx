@@ -18,9 +18,9 @@ export default function ProductModal() {
           modal={status}
           modalHandler={() => previewProductHandler(false, null)}
         >
-          <div className="content flex space-x-4 items-start">
+          <div className="content flex flex-col lg:flex-row lg:space-x-4 items-start">
             <ModalImageView product={product} />
-            <div className="right w-1/2">
+            <div className="right lg:w-1/2 w-full">
               <p className="text-gray-400 my-1">
                 {product.brand} | {product.category}
               </p>

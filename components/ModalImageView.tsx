@@ -15,7 +15,7 @@ export default function ModalImageView({ product }: Props) {
   }
 
   return (
-    <div className="left w-1/2 justify-between flex flex-col">
+    <div className="left w-full lg:w-1/2 justify-between flex flex-col">
       <Image
         src={mainImage}
         alt={product.title}
