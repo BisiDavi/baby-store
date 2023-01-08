@@ -4,7 +4,7 @@ import { fetchCategoryProducts } from "@/utils/apiRequest";
 import ProductSlider from "@/components/ProductSlider";
 import ProductLoader from "@/components/ProductLoader";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import SpinnerRipple from "./SpinnerRipple";
+import SpinnerRipple from "@/components/SpinnerRipple";
 
 interface Props {
   category: string;
