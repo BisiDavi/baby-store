@@ -39,7 +39,9 @@ export default function Wishlist() {
                       alt={item.title}
                       height={70}
                       width={70}
-                      className="w-1/6 m"
+                      className="w-1/6"
+                      blurDataURL={item.thumbnail}
+                      placeholder="blur"
                     />
                     <div className="content w-3/5">
                       <h4 className="text-2xl font-bold">{item.title}</h4>

@@ -1,5 +1,5 @@
-import footerContent from "@/json/menu.json";
 import Logo from "@/components/Logo";
+import footerContent from "@/json/menu.json";
 
 export default function Footer() {
   return (
@@ -11,10 +11,12 @@ export default function Footer() {
               <Logo />
             </div>
             <p className="leading-loose mt-4">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
-              similique molestiae illo quibusdam in saepe animi quidem maiores,
-              mollitia facere iusto debitis ipsam praesentium corrupti ut!
-              Numquam quam dolores voluptatibus!
+              BestStore is a multicurrency JamStack eCommerce website that allows you to shop
+              for products and make payment in your preferred currency.
+              <br /> The platform allows you to login via
+              <span className="mx-1 font-bold">google authentication</span>, and
+              payment is processed by
+              <span className="mx-1 font-bold">stripe</span>
             </p>
           </div>
           <div className="grid grid-cols-2 gap-y-5 lg:grid-cols-3 w-full mt-4 lg:w-3/5">

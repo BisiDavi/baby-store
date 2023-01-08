@@ -41,6 +41,8 @@ export default function SlideCartItem({
             height={200}
             className="w-1/3 max-h-24"
             width={200}
+            blurDataURL={item.images[0]}
+            placeholder="blur"
           />
           <div className="text-content">
             <h3 className="text-ellipsis truncate">{item.title}</h3>

@@ -33,6 +33,8 @@ export default function SpecialProductImage({
                 height={100}
                 width={135}
                 className="h-1/2 w-2/3 mx-auto"
+                blurDataURL={item.images[0]}
+                placeholder="blur"
               />
             </button>
           </li>
@@ -49,6 +51,8 @@ export default function SpecialProductImage({
           height={400}
           width={400}
           className="rounded-xl flex mx-auto w-3/5 justify-center items-center "
+          blurDataURL={selectedProduct.images[0]}
+          placeholder="blur"
         />
       </div>
     </div>

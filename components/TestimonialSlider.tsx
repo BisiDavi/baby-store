@@ -21,6 +21,8 @@ export default function TestimonialSlider() {
                     alt={item.name}
                     height={80}
                     width={80}
+                    blurDataURL={item.img}
+                    placeholder="blur"
                   />
                 </div>
                 <p className="">{item.name}</p>

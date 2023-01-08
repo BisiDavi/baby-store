@@ -31,7 +31,13 @@ export default function BlogPage({ blog }: Props) {
         />
         <div className="content w-full flex flex-col lg:flex-row lg:space-x-6 mt-4 px-4 lg:px-0 space-y-4 lg:space-y-0">
           <div className="lg:w-1/2">
-            <Image src={blog.img} alt={blog.title} height={1000} width={1000} />
+            <Image
+              src={blog.img}
+              alt={blog.title}
+              height={1000}
+              width={1000}
+              
+            />
           </div>
           <div className="lg:w-1/2">
             <h4 className="text-3xl font-bold mb-2">{blog.title}</h4>

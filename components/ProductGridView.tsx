@@ -34,7 +34,14 @@ export default function ProductGridView({ product }: Props) {
         {first4Images.map((image) => (
           <li key={image} className="border p-2 rounded-lg flex items-center">
             <button onClick={() => onSelectImage(image)}>
-              <Image src={image} alt={product.title} height={500} width={500} />
+              <Image
+                src={image}
+                alt={product.title}
+                height={500}
+                width={500}
+                blurDataURL={image}
+                placeholder="blur"
+              />
             </button>
           </li>
         ))}

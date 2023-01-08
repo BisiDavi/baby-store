@@ -93,6 +93,8 @@ export default function Search() {
                             height={100}
                             width={100}
                             className="w-1/5"
+                            blurDataURL={item.images[0]}
+                            placeholder="blur"
                           />
                           <div className="text">
                             <h4 className="text-xl font-bold my-2">
