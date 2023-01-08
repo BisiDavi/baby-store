@@ -2,6 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import { fetchCategoryProducts } from "@/utils/apiRequest";
 import ProductSlider from "@/components/ProductSlider";
+import ProductLoader from "@/components/ProductLoader";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import SpinnerRipple from "./SpinnerRipple";
 
 interface Props {
   category: string;
@@ -12,6 +15,7 @@ export default function OtherCategoryProducts({
   category,
   mainProductName,
 }: Props) {
+  const mobileDevice = useMediaQuery("(max-width:768px");
   const { data, status } = useQuery(
     ["fetch-products-in-category"],
     () => fetchCategoryProducts(category),
@@ -30,7 +34,11 @@ export default function OtherCategoryProducts({
         {status === "error" ? (
           <p>Error fetching products</p>
         ) : status === "loading" ? (
-          <p>Fetching products</p>
+          mobileDevice ? (
+            <SpinnerRipple centerRipple />
+          ) : (
+            <ProductLoader className="flex" />
+          )
         ) : (
           <ProductSlider products={otherProducts} />
         )}
