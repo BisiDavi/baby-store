@@ -25,7 +25,7 @@ export default function ProductView({ product }: Props) {
         {category}
       </div>
       <ProductGridView product={product} />
-      <div className="text-cotent flex flex-col lg:flex-row items-center">
+      <div className="text-cotent flex flex-col bg-white px-4 py-6 rounded-lg shadow lg:flex-row items-center">
         <div className="order-2 text-content w-full lg:w-1/2 px-0 flex flex-col">
           <p className="text-gray-500 font-medium">{product.brand}</p>
           <h3 className="text-2xl font-bold"> {product.title}</h3>

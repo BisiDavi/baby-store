@@ -28,7 +28,7 @@ export default function OtherCategoryProducts({
       ? data.data.products.filter((item) => item.title !== mainProductName)
       : [];
   return (
-    <div>
+    <div className="mb-8">
       <h4 className="text-center font-bold text-2xl">View more {category}</h4>
       <div className="other-products mt-4">
         {status === "error" ? (

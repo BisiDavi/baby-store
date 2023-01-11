@@ -6,7 +6,7 @@ interface Props {
 
 export default function BreadCrumb({ links }: Props) {
   return (
-    <div className="my-4 bg-gray-100 rounded-lg px-4 w-full py-2 border">
+    <div className="my-4 bg-gray-200 rounded-lg px-4 w-full py-2 border">
       <ul className="flex flex-wrap lg:flex-nowrap space-x-2">
         {links.map((link) => (
           <li key={link.name} className="">
