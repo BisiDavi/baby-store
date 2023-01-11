@@ -1,0 +1,42 @@
+[
+  [
+    {
+      "label": "First Name*",
+      "type": "input",
+      "name": "firstName"
+    },
+    {
+      "label": "Last Name*",
+      "type": "input",
+      "name": "lastName"
+    }
+  ],
+  {
+    "label": "Mobile Phone Number*",
+    "type": "mobileNumber",
+    "name": "phoneNumber"
+  },
+  {
+    "label": "Delivery Address*",
+    "type": "textarea",
+    "name": "phoneNumber",
+    "placeholder": "Stree Name / Building / Apartment No. / Floor"
+  },
+  [
+    {
+      "label": "Country*",
+      "type": "country",
+      "name": "country"
+    },
+    {
+      "label": "State/Region*",
+      "type": "state",
+      "name": "state"
+    },
+    {
+      "label": "City*",
+      "type": "input",
+      "name": "city"
+    }
+  ]
+]

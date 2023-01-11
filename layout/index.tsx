@@ -31,7 +31,7 @@ export default function Layout({
       {!mobileDevice && <TopHeader />}
       {previewProduct.status && previewProduct.product && <ProductModal />}
       <Header title={title} />
-      <main className="flex mx-auto flex-col">{children}</main>
+      <main className="flex mx-auto flex-col bg-gray">{children}</main>
       <Newsletter />
       <Footer />
     </>

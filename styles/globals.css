@@ -60,6 +60,10 @@ ul.splide__pagination.splide__pagination--ltr {
   transition: transform 0.5s ease-in-out;
 }
 
+.bg-gray {
+  background-color: #f5f5f5;
+}
+
 @media (max-width: 768px) {
   .splide .splide__track {
     padding-left: 0px !important;
