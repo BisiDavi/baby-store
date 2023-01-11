@@ -51,7 +51,7 @@ export default function Blog() {
                     </div>
                     <Link href={blogLink}>
                       <Button
-                        className="rounded-xl text-white py-2 mt-4 lg:mt-0 px-6 bg-blue-900 hover:opacity-80"
+                        className="rounded-xl text-white py-2 mt-4 lg:mt-10 px-6 bg-blue-900 hover:opacity-80"
                         text="Read More"
                       />
                     </Link>
