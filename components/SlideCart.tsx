@@ -48,20 +48,21 @@ export default function SlideCart() {
                   </div>
                   <Link href="/checkout">
                     <Button
-                      className="bg-red-500 text-white my-4 py-0.5 text-lg hover:opacity-80 rounded-full px-6 fit-content mx-auto"
+                      className="bg-red-500 justify-center flex text-white my-4 py-0.5 text-lg hover:opacity-80 rounded-full px-6 fit-content mx-auto"
                       text="Checkout →"
+                      onClick={toggleSlideCart}
                     />
                   </Link>
                 </div>
               </>
             ) : (
               <>
-                <p className="font-bold text-center text-xl">
+                <p className="font-bold text-center lg:text-2xl">
                   Oops cart 🛒 is empty
                 </p>
                 <Link href="/products">
                   <Button
-                    className="bg-black text-white px-4 py-2 mx-auto flex my-4 hover:opacity-80"
+                    className="bg-black text-white  px-4 py-2 mx-auto flex my-2 hover:opacity-80"
                     text="Continue Shopping"
                     onClick={toggleSlideCart}
                   />

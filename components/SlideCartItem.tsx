@@ -31,9 +31,12 @@ export default function SlideCartItem({
     <li
       key={item.id}
       className="border-b flex-col lg:flex-row px-2 hover:bg-gray-100 py-2 border-gray-200 flex lg:justify-between lg:items-center w-full"
-      onClick={toggleSlideCart}
     >
-      <Link href={`/product/${itemLink}?id=${item.id}`} className="w-4/6">
+      <Link
+        href={`/product/${itemLink}?id=${item.id}`}
+        className="w-4/6"
+        onClick={toggleSlideCart}
+      >
         <div className="product flex items-center space-x-3">
           <Image
             src={item.images[0]}
