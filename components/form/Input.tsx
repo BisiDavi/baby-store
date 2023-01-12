@@ -1,5 +1,14 @@
-export default function Input() {
+interface Props {
+  input: {
+    label: string;
+    name: string;
+  };
+}
+export default function Input({ input }: Props) {
   return (
-    <div>Input</div>
-  )
+    <div className="form-input">
+      <label htmlFor={input.name}>{input.label}</label>
+      <input className="" name={input.name} />
+    </div>
+  );
 }

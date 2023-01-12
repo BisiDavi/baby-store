@@ -36,3 +36,9 @@ export type UIType = {
     product: null | productType;
   };
 };
+
+export type inputType = {
+  label: string;
+  name: string;
+  type: string;
+};

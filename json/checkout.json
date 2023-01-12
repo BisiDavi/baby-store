@@ -3,25 +3,38 @@
     {
       "label": "First Name*",
       "type": "input",
-      "name": "firstName"
+      "name": "firstName",
+      "inputType": "text"
     },
     {
       "label": "Last Name*",
       "type": "input",
-      "name": "lastName"
+      "name": "lastName",
+      "inputType": "text"
     }
   ],
-  {
-    "label": "Mobile Phone Number*",
-    "type": "mobileNumber",
-    "name": "phoneNumber"
-  },
-  {
-    "label": "Delivery Address*",
-    "type": "textarea",
-    "name": "phoneNumber",
-    "placeholder": "Stree Name / Building / Apartment No. / Floor"
-  },
+  [
+    {
+      "label": "Mobile Phone Number*",
+      "type": "mobileNumber",
+      "name": "phoneNumber",
+      "inputType": "text"
+    },
+    {
+      "label": "Email Address*",
+      "type": "input",
+      "name": "emailAddress",
+      "inputType": "email"
+    }
+  ],
+  [
+    {
+      "label": "Delivery Address*",
+      "type": "textarea",
+      "name": "deliveryAdress",
+      "placeholder": "Street Name / Building / Apartment No. / Floor"
+    }
+  ],
   [
     {
       "label": "Country*",
