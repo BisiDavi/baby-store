@@ -64,6 +64,11 @@ ul.splide__pagination.splide__pagination--ltr {
   background-color: #f5f5f5;
 }
 
+button:disabled {
+  background-color: gray;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .splide .splide__track {
     padding-left: 0px !important;
