@@ -7,6 +7,7 @@ interface Props {
   onMouseMove?: () => void;
   onMouseOut?: () => void;
   iconPosition?: "left" | "right";
+  disabled?: boolean;
 }
 export default function Button(props: Props) {
   const {

@@ -1,16 +1,9 @@
 import Layout from "@/layout";
-import checkoutForm from "@/json/checkout.json";
 import { displayForm } from "@/components/form";
-import useCart from "@/hooks/useCart";
-import SlideCartItem from "@/components/SlideCartItem";
-import useCartMutation from "@/hooks/useCartMutation";
+import OrderSummary from "@/components/OrderSummary";
+import checkoutForm from "@/json/checkout.json";
 
 export default function Checkout() {
-  const { cart } = useCart();
-  const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
-    useCartMutation();
-  const mutateDelete = useDeleteProductFromCart();
-  const mutateUpdateQuantity = useUpdateProductQuantityMutation();
   return (
     <Layout title="Checkout">
       <section className="container py-4 flex mx-auto space-x-6">
@@ -38,20 +31,7 @@ export default function Checkout() {
             </div>
           </div>
         </div>
-        <div className="w-1/3">
-          <h4 className="font-bold text-gray-500">ORDER SUMMARY</h4>
-          <div className="order-summary shadow my-1 p-1 bg-white rounded">
-            {cart?.items.map((item) => (
-              <SlideCartItem
-                key={item.id}
-                item={item}
-                mutateUpdateQuantity={mutateUpdateQuantity}
-                mutateDelete={mutateDelete}
-                // className="last:border-b-0 border-b"
-              />
-            ))}
-          </div>
-        </div>
+        <OrderSummary />
       </section>
     </Layout>
   );
