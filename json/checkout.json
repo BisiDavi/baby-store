@@ -48,7 +48,7 @@
     },
     {
       "label": "City*",
-      "type": "input",
+      "type": "city",
       "name": "city"
     }
   ]

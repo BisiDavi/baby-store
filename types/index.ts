@@ -41,4 +41,5 @@ export type inputType = {
   label: string;
   name: string;
   type: string;
+  placeholder?: string;
 };

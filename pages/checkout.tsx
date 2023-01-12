@@ -47,6 +47,7 @@ export default function Checkout() {
                 item={item}
                 mutateUpdateQuantity={mutateUpdateQuantity}
                 mutateDelete={mutateDelete}
+                // className="last:border-b-0 border-b"
               />
             ))}
           </div>
