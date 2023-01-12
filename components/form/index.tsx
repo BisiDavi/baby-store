@@ -11,7 +11,3 @@ export function displayForm(input: inputType) {
       return <Input input={input} />;
   }
 }
-
-export default function Form({ input }: Props) {
-  return <>{displayForm(input)}</>;
-}

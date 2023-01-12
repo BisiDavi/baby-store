@@ -15,8 +15,8 @@
   ],
   [
     {
-      "label": "Mobile Phone Number*",
-      "type": "mobileNumber",
+      "label": "Phone Number*",
+      "type": "input",
       "name": "phoneNumber",
       "inputType": "text"
     },
