@@ -29,7 +29,7 @@ export default function Blog() {
                       width={500}
                       className="rounded-t-xl"
                     />
-                    <div className="text-content bg-gray-100 p-4 rounded-b-xl">
+                    <div className="text-content bg-white p-4 shadow rounded-b-xl">
                       <h4 className="mb-1 text-lg font-bold">{item.title}</h4>
                       <div className="published flex justify-between">
                         <div className="date flex items-center">

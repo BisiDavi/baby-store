@@ -36,7 +36,7 @@
       "dropdown": true,
       "links": [
         { "name": "Search", "link": "/search" },
-        { "name": "News", "link": "/news" },
+        { "name": "Blog", "link": "/blog" },
         { "name": "Wishlist", "link": "/wishlist" },
         { "name": "All Collections", "link": "/all-collections" },
         { "name": "All Products", "link": "/all-products" }

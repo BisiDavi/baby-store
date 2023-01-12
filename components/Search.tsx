@@ -45,6 +45,7 @@ export default function Search() {
           className="bg-white px-4 border w-full py-1 rounded-l-lg"
           value={query}
           onChange={onInputChange}
+          required
         />
         {query && (
           <Button

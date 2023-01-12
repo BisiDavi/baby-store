@@ -1,7 +1,12 @@
+import { useState } from "react";
 import Button from "@/components/Button";
 import NewsletterIcon from "@/public/icon/Newsletter";
 
 export default function Newsletter() {
+  const [subscriberEmail, setSubscriberEmail] = useState("");
+
+
+
   return (
     <div className="flex-col mx-6 px-6 pt-4 lg:flex-row  bg-gray-100 lg:h-40 relative z-20 -mb-16 lg:container lg:items-center lg:justify-between lg:mx-auto mt-10 lg:mt-20 lg:py-14 flex rounded-md">
       <div className="column-1 mx-auto justify-center lg:mx-0 w-full lg:w-1/4 flex items-center">
@@ -21,6 +26,7 @@ export default function Newsletter() {
           name="email"
           placeholder="Email"
           className="p-2 lg:p-3 lg:pl-4 w-full rounded-l-lg"
+          required
         />
         <Button
           text="Subscribe"
