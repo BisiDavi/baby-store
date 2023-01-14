@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form";
 interface Props {
   input: {
     label: string;
@@ -5,10 +6,18 @@ interface Props {
   };
 }
 export default function Input({ input }: Props) {
+  const {
+    register,
+    formState: { errors },
+  }: any = useFormContext();
   return (
     <div className="form-input flex flex-col my-2 w-full">
       <label htmlFor={input.name}>{input.label}</label>
-      <input className="border h-8 rounded w-full" name={input.name} />
+      <input
+        className="border h-8 rounded w-full"
+        name={input.name}
+        {...register(input.name)}
+      />
     </div>
   );
 }
