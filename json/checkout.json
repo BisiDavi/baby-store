@@ -23,7 +23,7 @@
     {
       "label": "Email Address*",
       "type": "input",
-      "name": "emailAddress",
+      "name": "email",
       "inputType": "email"
     }
   ],
@@ -31,7 +31,7 @@
     {
       "label": "Delivery Address*",
       "type": "textarea",
-      "name": "deliveryAdress",
+      "name": "deliveryAddress",
       "placeholder": "Street Name / Building / Apartment No. / Floor"
     }
   ],

@@ -18,6 +18,7 @@ export default function Input({ input }: Props) {
         name={input.name}
         {...register(input.name)}
       />
+      <p className="text-red-500 text-xs">{errors[input.name]?.message}</p>
     </div>
   );
 }
