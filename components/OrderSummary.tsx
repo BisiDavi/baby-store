@@ -3,15 +3,18 @@ import SlideCartItem from "@/components/SlideCartItem";
 import useCartMutation from "@/hooks/useCartMutation";
 import { formatPrice } from "@/utils/formatPrice";
 import Button from "@/components/Button";
+import { useAppSelector } from "@/redux/store";
 
 export default function OrderSummary() {
   const { cart } = useCart();
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
     useCartMutation();
+  const { checkoutDetails } = useAppSelector((state) => state.checkout);
   const mutateDelete = useDeleteProductFromCart();
   const mutateUpdateQuantity = useUpdateProductQuantityMutation();
   const DELIVERY_FEE = 80;
   const total = cart ? DELIVERY_FEE + cart.amount : 0;
+  const disableButton = !checkoutDetails ? true : false;
   return (
     <div className="w-1/3">
       <h4 className="font-bold text-gray-500">ORDER SUMMARY</h4>
@@ -47,7 +50,7 @@ export default function OrderSummary() {
             <Button
               className="border bg-blue-500 text-white px-6 py-1 rounded-md mx-auto flex my-4 hover:bg-transparent hover:border-blue-500 hover:text-blue-500"
               text="Make Payment"
-              disabled
+              disabled={disableButton}
             />
           </>
         )}

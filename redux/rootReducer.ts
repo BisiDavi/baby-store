@@ -5,11 +5,13 @@ import { persistReducer } from "redux-persist";
 import CartReducer from "@/redux/cart-slice";
 import UIReducer from "@/redux/ui-slice";
 import WishlistReducer from "@/redux/wishlist-slice";
+import CheckoutReducer from "@/redux/checkout-slice";
 
 const reducers = combineReducers({
   cart: CartReducer,
   UI: UIReducer,
   wishlist: WishlistReducer,
+  checkout: CheckoutReducer,
 });
 
 const persistConfig = {

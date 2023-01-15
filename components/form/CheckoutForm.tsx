@@ -1,19 +1,26 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 import { displayForm } from "@/components/form";
 import Button from "@/components/Button";
 import { checkoutFormSchema } from "@/components/form/checkout.schema";
 import checkoutForm from "@/json/checkout.json";
+import { useAppSelector } from "@/redux/store";
+import { updateCheckoutDetails } from "@/redux/checkout-slice";
+import type { checkoutType } from "@/types";
 
 export default function CheckoutForm() {
-  const methods = useForm({
+  const methods = useForm<checkoutType>({
     resolver: yupResolver(checkoutFormSchema),
     mode: "all",
   });
+  const { checkoutDetails } = useAppSelector((state) => state.checkout);
+  const dispatch = useDispatch();
 
-  function onSubmit(data: any) {
+  function onSubmit(data: checkoutType) {
     console.log("data", data);
+    dispatch(updateCheckoutDetails(data));
   }
 
   return (

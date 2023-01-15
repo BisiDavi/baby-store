@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { checkoutType } from "@/types";
+import type { checkoutType } from "@/types";
 
 type initialStateType = { checkoutDetails: null | checkoutType };
 
