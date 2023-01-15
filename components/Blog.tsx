@@ -11,7 +11,7 @@ import "@splidejs/react-splide/css";
 
 export default function Blog() {
   return (
-    <div className="bg-white py-4">
+    <div className="bg-white py-8">
       <div className="container  mx-auto relative blog">
         <h4 className="text-3xl text-center font-bold my-4 lg:my-0">
           Latest Blog

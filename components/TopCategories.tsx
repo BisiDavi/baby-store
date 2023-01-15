@@ -2,7 +2,7 @@ import CategoryTabView from "@/components/CategoryTabView";
 
 export default function TopCategories() {
   return (
-    <div className="bg-white my-6 px-4 py-6 lg:px-0">
+    <div className="bg-white my-8 px-4 py-6 lg:px-0 lg:pb-14">
       <h3 className="text-2xl lg:text-3xl text-center font-medium">
         Top Categories
       </h3>
