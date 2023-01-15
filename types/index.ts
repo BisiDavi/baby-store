@@ -43,3 +43,11 @@ export type inputType = {
   type: string;
   placeholder?: string;
 };
+
+export type checkoutType = {
+  firstName: string;
+  lastName: string;
+  phoneNumber: number;
+  email: string;
+  deliveryAddress: string;
+};
