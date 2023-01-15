@@ -24,7 +24,7 @@ export default function CheckoutForm() {
   }
 
   return (
-    <div className="w-2/3">
+    <div className="checkout">
       <h4 className="font-bold text-gray-500">CHECKOUT</h4>
       <FormProvider {...methods}>
         <form
