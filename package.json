@@ -28,6 +28,7 @@
     "eslint-config-next": "^13.1.1",
     "firebase": "^9.15.0",
     "next": "13.0.7",
+    "next-swagger-doc": "^0.3.6",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-content-loader": "^6.2.0",
