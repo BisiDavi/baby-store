@@ -2,9 +2,11 @@ import Modal from "@/components/Modal";
 import Button from "@/components/Button";
 import useUI from "@/hooks/useUI";
 import Google from "@/public/icon/Google";
+import useFirebase from "@/hooks/useFirebase";
 
 export default function AuthModal() {
   const { authModalHandler, authModal } = useUI();
+  const { googleProvider } = useFirebase();
 
   return (
     <Modal
@@ -20,6 +22,7 @@ export default function AuthModal() {
           className="my-10 mx-auto font-bold items-center justify-center flex border px-4 rounded-lg py-1 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
           text="  Login with Google"
           icon={<Google />}
+          onClick={googleProvider}
         />
       </div>
     </Modal>

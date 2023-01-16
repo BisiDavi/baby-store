@@ -1,13 +1,13 @@
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { getDatabase, ref, set, onValue, remove } from "firebase/database";
-import { toast } from "react-toastify";
-import { useRouter } from "next/router";
-import axios from "axios";
 
 import { createFirebaseApp } from "@/utils/firebaseConfig";
+import useUI from "./useUI";
 
 export default function useFirebase() {
-  const router = useRouter();
+  const { authModalHandler } = useUI();
 
   function initFB() {
     const app = createFirebaseApp();
@@ -24,6 +24,8 @@ export default function useFirebase() {
       currentUser.photoURL = user.photoURL;
       currentUser.emailVerified = user.emailVerified;
       currentUser.uid = user.uid;
+    } else {
+      return null;
     }
     return currentUser;
   }
@@ -60,16 +62,9 @@ export default function useFirebase() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider).then((result) => {
       const user = result.user;
-      axios
-        .post("/api/email/send-signup-email", {
-          email: user.email,
-          name: user.displayName,
-        })
-        .then((response) => console.log("email response", response))
-        .catch((err) => console.log("email error", err));
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
-        router.push("/");
+        authModalHandler();
       });
     });
   }
