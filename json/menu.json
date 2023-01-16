@@ -3,7 +3,7 @@
     "currencyDropdown": [
       { "name": "United States (USD)", "value": "$", "code": "usd" },
       { "name": "Euro (EUR)", "value": "€", "code": "eur" },
-      { "name": "Nigerian Naira (NGN)", "value": "₦", "code": "ngn" }
+      { "name": "Canadian Dollar (CAD)", "value": "C$", "code": "cad" }
     ],
     "languageDropdown": [
       { "name": "English", "value": "english" },
