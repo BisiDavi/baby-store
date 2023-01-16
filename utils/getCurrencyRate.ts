@@ -10,3 +10,8 @@ export default function getCurrencyRate() {
     axios.get("/api/currency-rate");
   }
 }
+
+export function formatCurrencyRate(currenyCode: "EUR" | "NGN" | "CAD") {
+  const rate = currencyRate.quotes[`USD${currenyCode}`];
+  return rate;
+}

@@ -65,5 +65,9 @@ export type lineItemsType = {
 };
 
 export type currencyType = {
-  currency: { name: string; value: string; code: string };
+  currency: {
+    name: string;
+    value: string;
+    code: "USD" | "NGN" | "CAD" | "EUR";
+  };
 };

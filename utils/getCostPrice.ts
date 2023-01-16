@@ -1,7 +1,12 @@
-import { formatPrice } from "./formatPrice";
+import { formatPrice } from "@/utils/formatPrice";
 
-export default function getCostPrice(price: number, discount: number) {
+export default function getCostPrice(
+  price: number,
+  discount: number,
+  rate: number
+) {
   const actualDiscount = Math.round(discount);
   const costPrice = actualDiscount + price;
-  return formatPrice(costPrice);
+  const itemCostPrice = costPrice * rate;
+  return formatPrice(itemCostPrice);
 }

@@ -1,10 +1,10 @@
 {
   "topHeader": {
     "currencyDropdown": [
-      { "name": "United States (USD)", "value": "$", "code": "usd" },
-      { "name": "Euro (EUR)", "value": "€", "code": "eur" },
-      { "name": "Canadian Dollar (CAD)", "value": "C$", "code": "cad" },
-      { "name": "Nigerian Naira (NGN)", "value": "₦", "code": "ngn" }
+      { "name": "United States (USD)", "value": "$", "code": "USD" },
+      { "name": "Euro (EUR)", "value": "€", "code": "EUR" },
+      { "name": "Canadian Dollar (CAD)", "value": "C$", "code": "CAD" },
+      { "name": "Nigerian Naira (NGN)", "value": "₦", "code": "NGN" }
     ],
     "languageDropdown": [
       { "name": "English", "value": "english" },

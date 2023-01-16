@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { currencyType } from "@/types";
 
 const initialState: currencyType = {
-  currency: { name: "United States (USD)", value: "$", code: "usd" },
+  currency: { name: "United States (USD)", value: "$", code: "USD" },
 };
 
 const currencySlice = createSlice({
