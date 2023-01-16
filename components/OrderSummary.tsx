@@ -1,12 +1,14 @@
 import useCart from "@/hooks/useCart";
-import SlideCartItem from "@/components/SlideCartItem";
+import { useAppSelector } from "@/redux/store";
 import useCartMutation from "@/hooks/useCartMutation";
+import SlideCartItem from "@/components/SlideCartItem";
 import { formatPrice } from "@/utils/formatPrice";
 import Button from "@/components/Button";
-import { useAppSelector } from "@/redux/store";
+import useStripePayment from "@/hooks/useStripePayment";
 
 export default function OrderSummary() {
   const { cart } = useCart();
+  const { makePayment } = useStripePayment(cart);
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
     useCartMutation();
   const { checkoutDetails } = useAppSelector((state) => state.checkout);
@@ -15,6 +17,7 @@ export default function OrderSummary() {
   const DELIVERY_FEE = 80;
   const total = cart ? DELIVERY_FEE + cart.amount : 0;
   const disableButton = !checkoutDetails ? true : false;
+
   return (
     <div className="w-1/3">
       <h4 className="font-bold text-gray-500">ORDER SUMMARY</h4>
@@ -51,6 +54,7 @@ export default function OrderSummary() {
               className="border bg-blue-500 text-white px-6 py-1 rounded-md mx-auto flex my-4 hover:bg-transparent hover:border-blue-500 hover:text-blue-500"
               text="Make Payment"
               disabled={disableButton}
+              onClick={makePayment}
             />
           </>
         )}

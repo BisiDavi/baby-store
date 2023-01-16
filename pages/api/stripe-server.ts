@@ -4,12 +4,14 @@ export default async function handler(req: any, res: any) {
   switch (req.method) {
     case "POST": {
       try {
-        const session = await stripe.checkout.sessions.create({
-          line_items: req.body.lineItems,
+        const sessionData = {
+          ...req.body,
           mode: "payment",
           success_url: `${req.headers.origin}/checkout/success?session_id=CHECKOUT_SESSION_ID}`,
           cancel_url: `${req.headers.origin}/checkout/error`,
-        });
+        };
+        console.log("sessionData", sessionData);
+        const session = await stripe.checkout.sessions.create(sessionData);
         console.log("session", session);
         res.redirect(303, session.url);
         // res.status(200).json({ session });
