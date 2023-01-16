@@ -104,8 +104,15 @@ const CartSlice = createSlice({
         };
       }
     },
+    resetCart(state) {
+      if (state.cart) {
+        state.cart = null;
+        state.deliveryFee = 0;
+      }
+    },
   },
 });
 
-export const { addToCart, updateQuantity, deleteProduct } = CartSlice.actions;
+export const { addToCart, updateQuantity, deleteProduct, resetCart } =
+  CartSlice.actions;
 export default CartSlice.reducer;
