@@ -16,7 +16,7 @@ export default function OrderSummary() {
   const mutateDelete = useDeleteProductFromCart();
   const mutateUpdateQuantity = useUpdateProductQuantityMutation();
   const { rate, currency } = usePrice();
-  const DELIVERY_FEE = 80 * rate;
+  const DELIVERY_FEE = 30 * rate;
   const disableButton = !checkoutDetails ? true : false;
   const itemAmount = cart ? cart.amount * rate : 0;
   const total = cart ? DELIVERY_FEE + itemAmount : 0;
