@@ -7,6 +7,7 @@ const initialState: UIType = {
     status: false,
     product: null,
   },
+  authModal: false,
 };
 
 const UISlice = createSlice({
@@ -22,8 +23,12 @@ const UISlice = createSlice({
     ) {
       state.previewProduct = action.payload;
     },
+    updateAuthModal(state) {
+      state.authModal = !state.authModal;
+    },
   },
 });
 
-export const { updateSlideCart, updatePreviewProduct } = UISlice.actions;
+export const { updateSlideCart, updatePreviewProduct, updateAuthModal } =
+  UISlice.actions;
 export default UISlice.reducer;

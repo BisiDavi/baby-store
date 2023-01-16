@@ -10,10 +10,12 @@ import Button from "@/components/Button";
 import useCart from "@/hooks/useCart";
 import Search from "@/components/Search";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
+import useUI from "@/hooks/useUI";
 
 export default function Header() {
   const mobileDevice = useMediaQuery("(max-width:768px)");
   const { scroll } = useScroll();
+  const { authModalHandler } = useUI();
   const { cart, toggleSlideCart } = useCart();
   const { wishlist } = useWishlistMutation();
 
@@ -35,7 +37,7 @@ export default function Header() {
               </span>
             )}
           </Link>
-          <Button className="" icon={<Person />} />
+          <Button className="" icon={<Person />} onClick={authModalHandler} />
           <div
             className="cart relative cursor-pointer"
             onClick={toggleSlideCart}

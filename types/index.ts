@@ -35,6 +35,7 @@ export type UIType = {
     status: boolean;
     product: null | productType;
   };
+  authModal: boolean;
 };
 
 export type inputType = {

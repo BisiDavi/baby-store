@@ -25,7 +25,9 @@ export default function Layout({
   children,
   title,
 }: PropsWithChildren<{ title: string }>) {
-  const { showSlideCart, previewProduct } = useAppSelector((state) => state.UI);
+  const { showSlideCart, previewProduct, authModal } = useAppSelector(
+    (state) => state.UI
+  );
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopHeader />
-      {previewProduct.status && previewProduct.product && <AuthModal />}
+      {authModal && <AuthModal />}
       {previewProduct.status && previewProduct.product && <ProductModal />}
       <Header />
       <main className="flex mx-auto flex-col bg-gray">{children}</main>
