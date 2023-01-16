@@ -25,12 +25,14 @@ export default function CurrencyDropdown({ content }: Props) {
 
   return (
     <div className="relative">
-      <Button
-        text={currency.name}
-        className="h-10  px-2 mx-2 flex items-center"
-        onClick={showDropdownHandler}
-        icon={<Caret className="w-4 mr-2" />}
-      />
+      {currency && (
+        <Button
+          text={currency.name}
+          className="h-10  px-2 mx-2 flex items-center"
+          onClick={showDropdownHandler}
+          icon={<Caret className="w-4 mr-2" />}
+        />
+      )}
       {dropdownStatus && (
         <ul className="dropdown-list w-52 bg-white absolute z-20 top-10 text-black py-1 rounded-md shadow">
           {content.map((item) => (

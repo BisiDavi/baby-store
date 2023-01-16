@@ -20,11 +20,11 @@ export default function Price({
   return (
     <div className={`price-view flex space-x-2  ${className}  `}>
       <h5 className="font-bold text-center text-lg">
-        {currency.value}
+        {currency?.value}
         {fPrice}
       </h5>
       <h6 className="font-bold text-center line-through text-sm">
-        {currency.value}
+        {currency?.value}
         {costPrice}
       </h6>
     </div>
