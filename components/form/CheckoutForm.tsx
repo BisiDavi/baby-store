@@ -29,9 +29,7 @@ export default function CheckoutForm() {
           className="bg-white shadow w-full rounded py-6 my-1"
           onSubmit={methods.handleSubmit(onSubmit)}
         >
-          <div className="form-title border-b w-full px-4">
-            1. ADDRESS DETAILS
-          </div>
+          <div className="form-title border-b w-full px-4 font-bold">ADDRESS DETAILS</div>
           <div className="form-content p-4">
             {checkoutForm.map((item, index) => {
               return (
