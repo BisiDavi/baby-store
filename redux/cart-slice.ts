@@ -55,7 +55,7 @@ const CartSlice = createSlice({
         state.cart = {
           userEmail,
           quantity: 1,
-          amount: 0,
+          amount: product.price,
           items: [product],
         };
       }

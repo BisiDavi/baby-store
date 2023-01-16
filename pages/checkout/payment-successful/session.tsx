@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Layout from "@/layout";
 import { resetCart } from "@/redux/cart-slice";
-import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { useAppDispatch } from "@/redux/store";
 import { GetServerSidePropsContext } from "next";
 
 interface Props {
@@ -28,7 +28,7 @@ export default function CheckoutSuccessPage({ session_id }: Props) {
     <Layout title="Thanks for purchasing from us">
       <section className="my-8 container mx-auto ">
         {session_id && (
-          <div className="appreciaton mx-auto py-4 w-2/3 bg-white shadow rounded my-4">
+          <div className="appreciaton mx-auto py-4 w-4/5 lg:w-2/3 bg-white shadow rounded my-4">
             <h3 className=" text-2xl font-bold mt-4 text-center">
               🤩 Thanks for purchasing from BestStores
             </h3>

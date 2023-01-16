@@ -31,7 +31,7 @@ export default function SlideCartItem({
   const itemLink = toSlug(item.title);
   const { toggleSlideCart } = useCart();
 
-  const controlClassName = className ? className : "lg:w-1/6";
+  const controlClassName = className ? className : "lg:w-2/6";
 
   return (
     <li
