@@ -1,11 +1,10 @@
 import axios from "axios";
-import { useAppSelector } from "@/redux/store";
-import type { cartType, lineItemsType } from "@/types";
-import usePrice from "./usePrice";
 
-export default function useStripePayment(cart: cartType | null) {
+import usePrice from "@/hooks/usePrice";
+import type { cartType, lineItemsType } from "@/types";
+
+export default function useStripePayment(cart: cartType | null, email: string) {
   const line_items: Array<lineItemsType> = [];
-  const { checkoutDetails } = useAppSelector((state) => state.checkout);
   const { rate, currency } = usePrice();
 
   if (cart) {
@@ -23,10 +22,11 @@ export default function useStripePayment(cart: cartType | null) {
       });
     });
   }
+  const emailAddress = email ? { customer_email: email } : "";
 
   const result = {
+    ...emailAddress,
     line_items,
-    customer_email: checkoutDetails?.email,
   };
 
   async function makePayment() {

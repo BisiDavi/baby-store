@@ -4,20 +4,23 @@ import useCartMutation from "@/hooks/useCartMutation";
 import SlideCartItem from "@/components/SlideCartItem";
 import Button from "@/components/Button";
 import { formatPrice } from "@/utils/formatPrice";
-import { useAppSelector } from "@/redux/store";
 import usePrice from "@/hooks/usePrice";
+import useFirebase from "@/hooks/useFirebase";
 
 export default function OrderSummary() {
   const { cart } = useCart();
-  const { makePayment } = useStripePayment(cart);
+  const { getAuthdetails } = useFirebase();
+  const userDetails = getAuthdetails();
+  const { makePayment } = useStripePayment(cart, userDetails.email);
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
     useCartMutation();
-  const { checkoutDetails } = useAppSelector((state) => state.checkout);
   const mutateDelete = useDeleteProductFromCart();
   const mutateUpdateQuantity = useUpdateProductQuantityMutation();
   const { rate, currency } = usePrice();
+
   const DELIVERY_FEE = 30 * rate;
-  const disableButton = !checkoutDetails ? true : false;
+  console.log("userDetails", userDetails);
+  const disableButton = !userDetails ? true : false;
   const itemAmount = cart ? cart.amount * rate : 0;
   const total = cart ? DELIVERY_FEE + itemAmount : 0;
 
