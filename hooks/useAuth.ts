@@ -65,13 +65,6 @@ export default function useAuth() {
             .then((response) => console.log("email response", response))
             .catch((err) => console.log("email error", err));
           writeData(JSON.stringify(saveData), `/${dbRoute}/${user.uid}/`);
-          if (router.asPath.includes("/admin")) {
-            setCookie("admin", true, {
-              path: "/",
-              sameSite: true,
-            });
-            router.push("/admin");
-          }
         }
       );
       return await updateProfile(auth.currentUser, {
@@ -84,25 +77,11 @@ export default function useAuth() {
 
   function authSignIn(email: string, password: string) {
     const auth = getAuth(app);
-    return signInWithEmailAndPassword(auth, email, password).then(() => {
-      if (router.asPath.includes("/admin")) {
-        setCookie("admin", true, {
-          path: "/",
-          sameSite: true,
-        });
-        router.push("/admin");
-      }
-    });
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   function authSignOut() {
     const auth = getAuth(app);
-    if (router.asPath.includes("/admin")) {
-      setCookie("admin", false, {
-        path: "/",
-        sameSite: true,
-      });
-    }
     return signOut(auth);
   }
 
