@@ -3302,13 +3302,6 @@
     regenerator-runtime "^0.13.7"
     resolve-from "^5.0.0"
 
-"@stripe/react-stripe-js@^1.16.2":
-  version "1.16.2"
-  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.16.2.tgz#f31efeb5cc7923ceffcffc508a59121815c20619"
-  integrity sha512-RTL3rE6eNosRb2AhxHBWN0HQgigSo/cfZu8vPAqB9/dZEAjYcEoiDYtjI9Zj1MAh58c5RyQNn3HU3M4hIqUdAg==
-  dependencies:
-    prop-types "^15.7.2"
-
 "@stripe/stripe-js@^1.46.0":
   version "1.46.0"
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.46.0.tgz#2b9acca0dfa7b90aaecd909e678a049f799a27d6"
