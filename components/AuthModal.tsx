@@ -1,6 +1,7 @@
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
 import useUI from "@/hooks/useUI";
+import Google from "@/public/icon/Google";
 
 export default function AuthModal() {
   const { authModalHandler, authModal } = useUI();
@@ -16,8 +17,9 @@ export default function AuthModal() {
           Please Login to Proceed
         </h4>
         <Button
-          className="my-10 mx-auto justify-center flex border px-4 rounded py-1 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+          className="my-10 mx-auto font-bold items-center justify-center flex border px-4 rounded-lg py-1 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
           text="  Login with Google"
+          icon={<Google />}
         />
       </div>
     </Modal>
