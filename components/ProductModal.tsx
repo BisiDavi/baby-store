@@ -11,6 +11,7 @@ export default function ProductModal() {
   const { product, status } = previewProduct;
   const { useAddToCartMutation } = useCartMutation();
   const { mutate } = useAddToCartMutation();
+
   return (
     <>
       {product && (

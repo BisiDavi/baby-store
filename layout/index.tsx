@@ -19,16 +19,22 @@ const ProductModal = dynamic(
     import(/* webpackChunkName: 'ProductModal' */ "@/components/ProductModal")
 );
 
+const AuthModal = dynamic(
+  () => import(/* webpackChunkName: 'AuthModal' */ "@/components/AuthModal")
+);
+
 export default function Layout({
   children,
   title,
 }: PropsWithChildren<{ title: string }>) {
   const mobileDevice = useMediaQuery("(max-width:768px)");
   const { showSlideCart, previewProduct } = useAppSelector((state) => state.UI);
+
   return (
     <>
       {showSlideCart && <SlideCart />}
       {!mobileDevice && <TopHeader />}
+      {previewProduct.status && previewProduct.product && <AuthModal />}
       {previewProduct.status && previewProduct.product && <ProductModal />}
       <Header title={title} />
       <main className="flex mx-auto flex-col bg-gray">{children}</main>
