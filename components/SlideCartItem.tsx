@@ -10,6 +10,7 @@ import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
 import type { cartProductType } from "@/types";
+import usePrice from "@/hooks/usePrice";
 
 interface Props {
   item: cartProductType;
@@ -22,7 +23,8 @@ export default function SlideCartItem({
   mutateUpdateQuantity,
   mutateDelete,
 }: Props) {
-  const _itemAmount = item.quantity * item.price;
+  const { rate, currency } = usePrice();
+  const _itemAmount = item.quantity * item.price * rate;
   const itemAmount = formatPrice(_itemAmount);
   const itemLink = toSlug(item.title);
   const { toggleSlideCart } = useCart();
@@ -55,7 +57,8 @@ export default function SlideCartItem({
               className=""
             />
             <p>
-              X {item.quantity} = ${itemAmount}
+              X {item.quantity} = {currency.value}
+              {itemAmount}
             </p>
           </div>
         </div>

@@ -1,7 +1,6 @@
-import { useAppSelector } from "@/redux/store";
+import usePrice from "@/hooks/usePrice";
 import { formatPrice } from "@/utils/formatPrice";
 import getCostPrice from "@/utils/getCostPrice";
-import { formatCurrencyRate } from "@/utils/getCurrencyRate";
 
 interface Props {
   price: number;
@@ -14,8 +13,7 @@ export default function Price({
   discountPercentage,
   className = "mx-auto justify-center items-center",
 }: Props) {
-  const { currency } = useAppSelector((state) => state.currency);
-  const rate = currency.code !== "USD" ? formatCurrencyRate(currency.code) : 1;
+  const { rate, currency } = usePrice();
   const _actualPrice = rate * price;
   const actualPrice = formatPrice(_actualPrice);
   const costPrice = getCostPrice(price, discountPercentage, rate);

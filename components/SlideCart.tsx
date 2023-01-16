@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import useCartMutation from "@/hooks/useCartMutation";
 import SlideCartItem from "@/components/SlideCartItem";
 import { formatPrice } from "@/utils/formatPrice";
+import usePrice from "@/hooks/usePrice";
 
 export default function SlideCart() {
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
@@ -13,6 +14,8 @@ export default function SlideCart() {
   const mutateUpdateQuantity = useUpdateProductQuantityMutation();
 
   const { toggleSlideCart, cart } = useCart();
+  const { rate, currency } = usePrice();
+  const cartAmount = cart ? rate * cart?.amount : 0;
 
   return (
     <aside className="flex items-center fixed top-0 z-50 left-0 h-screen w-screen">
@@ -44,7 +47,10 @@ export default function SlideCart() {
                 <div className="cart-prices font-bold border rounded text-xl shadow-xl mx-auto justify-center p-4 mb-4  flex flex-col">
                   <div className="text flex w-full items-center justify-between">
                     <h6>Subtotal</h6>
-                    <h6>${formatPrice(cart.amount)}</h6>
+                    <h6>
+                      {currency.value}
+                      {formatPrice(cartAmount)}
+                    </h6>
                   </div>
                   <Link href="/checkout">
                     <Button
