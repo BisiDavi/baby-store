@@ -12,6 +12,7 @@ import Search from "@/components/Search";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
 import useUI from "@/hooks/useUI";
 import useFirebase from "@/hooks/useFirebase";
+import Logout from "@/public/icon/Logout";
 
 export default function Header() {
   const mobileDevice = useMediaQuery("(max-width:768px)");
@@ -19,7 +20,7 @@ export default function Header() {
   const { authModalHandler } = useUI();
   const { cart, toggleSlideCart } = useCart();
   const { wishlist } = useWishlistMutation();
-  const { getAuthdetails } = useFirebase();
+  const { getAuthdetails, authSignOut } = useFirebase();
   const userDetails = getAuthdetails();
 
   const userName =
@@ -49,13 +50,9 @@ export default function Header() {
               )}
             </Link>
             {userDetails ? (
-              <Button className="" />
+              <Button icon={<Logout />} onClick={authSignOut} />
             ) : (
-              <Button
-                className=""
-                icon={<Person />}
-                onClick={authModalHandler}
-              />
+              <Button icon={<Person />} onClick={authModalHandler} />
             )}
             <div
               className="cart relative cursor-pointer"

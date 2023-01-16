@@ -1,6 +1,10 @@
-import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signOut,
+  getAuth,
+  signInWithPopup,
+} from "firebase/auth";
 import { getDatabase, ref, set, onValue, remove } from "firebase/database";
 
 import { createFirebaseApp } from "@/utils/firebaseConfig";
@@ -69,6 +73,12 @@ export default function useFirebase() {
     });
   }
 
+  function authSignOut() {
+    const app = initFB();
+    const auth = getAuth(app);
+    return signOut(auth).then(() => toast.success("logout successful"));
+  }
+
   return {
     getAuthdetails,
     initFB,
@@ -76,5 +86,6 @@ export default function useFirebase() {
     readData,
     deleteData,
     googleProvider,
+    authSignOut,
   };
 }
