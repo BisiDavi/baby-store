@@ -7,6 +7,7 @@ import UIReducer from "@/redux/ui-slice";
 import WishlistReducer from "@/redux/wishlist-slice";
 import CheckoutReducer from "@/redux/checkout-slice";
 import curencyReducer from "@/redux/currency-slice";
+import authReducer from "@/redux/auth-slice";
 
 const reducers = combineReducers({
   cart: CartReducer,
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   wishlist: WishlistReducer,
   checkout: CheckoutReducer,
   currency: curencyReducer,
+  auth: authReducer,
 });
 
 const persistConfig = {
