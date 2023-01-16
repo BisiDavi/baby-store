@@ -1,6 +1,5 @@
 import Layout from "@/layout";
 import OrderSummary from "@/components/OrderSummary";
-// import CheckoutForm from "@/components/form/CheckoutForm";
 
 export default function Checkout() {
   return (
