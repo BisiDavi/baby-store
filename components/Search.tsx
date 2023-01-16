@@ -82,7 +82,7 @@ export default function Search() {
                     {data.data.products.map((item) => (
                       <li
                         key={item.id}
-                        className="flex border-b p-2 hover:bg-gray-100"
+                        className="flex last:border-b-0 border-b p-2 hover:bg-gray-100"
                       >
                         <Link
                           href={`/product/${toSlug(item.title)}?id=${item.id}`}
