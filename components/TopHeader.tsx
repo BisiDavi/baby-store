@@ -1,4 +1,4 @@
-import Dropdown from "@/components/Dropdown";
+import CurrencyDropdown from "@/components/CurrencyDropdown";
 import dropdownContent from "@/json/menu.json";
 
 export default function TopHeader() {
@@ -9,7 +9,7 @@ export default function TopHeader() {
           <p>Free Shipping for $1000</p>
         </div>
         <div className="right flex items-center justify-between">
-          <Dropdown content={dropdownContent.topHeader.currencyDropdown} />
+          <CurrencyDropdown content={dropdownContent.topHeader.currencyDropdown} />
         </div>
       </div>
     </div>

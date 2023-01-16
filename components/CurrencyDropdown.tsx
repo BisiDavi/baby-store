@@ -6,12 +6,15 @@ import Button from "@/components/Button";
 interface Props {
   content: Array<{ name: string; value: string }>;
 }
-export default function Dropdown({ content }: Props) {
+export default function CurrencyDropdown({ content }: Props) {
   const [dropdownStatus, setDropdownStatus] = useState(false);
-  const [dropdown, setDropdown] = useState<{
-    name: string;
-    value: string;
-  } | null>(null);
+  const [dropdown, setDropdown] =
+    useState<{
+      name: string;
+      value: string;
+    } | null>(null);
+
+  console.log("dropdown", dropdown);
 
   function showDropdownHandler() {
     return setDropdownStatus(!dropdownStatus);
@@ -27,7 +30,7 @@ export default function Dropdown({ content }: Props) {
         text={content[0].name}
         className="h-10  px-2 mx-2 flex items-center"
         onClick={showDropdownHandler}
-        icon={<Caret className="w-4 mr-1" />}
+        icon={<Caret className="w-4 mr-2" />}
       />
       {dropdownStatus && (
         <ul className="dropdown-list bg-white absolute z-20 top-10 text-black py-1 rounded-md shadow">
