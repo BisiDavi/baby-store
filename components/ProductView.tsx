@@ -1,19 +1,16 @@
-import getCostPrice from "@/utils/getCostPrice";
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import AddPlus from "@/public/icon/AddPlus";
 import ProductGridView from "@/components/ProductGridView";
-import { formatPrice } from "@/utils/formatPrice";
 import useCartMutation from "@/hooks/useCartMutation";
+import Price from "@/components/Price";
 import type { productType } from "@/types";
 
 interface Props {
   product: productType;
 }
 export default function ProductView({ product }: Props) {
-  const price = formatPrice(product.price);
-  const oldPrice = getCostPrice(product.price, product.discountPercentage);
   const discount = Math.round(product.discountPercentage);
   const category = product.category.toUpperCase();
   const { useAddToCartMutation } = useCartMutation();
@@ -32,10 +29,11 @@ export default function ProductView({ product }: Props) {
           <p className="fit-content hover:bg-orange-500 hover:text-white text-orange-500 rounded-full border w-auto px-2 my-1 flex">
             {discount} % discount
           </p>
-          <div className="price flex space-x-2">
-            <h5 className="text-xl font-medium">${price}</h5>
-            <h6 className="text- line-through font-medium">${oldPrice}</h6>
-          </div>
+          <Price
+            price={product.price}
+            discountPercentage={product.discountPercentage}
+            className="text-xl"
+          />
           <Ratings ratings={product.rating} className="text-left" />
           <p className="mt-2">{product.description}</p>
         </div>

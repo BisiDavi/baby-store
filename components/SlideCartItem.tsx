@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Price from "@/components/Price";
+import useCart from "@/hooks/useCart";
 import Button from "@/components/Button";
 import AddPlus from "@/public/icon/AddPlus";
 import Minus from "@/public/icon/Minus";
@@ -9,7 +10,6 @@ import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
 import type { cartProductType } from "@/types";
-import useCart from "@/hooks/useCart";
 
 interface Props {
   item: cartProductType;

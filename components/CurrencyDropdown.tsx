@@ -7,7 +7,11 @@ import { updateCurrency } from "@/redux/currency-slice";
 import type { currencyType } from "@/types";
 
 interface Props {
-  content: Array<{ name: string; value: string; code: string }>;
+  content: Array<{
+    name: string;
+    value: string;
+    code: "USD" | "NGN" | "EUR" | "CAD";
+  }>;
 }
 export default function CurrencyDropdown({ content }: Props) {
   const [dropdownStatus, setDropdownStatus] = useState(false);
