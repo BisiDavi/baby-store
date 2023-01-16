@@ -1,9 +1,9 @@
 {
   "topHeader": {
     "currencyDropdown": [
-      { "name": "United States (USD)", "value": "$" },
-      { "name": "Euro (EUR)", "value": "E" },
-      { "name": "Nigerian Naira (NGN)", "value": "N" }
+      { "name": "United States (USD)", "value": "$", "code": "usd" },
+      { "name": "Euro (EUR)", "value": "€", "code": "eur" },
+      { "name": "Nigerian Naira (NGN)", "value": "₦", "code": "ngn" }
     ],
     "languageDropdown": [
       { "name": "English", "value": "english" },

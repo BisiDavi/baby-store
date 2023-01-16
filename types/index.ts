@@ -63,3 +63,7 @@ export type lineItemsType = {
   };
   quantity: number;
 };
+
+export type currencyType = {
+  currency: { name: string; value: string; code: string };
+};
