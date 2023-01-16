@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "timestamp": 1673871543,
+  "source": "USD",
+  "date": "2023-01-16",
+  "quotes": { "USDEUR": 0.923695, "USDNGN": 460.498941, "USDCAD": 1.338375 }
+}
