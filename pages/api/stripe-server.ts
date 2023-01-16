@@ -10,9 +10,7 @@ export default async function handler(req: any, res: any) {
           success_url: `${req.headers.origin}/checkout/success`,
           cancel_url: `${req.headers.origin}/checkout`,
         };
-        console.log("sessionData", sessionData);
         const session = await stripe.checkout.sessions.create(sessionData);
-        console.log("session", session);
         res.status(200).json({ session });
       } catch (error: any) {
         res.status(error.statusCode || 500).json(error.message);
