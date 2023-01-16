@@ -14,6 +14,7 @@ import usePrice from "@/hooks/usePrice";
 
 interface Props {
   item: cartProductType;
+  className?: string;
   mutateUpdateQuantity: any;
   mutateDelete: any;
 }
@@ -21,6 +22,7 @@ interface Props {
 export default function SlideCartItem({
   item,
   mutateUpdateQuantity,
+  className,
   mutateDelete,
 }: Props) {
   const { rate, currency } = usePrice();
@@ -28,6 +30,8 @@ export default function SlideCartItem({
   const itemAmount = formatPrice(_itemAmount);
   const itemLink = toSlug(item.title);
   const { toggleSlideCart } = useCart();
+
+  const controlClassName = className ? className : "lg:w-1/6";
 
   return (
     <li
@@ -41,12 +45,12 @@ export default function SlideCartItem({
       >
         <div className="product flex items-center space-x-3">
           <Image
-            src={item.images[0]}
+            src={item.thumbnail}
             alt={item.title}
             height={200}
             className="w-1/3 max-h-24"
             width={200}
-            blurDataURL={item.images[0]}
+            blurDataURL={item.thumbnail}
             placeholder="blur"
           />
           <div className="text-content">
@@ -63,7 +67,9 @@ export default function SlideCartItem({
           </div>
         </div>
       </Link>
-      <div className=" controls mt-3 justify-between w-2/3 mx-auto lg:mx-0 lg:w-2/6 flex">
+      <div
+        className={`controls mt-3 justify-between w-2/3 mx-auto lg:mx-0 ${controlClassName} flex`}
+      >
         <Button
           className=""
           icon={

@@ -11,7 +11,7 @@ export default function OrderSummary() {
   const { cart } = useCart();
   const { getAuthdetails } = useFirebase();
   const userDetails = getAuthdetails();
-  const { makePayment } = useStripePayment(cart, userDetails.email);
+  const { makePayment } = useStripePayment(cart, userDetails?.email);
   const { useDeleteProductFromCart, useUpdateProductQuantityMutation } =
     useCartMutation();
   const mutateDelete = useDeleteProductFromCart();
@@ -34,6 +34,7 @@ export default function OrderSummary() {
               {cart.items.map((item) => (
                 <SlideCartItem
                   key={item.id}
+                  className="lg:w-1/6"
                   item={item}
                   mutateUpdateQuantity={mutateUpdateQuantity}
                   mutateDelete={mutateDelete}
