@@ -7,21 +7,20 @@ import getCostPrice from "@/utils/getCostPrice";
 import useCartMutation from "@/hooks/useCartMutation";
 import type { productType } from "@/types";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
+import Price from "./Price";
 
 interface Props {
   product: productType;
 }
 
 export default function SpecialProductDescription({ product }: Props) {
-  const price = formatPrice(product.price);
-  const costPrice = getCostPrice(product.price, product.discountPercentage);
   const { useAddToCartMutation } = useCartMutation();
   const { mutate } = useAddToCartMutation();
   const { wishlist, useAddToWishlist } = useWishlistMutation();
   const { mutate: mutateAddToWishlist } = useAddToWishlist();
 
-  const checkForWishlist = wishlist.filter(item => item.id === product.id)[0]
-  const wishlistFill = checkForWishlist ? "red" : "black"
+  const checkForWishlist = wishlist.filter((item) => item.id === product.id)[0];
+  const wishlistFill = checkForWishlist ? "red" : "black";
 
   return (
     <div className="flex w-full -mr-1 lg:mr-0 pl-1 lg:w-1/2 bg-white lg:mx-auto my-4 lg:my-0 lg:mx-4 px-0 py-8 lg:py-12 lg:pr-6 rounded-lg shadow">
@@ -29,12 +28,11 @@ export default function SpecialProductDescription({ product }: Props) {
       <div className="pl-5 lg:pl-8">
         <h4 className="text-xl">{product.title}</h4>
         <div className="price-view flex my-4 flex-col">
-          <div className="price flex">
-            <h5 className="text-xl font-bold">${price}</h5>
-            <h6 className="text-md ml-3 line-through font-bold">
-              ${costPrice}
-            </h6>
-          </div>
+          <Price
+            price={product.price}
+            discountPercentage={product.discountPercentage}
+            className="flex"
+          />
           <Ratings ratings={product.rating} className="text-left" />
         </div>
         <p className="mb-16">{product.description}</p>
