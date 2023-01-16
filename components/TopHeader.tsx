@@ -7,13 +7,9 @@ export default function TopHeader() {
     dropdownContent.topHeader.currencyDropdown;
   return (
     <div className="w-full border-b bg-green-800 text-white">
-      <div className="container mx-auto h-12 flex items-center justify-between">
-        <div className="left">
-          <p>Free Shipping for $1000</p>
-        </div>
-        <div className="right flex items-center justify-between">
-          <CurrencyDropdown content={currencyDropdown} />
-        </div>
+      <div className="container px-4 lg:px-0 mx-auto h-12 flex items-center justify-between">
+        <p className="text-sm lg:text-base font-bold">Free Shipping for $1000</p>
+        <CurrencyDropdown content={currencyDropdown} />
       </div>
     </div>
   );
