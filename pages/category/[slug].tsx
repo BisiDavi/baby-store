@@ -29,9 +29,14 @@ export default function CategoryPage({ categoryProducts, category }: Props) {
 export async function getServerSideProps(context: any) {
   async function getCategory() {
     const result: any = [];
-    return fetch(
-      `https://fakestoreapi.com/products/category/${context.params.slug}`
-    )
+    const formatSlug =
+      context.params.slug === "mens-clothing"
+        ? "men's clothing"
+        : context.params.slug === "womens-clothing"
+        ? "women's clothing"
+        : context.params.slug;
+        
+    return fetch(`https://fakestoreapi.com/products/category/${formatSlug}`)
       .then((response) => {
         return response.json();
       })

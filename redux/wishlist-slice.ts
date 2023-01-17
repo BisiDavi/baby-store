@@ -18,7 +18,7 @@ const WishlistSlice = createSlice({
         throw Error;
       }
     },
-    removeProductFromWishlist(state, action: PayloadAction<string>) {
+    removeProductFromWishlist(state, action: PayloadAction<number>) {
       const { payload } = action;
       if (state) {
         const productId = state.wishlist.findIndex(

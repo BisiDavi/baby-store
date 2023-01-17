@@ -62,7 +62,7 @@ const CartSlice = createSlice({
     },
     updateQuantity(
       state,
-      action: PayloadAction<{ type: "add" | "minus"; id: string }>
+      action: PayloadAction<{ type: "add" | "minus"; id: number }>
     ) {
       const { type, id } = action.payload;
 
@@ -92,7 +92,7 @@ const CartSlice = createSlice({
         };
       }
     },
-    deleteProduct(state, action: PayloadAction<{ id: string }>) {
+    deleteProduct(state, action: PayloadAction<{ id: number }>) {
       const { id } = action.payload;
       if (state.cart) {
         const productId = state.cart?.items.findIndex((item) => item.id === id);

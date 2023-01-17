@@ -12,13 +12,11 @@ export type productType = {
 };
 
 export type cartProductType = {
-  id: string;
+  id: number;
   title: string;
   price: number;
-  discountPercentage: number;
   quantity: number;
-  thumbnail: string;
-  images: string[];
+  image: string;
 };
 
 export type cartType = {

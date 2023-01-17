@@ -77,7 +77,7 @@ export default function Product({ product, className }: ProductItem) {
             <Image
               src={image}
               alt={title}
-              className="h-32 w-full lg:h-80  mx-auto my-5"
+              className="h-32 w-full lg:h-96  mx-auto my-5"
               height={imageDimension.height}
               width={imageDimension.width}
               blurDataURL={image}

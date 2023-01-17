@@ -33,21 +33,20 @@ export default function Wishlist() {
                     className="w-5/6 lg:w-4/5 flex items-center space-x-4 lg:space-x-8"
                   >
                     <Image
-                      src={item.thumbnail}
+                      src={item.image}
                       alt={item.title}
                       height={70}
                       width={70}
-                      className="lg:w-1/6 w-2/6"
-                      blurDataURL={item.thumbnail}
+                      className="lg:w-1/12 w-2/6"
+                      blurDataURL={item.image}
                       placeholder="blur"
                     />
-                    <div className="content lg:w-3/5">
-                      <h4 className="text-lg lg:text-2xl font-bold">
+                    <div className="content lg:w-4/5">
+                      <h4 className="text-lg lg:text-lg font-bold">
                         {item.title}
                       </h4>
                       <Price
                         price={item.price}
-                        discountPercentage={item.discountPercentage}
                         className=""
                       />
                       <Ratings ratings={item.rating} className="" />

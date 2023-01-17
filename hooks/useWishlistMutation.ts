@@ -29,7 +29,7 @@ export default function useWishlistMutation() {
 
   function useRemoveProductFromWishlist() {
     return useMutation(
-      async (id: string) => dispatch(removeProductFromWishlist(id)),
+      async (id: number) => dispatch(removeProductFromWishlist(id)),
       {
         mutationKey: ["useRemoveProductFromWishlist"],
         onSuccess: () => {

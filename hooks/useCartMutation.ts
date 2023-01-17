@@ -22,7 +22,7 @@ export default function useCartMutation() {
 
   function useUpdateProductQuantityMutation() {
     return useMutation(
-      async ({ type, id }: { type: "add" | "minus"; id: string }) =>
+      async ({ type, id }: { type: "add" | "minus"; id: number }) =>
         updateProductQuantity(type, id),
       {
         mutationKey: ["updateProductQuantityMutation"],
@@ -34,7 +34,7 @@ export default function useCartMutation() {
   }
 
   function useDeleteProductFromCart() {
-    return useMutation(async (id: string) => deleteProductFromCart(id), {
+    return useMutation(async (id: number) => deleteProductFromCart(id), {
       mutationKey: ["useDeleteProductFromCart"],
       onSuccess: () => {
         toast.success("product removed from cart");

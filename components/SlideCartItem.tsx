@@ -9,8 +9,8 @@ import Minus from "@/public/icon/Minus";
 import Trash from "@/public/icon/Trash";
 import { formatPrice } from "@/utils/formatPrice";
 import toSlug from "@/utils/toSlug";
-import type { cartProductType } from "@/types";
 import usePrice from "@/hooks/usePrice";
+import type { cartProductType } from "@/types";
 
 interface Props {
   item: cartProductType;
@@ -45,21 +45,17 @@ export default function SlideCartItem({
       >
         <div className="product flex items-center space-x-3">
           <Image
-            src={item.thumbnail}
+            src={item.image}
             alt={item.title}
             height={200}
             className="w-1/3 max-h-24"
             width={200}
-            blurDataURL={item.thumbnail}
+            blurDataURL={item.image}
             placeholder="blur"
           />
-          <div className="text-content">
+          <div className="text-content w-full">
             <h3 className="text-ellipsis truncate">{item.title}</h3>
-            <Price
-              price={item.price}
-              discountPercentage={item.discountPercentage}
-              className=""
-            />
+            <Price price={item.price} className="" />
             <p>
               X {item.quantity} = {currency.value}
               {itemAmount}

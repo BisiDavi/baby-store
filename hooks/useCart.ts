@@ -11,29 +11,27 @@ export default function useCart() {
     dispatch(updateSlideCart());
   }
 
-  function updateProductQuantity(type: "add" | "minus", id: string) {
+  function updateProductQuantity(type: "add" | "minus", id: number) {
     dispatch(updateQuantity({ type, id }));
   }
 
   function addToCartHandler(product: productType) {
-    const { price, id, title, discountPercentage, thumbnail, images } = product;
+    const { price, id, title, image } = product;
     dispatch(
       addToCart({
         userEmail: "",
         product: {
           price,
           id,
+          image,
           title,
-          discountPercentage,
           quantity: 1,
-          thumbnail,
-          images,
         },
       })
     );
   }
 
-  function deleteProductFromCart(id: string) {
+  function deleteProductFromCart(id: number) {
     dispatch(deleteProduct({ id }));
   }
 
