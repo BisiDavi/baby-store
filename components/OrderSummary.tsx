@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import { formatPrice } from "@/utils/formatPrice";
 import usePrice from "@/hooks/usePrice";
 import useFirebase from "@/hooks/useFirebase";
+import Link from "next/link";
 
 export default function OrderSummary() {
   const { cart } = useCart();
@@ -27,7 +28,7 @@ export default function OrderSummary() {
     <div className="w-full lg:w-2/3 mx-auto justify-center my-8">
       <h4 className="font-bold text-gray-500">ORDER SUMMARY</h4>
       <div className="order-summary shadow my-1 p-1 bg-white rounded">
-        {cart && (
+        {cart && cart.items.length > 0 ? (
           <>
             <div className="cart-list">
               {cart.items.map((item) => (
@@ -72,6 +73,13 @@ export default function OrderSummary() {
               onClick={makePayment}
             />
           </>
+        ) : (
+          <Link href="/products">
+            <Button
+              text="Continue Shopping"
+              className="mx-auto flex my-4 font-bold border border-blue-500 px-4 py-1 rounded hover:bg-blue-500 hover:text-white"
+            />
+          </Link>
         )}
       </div>
     </div>

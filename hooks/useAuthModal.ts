@@ -14,7 +14,7 @@ export default function useAuthModal() {
 
   console.log("authModal", authModal);
 
-  const modalState = router.route === "/checkout" && false ? true : authModal;
+  const modalState = router.route === "/checkout" && !auth ? true : authModal;
   const modalHandler =
     router.route === "/checkout" && !auth ? () => null : authModalHandler;
 
