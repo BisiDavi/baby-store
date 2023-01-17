@@ -25,7 +25,7 @@ export default function OtherCategoryProducts({
   );
   const otherProducts =
     status === "success"
-      ? data.data.products.filter((item) => item.title !== mainProductName)
+      ? data.data.filter((item) => item.title !== mainProductName)
       : [];
   return (
     <div className="mb-8">

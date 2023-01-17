@@ -6,7 +6,7 @@ import { fetchProducts } from "@/utils/apiRequest";
 
 export default function SpecialProducts() {
   const { data, status } = useQuery(["fetch-special-products"], () =>
-    fetchProducts("?limit=4&skip=21")
+    fetchProducts("?limit=4")
   );
 
   return (
@@ -22,7 +22,7 @@ export default function SpecialProducts() {
         <SpinnerRipple centerRipple />
       ) : (
         status === "success" && (
-          <SpecialProductView products={data.data.products} />
+          <SpecialProductView products={data.data} />
         )
       )}
     </div>

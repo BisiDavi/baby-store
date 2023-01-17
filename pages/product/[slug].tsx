@@ -39,7 +39,7 @@ export default function ProductPage({ product }: Props) {
 
 export async function getServerSideProps(context: any) {
   const product = await axios.get(
-    `https://dummyjson.com/products/${context.query.id}`
+    `https://fakestoreapi.com/products/${context.query.id}`
   );
 
   return {

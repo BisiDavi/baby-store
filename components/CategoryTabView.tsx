@@ -6,11 +6,11 @@ import ProductSlider from "@/components/ProductSlider";
 import { fetchCategories, fetchProducts } from "@/utils/apiRequest";
 import ProductLoader from "@/components/ProductLoader";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import SpinnerRipple from "./SpinnerRipple";
+import SpinnerRipple from "@/components/SpinnerRipple";
 
 export default function CategoryTabView() {
   const { data, status } = useQuery(["fetch-categories"], fetchCategories);
-  const [selectedCategory, setSelectedCategory] = useState("home-decoration");
+  const [selectedCategory, setSelectedCategory] = useState("electronics");
   const { data: productData, status: productStatus } = useQuery(
     ["fetch-products", selectedCategory],
     () => fetchProducts(`/category/${selectedCategory}`),
@@ -62,7 +62,7 @@ export default function CategoryTabView() {
           )}
         </>
       ) : (
-        <ProductSlider products={productData.data.products} />
+        <ProductSlider products={productData.data} />
       )}
     </div>
   );

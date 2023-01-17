@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 import type { productType } from "@/types";
 
@@ -7,45 +6,18 @@ interface Props {
   product: productType;
 }
 export default function ProductGridView({ product }: Props) {
-  const first4Images = product.images.slice(0, 4);
-  const [mainImage, setMainImage] = useState(product.thumbnail);
-
-  function onSelectImage(image: string) {
-    setMainImage(image);
-  }
-
-  useEffect(() => {
-    setMainImage(product.thumbnail);
-  }, []);
-
   return (
     <div className="images w-full space-y-6 lg:space-y-0 lg:space-x-5 my-4 lg:flex-row flex flex-col items-center">
       <Image
-        src={mainImage}
+        src={product.image}
         alt={product.title}
         height={600}
         width={600}
         className="w-full lg:w-1/2 rounded-xl"
-        blurDataURL={mainImage}
-        placeholder="blur"
+        // blurDataURL={product.image}
+        // placeholder="blur"
         priority={true}
       />
-      <ul className="thumblist grid gap-4 grid-cols-2 w-full lg:w-1/2">
-        {first4Images.map((image) => (
-          <li key={image} className="border p-2 rounded-lg flex items-center">
-            <button onClick={() => onSelectImage(image)}>
-              <Image
-                src={image}
-                alt={product.title}
-                height={500}
-                width={500}
-                blurDataURL={image}
-                placeholder="blur"
-              />
-            </button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

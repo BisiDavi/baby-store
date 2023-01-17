@@ -9,6 +9,8 @@ export default function TopratedProduct() {
     fetchProducts("?limit=12")
   );
 
+  console.log("data", data);
+
   return (
     <section className="container px-4 lg:px-0 mx-auto relative mt-6 mb-10 flex flex-col">
       <h3 className="text-center text-3xl font-bold">Top rated Products</h3>
@@ -23,7 +25,7 @@ export default function TopratedProduct() {
           <ProductLoader className="flex" />
         ) : (
           status === "success" && (
-            <ProductSlider products={data.data.products} />
+            <ProductSlider products={data.data} />
           )
         )}
       </div>

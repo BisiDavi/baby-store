@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-import Tag from "@/components/Tag";
-import { productType } from "@/types";
+import type { productType } from "@/types";
 
 interface Props {
   selectedProduct: productType;
@@ -14,7 +13,6 @@ export default function SpecialProductImage({
   setSelectedProduct,
   specialProductsContent,
 }: Props) {
-  const discount = Math.round(selectedProduct.discountPercentage);
   function onSelectImage(item: productType) {
     setSelectedProduct(item);
   }
@@ -28,12 +26,12 @@ export default function SpecialProductImage({
               className="block mx-auto justify-center hover:opacity-50 my-4"
             >
               <Image
-                src={item.images[0]}
+                src={item.image}
                 alt={item.title}
                 height={100}
                 width={135}
                 className="h-1/2 w-2/3 mx-auto"
-                blurDataURL={item.images[0]}
+                blurDataURL={item.image}
                 placeholder="blur"
               />
             </button>
@@ -41,17 +39,13 @@ export default function SpecialProductImage({
         ))}
       </ul>
       <div className="mainProduct items-center bg-white w-4/5 lg:w-3/4 relative border flex rounded-xl">
-        <Tag
-          text={`${discount} %`}
-          className="bg-blue-900 absolute top-4 z-5 left-4"
-        />
         <Image
-          src={selectedProduct.images[0]}
+          src={selectedProduct.image}
           alt={selectedProduct.title}
           height={400}
           width={400}
           className="rounded-xl flex mx-auto w-3/5 justify-center items-center "
-          blurDataURL={selectedProduct.images[0]}
+          blurDataURL={selectedProduct.image}
           placeholder="blur"
         />
       </div>

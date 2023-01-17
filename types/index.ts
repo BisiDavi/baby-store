@@ -1,15 +1,14 @@
 export type productType = {
-  id: string;
+  id: number;
   title: string;
   price: number;
-  discountPercentage: number;
   description: string;
   category: string;
-  images: string[];
-  rating: number;
-  stock: number;
-  brand: string;
-  thumbnail: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 };
 
 export type cartProductType = {

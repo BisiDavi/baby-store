@@ -3,30 +3,30 @@ import { productType } from "@/types";
 
 export function fetchProducts(
   urlQuery?: string
-): Promise<{ data: { products: productType[] } }> {
+): Promise<{ data: productType[] }> {
   const urlParams = urlQuery ? urlQuery : "";
-  return axios.get(`https://dummyjson.com/products${urlParams}`);
+  return axios.get(`https://fakestoreapi.com/products${urlParams}`);
 }
 
 export function fetchCategories(): Promise<{ data: string[] }> {
-  return axios.get("https://dummyjson.com/products/categories");
+  return axios.get("https://fakestoreapi.com/products/categories");
 }
 
 export function fetchCategoryProducts(
   category: string
-): Promise<{ data: { products: productType[] } }> {
-  return axios.get(`https://dummyjson.com/products/category/${category}`);
+): Promise<{ data: productType[] }> {
+  return axios.get(`https://fakestoreapi.com/products/category/${category}`);
 }
 
 export function fetchAllProducts(): Promise<{
   data: { products: productType[] };
 }> {
-  return axios.get("https://dummyjson.com/products?limit=100");
+  return axios.get("/api/fetch-all-products");
 }
 
 export function searchProducts(
   query: string
 ): Promise<{ data: { products: productType[] } }> {
   console.log("query", query);
-  return axios.get(`https://dummyjson.com/products/search?q=${query}`);
+  return axios.get(`https://fakestoreapi.com/products/search?q=${query}`);
 }

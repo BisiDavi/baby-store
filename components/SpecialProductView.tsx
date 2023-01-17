@@ -12,7 +12,7 @@ export default function SpecialProductView({ products }: Props) {
   const product = products[0];
   const [selectedProduct, setSelectedProduct] = useState<productType>(product);
   return (
-    <div className="product-view w-full flex-col lg:flex-row mx-auto bg-gray-100 justify-between lg:my-4 items-end flex p-4 lg:p-10">
+    <div className="product-view w-full flex-col lg:flex-row mx-auto bg-gray-100 justify-between lg:my-4 items-center flex p-4 lg:p-10">
       <SpecialProductImage
         selectedProduct={selectedProduct}
         setSelectedProduct={setSelectedProduct}

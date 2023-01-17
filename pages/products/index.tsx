@@ -20,6 +20,7 @@ export default function ProductsPage() {
       enabled: !!selectedCategory,
     }
   );
+  console.log("data", data?.data);
   const { data: categoryData, status: categoryStatus } = useQuery(
     ["fetchCategories"],
     fetchCategories
@@ -54,7 +55,7 @@ export default function ProductsPage() {
                 )}
               </>
             ) : (
-              <TopProductGrid products={data.data.products} />
+              <TopProductGrid products={data.data} />
             )}
           </div>
         </div>

@@ -2,7 +2,10 @@ import HalfStar from "@/public/icon/HalfStar";
 import Star from "@/public/icon/Star";
 
 interface Props {
-  ratings: number;
+  ratings: {
+    count: number;
+    rate: number;
+  };
   className?: string;
 }
 
@@ -10,8 +13,9 @@ export default function Ratings({
   ratings,
   className = "mx-auto justify-center",
 }: Props) {
-  const ratingRemainder = ratings % 1;
-  const ratingValue = Math.floor(ratings);
+  const { rate, count } = ratings;
+  const ratingRemainder = rate % 1;
+  const ratingValue = Math.floor(rate);
   const unfilledStars = 5 - Number(ratingValue);
   const numberOfunfilledStars =
     ratingRemainder > 0 ? unfilledStars - 1 : unfilledStars;
@@ -23,10 +27,11 @@ export default function Ratings({
       {filledStarsArray.map((_, index) => (
         <Star key={index} fill="#f1e803" />
       ))}
-      {ratingRemainder > 0 && <HalfStar  />}
+      {ratingRemainder > 0 && <HalfStar />}
       {unfilledStarsArray.map((_, index) => (
         <Star key={index} fill="gray" />
-      ))}
+      ))}{" "}
+      <span className="mx-1">({count})</span>
     </div>
   );
 }

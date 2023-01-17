@@ -1,13 +1,10 @@
 import Button from "@/components/Button";
 import Wishlist from "@/public/icon/Wishlist";
 import PromoCounter from "@/components/PromoCounter";
-import Ratings from "@/components/Ratings";
-import { formatPrice } from "@/utils/formatPrice";
-import getCostPrice from "@/utils/getCostPrice";
 import useCartMutation from "@/hooks/useCartMutation";
-import type { productType } from "@/types";
 import useWishlistMutation from "@/hooks/useWishlistMutation";
-import Price from "./Price";
+import Price from "@/components/Price";
+import type { productType } from "@/types";
 
 interface Props {
   product: productType;
@@ -28,12 +25,7 @@ export default function SpecialProductDescription({ product }: Props) {
       <div className="pl-5 lg:pl-8">
         <h4 className="text-xl">{product.title}</h4>
         <div className="price-view flex my-4 flex-col">
-          <Price
-            price={product.price}
-            discountPercentage={product.discountPercentage}
-            className="flex"
-          />
-          <Ratings ratings={product.rating} className="text-left" />
+          <Price price={product.price} className="flex" />
         </div>
         <p className="mb-16">{product.description}</p>
         <div className="button-group flex items-center mb-4">
