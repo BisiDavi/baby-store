@@ -48,7 +48,7 @@ export default function SlideCartItem({
             src={item.image}
             alt={item.title}
             height={200}
-            className="w-1/3 max-h-24"
+            className="w-2/3 lg:w-1/3 max-h-24"
             width={200}
             blurDataURL={item.image}
             placeholder="blur"

@@ -35,7 +35,9 @@ export default function ProductModal() {
               <h3 className="text-xl">{product.title}</h3>
               <Price price={product.price} className="" />
               <Ratings className="left" ratings={product.rating} />
-              <p className="my-2">{product.description}</p>
+              <p className="my-2 hidden lg:flex">
+                {product.description}
+              </p>
               <div className="button-group flex mt-4 flex-col space-y-4">
                 <Button
                   className="bg-blue-900 hover:opacity-80 text-white rounded-lg py-2"
