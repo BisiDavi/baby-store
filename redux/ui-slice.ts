@@ -26,9 +26,16 @@ const UISlice = createSlice({
     updateAuthModal(state) {
       state.authModal = !state.authModal;
     },
+    closeAuthModal(state) {
+      state.authModal = false;
+    },
   },
 });
 
-export const { updateSlideCart, updatePreviewProduct, updateAuthModal } =
-  UISlice.actions;
+export const {
+  updateSlideCart,
+  updatePreviewProduct,
+  updateAuthModal,
+  closeAuthModal,
+} = UISlice.actions;
 export default UISlice.reducer;

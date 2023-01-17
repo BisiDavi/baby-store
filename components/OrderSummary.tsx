@@ -19,7 +19,6 @@ export default function OrderSummary() {
   const { rate, currency } = usePrice();
 
   const DELIVERY_FEE = 30 * rate;
-  console.log("userDetails", userDetails);
   const disableButton = !userDetails ? true : false;
   const itemAmount = cart ? cart.amount * rate : 0;
   const total = cart ? DELIVERY_FEE + itemAmount : 0;

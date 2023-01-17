@@ -8,6 +8,7 @@ interface ModalProps {
   title?: string;
   header?: JSX.Element;
   modalHeaderClassName?: string;
+  hideCancel?:boolean
 }
 export default function Modal({
   modal,
@@ -16,6 +17,7 @@ export default function Modal({
   children,
   modalHeaderClassName,
   header,
+  hideCancel
 }: PropsWithChildren<ModalProps>) {
   const headerClassName = modalHeaderClassName
     ? modalHeaderClassName
@@ -35,11 +37,11 @@ export default function Modal({
                 >
                   <div className="flex justify-between relative items-center w-full">
                     {header}
-                    <Button
+                    {!hideCancel && <Button
                       className="p-1 border-0 text-black absolute right-0 -top-4 text-3xl leading-none font-semibold"
                       onClick={modalHandler}
                       icon={<Cancel />}
-                    />
+                    />}
                   </div>
                 </div>
                 {title && (

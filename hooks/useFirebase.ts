@@ -11,6 +11,7 @@ import { createFirebaseApp } from "@/utils/firebaseConfig";
 import useUI from "./useUI";
 import { useAppDispatch } from "@/redux/store";
 import { updateAuth } from "@/redux/auth-slice";
+import { closeAuthModal, updateAuthModal } from "@/redux/ui-slice";
 
 export default function useFirebase() {
   const { authModalHandler } = useUI();
@@ -71,7 +72,7 @@ export default function useFirebase() {
       const user = result.user;
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
-        authModalHandler();
+        dispatch(closeAuthModal());
         dispatch(updateAuth({ email: user.email, name: user.displayName }));
       });
     });

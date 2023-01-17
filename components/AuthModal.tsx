@@ -16,6 +16,7 @@ export default function AuthModal({ modal, modalHandler }: Props) {
       modal={modal}
       modalHandler={modalHandler}
       modalHeaderClassName="w-96"
+      hideCancel
     >
       <div className="authmodal w-full">
         <h4 className="font-bold text-2xl flex mx-auto items-center  justify-center">

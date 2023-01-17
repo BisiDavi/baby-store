@@ -1,22 +1,22 @@
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { useRouter } from "next/router";
 
 import useUI from "@/hooks/useUI";
 import useFirebase from "@/hooks/useFirebase";
+import { useAppSelector } from "@/redux/store";
 
 export default function useAuthModal() {
   const { authModalHandler, authModal } = useUI();
+  const { auth } = useAppSelector((state) => state.auth);
 
-  const { googleProvider, getAuthdetails } = useFirebase();
+  const { googleProvider } = useFirebase();
   const router = useRouter();
-  const userDetails = getAuthdetails();
 
-  const modalState =
-    router.route === "/checkout" && !userDetails ? true : authModal;
+  console.log("authModal", authModal);
+
+  const modalState = router.route === "/checkout" && false ? true : authModal;
   const modalHandler =
-    router.route === "/checkout" && !userDetails
-      ? () => null
-      : authModalHandler;
+    router.route === "/checkout" && !auth ? () => null : authModalHandler;
 
   if (!modalState) {
     enableBodyScroll(document.body);
