@@ -14,6 +14,8 @@ export default function useUI() {
     dispatch(updateAuthModal());
   }
 
+  
+
   return {
     previewProduct,
     previewProductHandler,

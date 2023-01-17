@@ -1,7 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { PropsWithChildren } from "react";
-import { useRouter } from "next/router";
 
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -27,9 +26,7 @@ export default function Layout({
   children,
   title,
 }: PropsWithChildren<{ title: string }>) {
-  const { showSlideCart, previewProduct, authModal } = useAppSelector(
-    (state) => state.UI
-  );
+  const { showSlideCart, previewProduct } = useAppSelector((state) => state.UI);
   const { modalState, modalHandler } = useAuthModal();
 
   return (

@@ -9,9 +9,12 @@ import { getDatabase, ref, set, onValue, remove } from "firebase/database";
 
 import { createFirebaseApp } from "@/utils/firebaseConfig";
 import useUI from "./useUI";
+import { useAppDispatch } from "@/redux/store";
+import { updateAuth } from "@/redux/auth-slice";
 
 export default function useFirebase() {
   const { authModalHandler } = useUI();
+  const dispatch = useAppDispatch();
 
   function initFB() {
     const app = createFirebaseApp();
@@ -69,6 +72,7 @@ export default function useFirebase() {
       writeData(JSON.stringify(user), `/users/${user.uid}/`).then(() => {
         toast.success(`Welcome, ${user?.displayName}`);
         authModalHandler();
+        dispatch(updateAuth({ email: user.email, name: user.displayName }));
       });
     });
   }
@@ -76,7 +80,10 @@ export default function useFirebase() {
   async function authSignOut() {
     const app = initFB();
     const auth = getAuth(app);
-    return await signOut(auth).then(() => toast.success("logout successful"));
+    return await signOut(auth).then(() => {
+      toast.success("logout successful");
+      dispatch(updateAuth(null));
+    });
   }
 
   return {

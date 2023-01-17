@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 type authType = {
   auth: {
     email: string;
+    name: string;
   } | null;
 };
 
