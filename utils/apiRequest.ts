@@ -27,6 +27,5 @@ export function fetchAllProducts(): Promise<{
 export function searchProducts(
   query: string
 ): Promise<{ data: { products: productType[] } }> {
-  console.log("query", query);
   return axios.get(`https://fakestoreapi.com/products/search?q=${query}`);
 }

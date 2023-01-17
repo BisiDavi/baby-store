@@ -35,7 +35,7 @@ export async function getServerSideProps(context: any) {
         : context.params.slug === "womens-clothing"
         ? "women's clothing"
         : context.params.slug;
-        
+
     return fetch(`https://fakestoreapi.com/products/category/${formatSlug}`)
       .then((response) => {
         return response.json();
@@ -44,7 +44,6 @@ export async function getServerSideProps(context: any) {
         result.push(item);
       })
       .then(() => {
-        console.log("result", result);
         return result[0];
       });
   }

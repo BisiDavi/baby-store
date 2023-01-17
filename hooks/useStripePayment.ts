@@ -14,7 +14,7 @@ export default function useStripePayment(cart: cartType | null, email: string) {
           currency: currency.code.toLocaleLowerCase(),
           product_data: {
             name: item.title,
-            images: item.images,
+            images: [item.image],
           },
           unit_amount: Math.round(item.price * rate * 100),
         },

@@ -89,23 +89,19 @@ export default function Search() {
                           className="w-full flex space-x-4"
                         >
                           <Image
-                            src={item.images[0]}
+                            src={item.image}
                             alt={item.title}
                             height={100}
                             width={100}
                             className="w-1/5"
-                            blurDataURL={item.images[0]}
+                            blurDataURL={item.image}
                             placeholder="blur"
                           />
                           <div className="text">
                             <h4 className="text-xl font-bold my-2">
                               {item.title}
                             </h4>
-                            <Price
-                              price={item.price}
-                              discountPercentage={item.discountPercentage}
-                              className="font-medium"
-                            />
+                            <Price price={item.price} className="font-medium" />
                             <Ratings
                               ratings={item.rating}
                               className="items-start"
