@@ -1,17 +1,20 @@
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
-import useUI from "@/hooks/useUI";
 import Google from "@/public/icon/Google";
 import useFirebase from "@/hooks/useFirebase";
 
-export default function AuthModal() {
-  const { authModalHandler, authModal } = useUI();
+interface Props {
+  modal: boolean;
+  modalHandler: () => void;
+}
+
+export default function AuthModal({ modal, modalHandler }: Props) {
   const { googleProvider } = useFirebase();
 
   return (
     <Modal
-      modal={authModal}
-      modalHandler={authModalHandler}
+      modal={modal}
+      modalHandler={modalHandler}
       modalHeaderClassName="w-96"
     >
       <div className="authmodal w-full">

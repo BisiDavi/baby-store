@@ -1,12 +1,14 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { PropsWithChildren } from "react";
+import { useRouter } from "next/router";
 
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TopHeader from "@/components/TopHeader";
 import { useAppSelector } from "@/redux/store";
+import useAuthModal from "@/hooks/useAuthModal";
 
 const SlideCart = dynamic(
   () => import(/* webpackChunkName: 'SlideCart' */ "@/components/SlideCart")
@@ -28,6 +30,7 @@ export default function Layout({
   const { showSlideCart, previewProduct, authModal } = useAppSelector(
     (state) => state.UI
   );
+  const { modalState, modalHandler } = useAuthModal();
 
   return (
     <>
@@ -39,7 +42,9 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopHeader />
-      {authModal && <AuthModal />}
+      {modalState && (
+        <AuthModal modal={modalState} modalHandler={modalHandler} />
+      )}
       {previewProduct.status && previewProduct.product && <ProductModal />}
       <Header />
       <main className="flex mx-auto flex-col bg-gray">{children}</main>
