@@ -4,7 +4,6 @@ import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
 import ShoppingCart from "@/public/icon/ShoppingCart";
 import AddPlus from "@/public/icon/AddPlus";
-import ProductGridView from "@/components/ProductGridView";
 import useCartMutation from "@/hooks/useCartMutation";
 import Price from "@/components/Price";
 import type { productType } from "@/types";
@@ -22,8 +21,8 @@ export default function ProductView({ product }: Props) {
       <div className="category border rounded-full fit-content px-4 bg-blue-900 text-white py-1">
         {category}
       </div>
-      <div className="flex space-x-4 my-4 items-start">
-        <div className="image-wrapper w-1/2 bg-white rounded-xl px-8 py-4">
+      <div className="flex flex-col lg:flex-row space-x-0 space-y-4 lg:space-y-0 lg:space-x-4 my-4 lg:items-start">
+        <div className="image-wrapper lg:w-1/2 w-full bg-white rounded-xl px-8 py-4">
           <Image
             src={product.image}
             alt={product.title}
@@ -35,7 +34,7 @@ export default function ProductView({ product }: Props) {
             priority={true}
           />
         </div>
-        <div className="text-content w-1/2 flex flex-col bg-white p-6 rounded-lg shadow">
+        <div className="text-content w-full lg:w-1/2 flex flex-col bg-white p-6 rounded-lg shadow">
           <div className="order-2  my-4 text-content w-full px-0 flex flex-col">
             <h3 className="text-2xl font-bold"> {product.title}</h3>
             <Price price={product.price} className="text-xl" />
