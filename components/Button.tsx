@@ -1,7 +1,7 @@
 interface Props {
   text?: string;
-  type?: "submit" | "reset" | "button";
   className?: string;
+  type?: "submit" | "reset" | "button";
   onClick?: () => void;
   icon?: JSX.Element;
   onMouseMove?: () => void;
