@@ -45,7 +45,7 @@ ul.splide__pagination.splide__pagination--ltr {
 }
 
 .slider.blog .splide__track {
-  height: 60vh;
+  height: fit-content;
 }
 
 .fit-content {
@@ -76,7 +76,7 @@ button:disabled {
 
   .slider.blog .splide__track {
     padding-left: 0px !important;
-    height: 65vh;
+    height: 70vh;
   }
 
   .products.slider .splide .splide__arrows.splide__arrows--ltr,
