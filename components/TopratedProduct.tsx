@@ -3,13 +3,17 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "@/utils/apiRequest";
 import ProductSlider from "@/components/ProductSlider";
 import ProductLoader from "@/components/ProductLoader";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function TopratedProduct() {
   const { data, status } = useQuery(["get-top-rated-products"], () =>
     fetchProducts("?limit=12")
   );
-
-  console.log("data", data);
+  const mobileDevice = useMediaQuery("(max-width:768px)");
+  const numberOfLoaders = mobileDevice ? 1 : 4;
+  const loaderClassName = mobileDevice
+    ? "flex w-full mx-auto justify-center"
+    : "flex";
 
   return (
     <section className="container px-4 lg:px-0 mx-auto relative mt-6 mb-10 flex flex-col">
@@ -22,11 +26,12 @@ export default function TopratedProduct() {
         {status === "error" ? (
           <p>Error fetching products</p>
         ) : status === "loading" ? (
-          <ProductLoader className="flex" />
+          <ProductLoader
+            className={loaderClassName}
+            arrayCount={numberOfLoaders}
+          />
         ) : (
-          status === "success" && (
-            <ProductSlider products={data.data} />
-          )
+          status === "success" && <ProductSlider products={data.data} />
         )}
       </div>
     </section>
