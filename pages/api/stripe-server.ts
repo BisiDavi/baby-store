@@ -1,5 +1,15 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
+/**
+ * @swagger
+ * /api/stripe-server:
+ *   post:
+ *     description: fetch stripe client session
+ *     responses:
+ *       200:
+ *         description: returns client session
+ */
+
 export default async function handler(req: any, res: any) {
   switch (req.method) {
     case "POST": {

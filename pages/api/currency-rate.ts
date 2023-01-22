@@ -3,6 +3,16 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 
+/**
+ * @swagger
+ * /api/currency-rate:
+ *   get:
+ *     description: Fetch the current currency rate of EUR, NGN & CAD in relative to USD and writes the rate in a file
+ *     responses:
+ *       200:
+ *         description:  "currency-rate updated"
+ */
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

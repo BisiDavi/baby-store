@@ -1,6 +1,16 @@
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 
+/**
+ * @swagger
+ * /api/fetch-products:
+ *   get:
+ *     description: fetch store products from https://fakestoreapi.com
+ *     responses:
+ *       200:
+ *         description: returns array of products
+ */
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
