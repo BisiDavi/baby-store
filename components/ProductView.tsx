@@ -7,6 +7,7 @@ import AddPlus from "@/public/icon/AddPlus";
 import useCartMutation from "@/hooks/useCartMutation";
 import Price from "@/components/Price";
 import type { productType } from "@/types";
+import { useRouter } from "next/router";
 
 interface Props {
   product: productType;
@@ -15,6 +16,7 @@ export default function ProductView({ product }: Props) {
   const category = product.category.toUpperCase();
   const { useAddToCartMutation } = useCartMutation();
   const { mutate } = useAddToCartMutation();
+  const router = useRouter();
 
   return (
     <div className="w-full flex-col px-4 lg:px-0 flex my-8">
@@ -52,6 +54,13 @@ export default function ProductView({ product }: Props) {
               icon={<ShoppingCart fill="white" className="mr-3" />}
               text="Buy Now"
               className="flex items-center bg-red-500 text-white hover:opacity-80 rounded-lg px-4 py-1"
+              onClick={() =>
+                mutate(product, {
+                  onSuccess: () => {
+                    router.push("/checkout")
+                  },
+                })
+              }
             />
           </div>
         </div>
