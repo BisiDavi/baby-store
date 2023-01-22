@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import Ratings from "@/components/Ratings";
 import Button from "@/components/Button";
@@ -7,7 +8,6 @@ import AddPlus from "@/public/icon/AddPlus";
 import useCartMutation from "@/hooks/useCartMutation";
 import Price from "@/components/Price";
 import type { productType } from "@/types";
-import { useRouter } from "next/router";
 
 interface Props {
   product: productType;

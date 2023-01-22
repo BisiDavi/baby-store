@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import Modal from "@/components/Modal";
 import useUI from "@/hooks/useUI";
@@ -12,6 +13,7 @@ export default function ProductModal() {
   const { product, status } = previewProduct;
   const { useAddToCartMutation } = useCartMutation();
   const { mutate } = useAddToCartMutation();
+  const router = useRouter();
 
   return (
     <>
@@ -24,8 +26,8 @@ export default function ProductModal() {
             <Image
               src={product.image}
               alt={product.title}
-              height={800}
-              width={500}
+              height={400}
+              width={400}
               className="sm:max-h-96 lg:max-h-full w-full lg:w-1/2 mx-auto"
               blurDataURL={product.image}
               placeholder="blur"
@@ -35,9 +37,7 @@ export default function ProductModal() {
               <h3 className="text-xl">{product.title}</h3>
               <Price price={product.price} className="" />
               <Ratings className="left" ratings={product.rating} />
-              <p className="my-2 hidden lg:flex">
-                {product.description}
-              </p>
+              <p className="my-2 hidden lg:flex">{product.description}</p>
               <div className="button-group flex mt-4 flex-col space-y-4">
                 <Button
                   className="bg-blue-900 hover:opacity-80 text-white rounded-lg py-2"
@@ -47,6 +47,14 @@ export default function ProductModal() {
                 <Button
                   className="border hover:bg-gray-400 hover:text-white rounded-lg py-2"
                   text="Buy it Now"
+                  onClick={() =>
+                    mutate(product, {
+                      onSuccess: () => {
+                        previewProductHandler(false, null);
+                        router.push("/checkout");
+                      },
+                    })
+                  }
                 />
               </div>
             </div>
