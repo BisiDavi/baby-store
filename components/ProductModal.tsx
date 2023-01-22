@@ -24,9 +24,9 @@ export default function ProductModal() {
             <Image
               src={product.image}
               alt={product.title}
-              height={500}
+              height={800}
               width={500}
-              className="max-h-96 w-full lg:w-1/2 mx-auto"
+              className="sm:max-h-96 lg:max-h-full w-full lg:w-1/2 mx-auto"
               blurDataURL={product.image}
               placeholder="blur"
             />

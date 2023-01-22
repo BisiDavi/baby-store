@@ -30,8 +30,16 @@ export default function Product({ product, className }: ProductItem) {
   const { previewProductHandler } = useUI();
   const mobileDevice = useMediaQuery("(max-width:768px)");
 
-  const fillEyeColor = hoverEyeFillState ? "white" : "black";
-  const fillHeartColor = hoverHeartFillState ? "white" : "black";
+  const fillEyeColor = !mobileDevice
+    ? hoverEyeFillState
+      ? "white"
+      : "black"
+    : "black";
+  const fillHeartColor = !mobileDevice
+    ? hoverHeartFillState
+      ? "white"
+      : "black"
+    : "black";
 
   const { price, image, title } = product;
   const productLink = toSlug(product.title);
