@@ -76,7 +76,7 @@ button:disabled {
 
   .slider.blog .splide__track {
     padding-left: 0px !important;
-    height: 70vh;
+    height: 100%
   }
 
   .products.slider .splide .splide__arrows.splide__arrows--ltr,
