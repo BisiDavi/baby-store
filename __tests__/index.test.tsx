@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import Slider from "@/components/Slider";
+import Home from "@/pages/index";
 
-describe("Slider", () => {
+describe("Home", () => {
   it("renders homepage slider", async () => {
-    render(<Slider />);
+    render(<Home />);
 
     const slider = await waitFor(() => screen.findByTestId("homepage-slider"));
     expect(slider).toBeTruthy();

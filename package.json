@@ -25,8 +25,8 @@
     "aos": "^2.3.4",
     "axios": "^1.2.1",
     "body-scroll-lock": "^4.0.0-beta.0",
-    "eslint": "^8.30.0",
-    "eslint-config-next": "^13.1.1",
+    "eslint": "^8.32.0",
+    "eslint-config-next": "^13.1.5",
     "firebase": "^9.15.0",
     "next": "13.0.7",
     "next-swagger-doc": "^0.3.6",
@@ -65,9 +65,11 @@
     "cypress": "^12.2.0",
     "eslint-plugin-storybook": "^0.6.8",
     "eslint-plugin-testing-library": "^5.9.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.4.0",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "ts-jest": "^29.0.5"
   }
 }
