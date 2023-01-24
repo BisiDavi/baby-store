@@ -8,13 +8,11 @@ import {
 import { getDatabase, ref, set, onValue, remove } from "firebase/database";
 
 import { createFirebaseApp } from "@/utils/firebaseConfig";
-import useUI from "./useUI";
 import { useAppDispatch } from "@/redux/store";
 import { updateAuth } from "@/redux/auth-slice";
-import { closeAuthModal, updateAuthModal } from "@/redux/ui-slice";
+import { closeAuthModal } from "@/redux/ui-slice";
 
 export default function useFirebase() {
-  const { authModalHandler } = useUI();
   const dispatch = useAppDispatch();
 
   function initFB() {

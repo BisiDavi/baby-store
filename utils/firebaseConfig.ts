@@ -38,9 +38,6 @@ export function initializeDB() {
   return db;
 }
 
-// const messaging =
-//   process.env.NODE_ENV === "production" ? getMessaging(app) : null;
-
 export function readData(dbNode: string, dataValue: any, setData: any) {
   const db = initializeDB();
   const dataRef = ref(db, dbNode);

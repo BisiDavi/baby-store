@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+import Layout from "@/layout/.";
 import Slider from "@/components/Slider";
 import InfoList from "@/components/InfoList";
 import TopratedProduct from "@/components/TopratedProduct";
