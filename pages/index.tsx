@@ -12,7 +12,7 @@ import bannerContent from "@/json/banner.json";
 export default function Home() {
   return (
     <Layout title="Welcome, buy phones, laptops, furniture, suglasses, automotive, motorcycle, clothes at a discounted price">
-      <Slider />
+      <Slider data-testid="homepage-slider" />
       <InfoList />
       <TopratedProduct />
       <Banner content={bannerContent.banner1} />
