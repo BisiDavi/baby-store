@@ -9,6 +9,7 @@ import Blog from "@/components/Blog";
 import Banner from "@/components/Banner";
 import bannerContent from "@/json/banner.json";
 
+// homepage 
 export default function Home() {
   return (
     <Layout title="Welcome, buy phones, laptops, furniture, suglasses, automotive, motorcycle, clothes at a discounted price">
