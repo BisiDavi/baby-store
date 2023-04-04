@@ -26,9 +26,6 @@ export default function useCartMutation() {
         updateProductQuantity(type, id),
       {
         mutationKey: ["updateProductQuantityMutation"],
-        onSuccess: () => {
-          toast.success("product quantity updated");
-        },
       }
     );
   }
