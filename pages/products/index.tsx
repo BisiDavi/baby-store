@@ -20,7 +20,6 @@ export default function ProductsPage() {
       enabled: !!selectedCategory,
     }
   );
-  console.log("data", data?.data);
   const { data: categoryData, status: categoryStatus } = useQuery(
     ["fetchCategories"],
     fetchCategories

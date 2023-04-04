@@ -29,8 +29,6 @@ export default function Layout({
   const { showSlideCart, previewProduct } = useAppSelector((state) => state.UI);
   const { modalState, modalHandler } = useAuthModal();
 
-  console.log("modalState", modalState);
-
   return (
     <>
       {showSlideCart && <SlideCart />}

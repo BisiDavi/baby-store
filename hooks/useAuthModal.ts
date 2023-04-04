@@ -12,8 +12,6 @@ export default function useAuthModal() {
   const { googleProvider } = useFirebase();
   const router = useRouter();
 
-  console.log("authModal", authModal);
-
   const modalState = router.route === "/checkout" && !auth ? true : authModal;
   const modalHandler =
     router.route === "/checkout" && !auth ? () => null : authModalHandler;
