@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import SpinnerRipple from "@/components/SpinnerRipple";
 import store from "@/redux/store";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +21,10 @@ export default function ProviderLayout({ children }: PropsWithChildren) {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate
+        loading={<SpinnerRipple centerRipple />}
+        persistor={persistor}
+      >
         <QueryClientProvider client={queryClient}>
           <NextNProgress
             color="#f54c4c"
