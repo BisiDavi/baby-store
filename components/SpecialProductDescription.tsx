@@ -13,11 +13,10 @@ interface Props {
 export default function SpecialProductDescription({ product }: Props) {
   const { useAddToCartMutation } = useCartMutation();
   const { mutate } = useAddToCartMutation();
-  const { wishlist, useAddToWishlist } = useWishlistMutation();
+  const { wishlist, useAddToWishlist }: any = useWishlistMutation();
   const { mutate: mutateAddToWishlist } = useAddToWishlist();
 
-  const checkForWishlist = wishlist.filter((item) => item.id === product.id)[0];
-  const wishlistFill = checkForWishlist ? "red" : "black";
+  const wishlistFill = wishlist?.items.length > 0 ? "red" : "black";
 
   return (
     <div className="flex w-full -mr-1 lg:mr-0 pl-1 lg:w-1/2 bg-white lg:mx-auto my-4 lg:my-0 lg:mx-4 px-0 py-8 lg:py-12 lg:pr-6 rounded-lg shadow">
